@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Descargar Material</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  .descargas-header {
+    background: linear-gradient(135deg, #1A1A1A 0%, #2C2C2C 100%);
+    padding: 48px 48px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .descargas-header .bubble { background: rgba(255,255,255,0.04); }
+  .descargas-header .chapter-badge { background: rgba(255,107,43,0.2); border-color: rgba(255,107,43,0.4); color: #FF6B2B; }
+  .descargas-header .chapter-title { color: white; }
+  .descargas-header .chapter-quote { color: rgba(255,255,255,0.6); }
+
+  .descargas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .descarga-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    border: 2px solid #F0EBE3;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .descarga-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.14);
+  }
+
+  .descarga-portada {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+    background: #F5F0EA;
+  }
+  .descarga-portada-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(135deg, #F5F0EA, #E8E2DA);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+  }
+
+  .descarga-info {
+    padding: 20px 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .descarga-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 10px;
+    border-radius: 100px;
+    width: fit-content;
+  }
+  .badge-principal { background: #FFD166; color: #1A1A1A; }
+  .badge-bono1 { background: #DCFCE7; color: #14532D; }
+  .badge-bono2 { background: #EDE9FE; color: #5B21B6; }
+  .badge-bono3 { background: #E0F2FE; color: #0C4A6E; }
+
+  .descarga-titulo {
+    font-family: 'Fredoka One', cursive;
+    font-size: 18px;
+    color: #1A1A1A;
+    line-height: 1.2;
+  }
+
+  .descarga-desc {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .descarga-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 13px;
+    border-radius: 100px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-top: 8px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-principal { background: linear-gradient(135deg, #FF6B2B, #FF8C5A); color: white; box-shadow: 0 4px 14px rgba(255,107,43,0.35); }
+  .btn-principal:hover { box-shadow: 0 8px 24px rgba(255,107,43,0.5); }
+  .btn-bono1 { background: linear-gradient(135deg, #16A34A, #4ADE80); color: white; box-shadow: 0 4px 14px rgba(22,163,74,0.35); }
+  .btn-bono1:hover { box-shadow: 0 8px 24px rgba(22,163,74,0.5); }
+  .btn-bono2 { background: linear-gradient(135deg, #7C3AED, #A78BFA); color: white; box-shadow: 0 4px 14px rgba(124,58,237,0.35); }
+  .btn-bono2:hover { box-shadow: 0 8px 24px rgba(124,58,237,0.5); }
+  .btn-bono3 { background: linear-gradient(135deg, #0284C7, #38BDF8); color: white; box-shadow: 0 4px 14px rgba(2,132,199,0.35); }
+  .btn-bono3:hover { box-shadow: 0 8px 24px rgba(2,132,199,0.5); }
+
+  .tip-descarga {
+    background: #FFF8F0;
+    border: 2px solid #FFD166;
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 28px;
+  }
+  .tip-descarga .tip-icon { font-size: 22px; flex-shrink: 0; }
+  .tip-descarga p { font-size: 14px; color: #555; line-height: 1.6; margin: 0; }
+
+  @media (max-width: 768px) {
+    .descargas-header { padding: 56px 20px 48px; }
+    .descargas-grid { grid-template-columns: 1fr; gap: 20px; }
+    .descarga-portada { aspect-ratio: 16/9; }
+    .descarga-portada-placeholder { aspect-ratio: 16/9; }
+  }
+</style>
+</head>
+<body>
+<div id="sidebar-container"></div>
+
+<main class="main">
+  <div class="descargas-header chapter-header">
+    <div class="bubble b1"></div><div class="bubble b2"></div>
+    <div class="bubble b3"></div><div class="bubble b4"></div>
+    <div class="chapter-badge">⬇️ Tu material completo</div>
+    <h1 class="chapter-title">Descargar Material</h1>
+    <p class="chapter-quote">Acá encontrás el ebook principal y los 3 bonos para descargar y tener siempre a mano.</p>
+  </div>
+
+  <div class="content" style="padding-top:36px;">
+
+    <div class="tip-descarga">
+      <div class="tip-icon">💡</div>
+      <p>Estos archivos son para vos — guardálos en tu teléfono o computadora. El ebook principal y cada bono están disponibles en PDF para leer cuando quieras, sin internet.</p>
+    </div>
+
+    <div class="descargas-grid">
+
+      <!-- EBOOK PRINCIPAL -->
+      <div class="descarga-card">
+        <img src="assets/descargas/LEERCONGANAS.png" alt="Leer con Ganas" class="descarga-portada"
+          onerror="this.outerHTML='<div class=\'descarga-portada-placeholder\'>📖</div>'">
+        <div class="descarga-info">
+          <span class="descarga-badge badge-principal">Guía principal</span>
+          <div class="descarga-titulo">Leer con Ganas</div>
+          <div class="descarga-desc">La guía completa en PDF — 10 capítulos con todas las estrategias, actividades y planes de acción para motivar a tu hijo a leer.</div>
+          <a href="assets/descargas/ebook-principal.pdf" download class="descarga-btn btn-principal">
+            ⬇️ Descargar PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- BONO 1 -->
+      <div class="descarga-card">
+        <img src="assets/descargas/portadabono1.png" alt="Juegos que Enseñan" class="descarga-portada"
+          onerror="this.outerHTML='<div class=\'descarga-portada-placeholder\'>🎮</div>'">
+        <div class="descarga-info">
+          <span class="descarga-badge badge-bono1">Bono 1</span>
+          <div class="descarga-titulo">Juegos que Enseñan</div>
+          <div class="descarga-desc">Aprender a leer jugando — juegos de palabras, narrativa interactiva, tecnología y actividades prácticas para hacer en casa.</div>
+          <a href="assets/descargas/bono1.pdf" download class="descarga-btn btn-bono1">
+            ⬇️ Descargar PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- BONO 2 -->
+      <div class="descarga-card">
+        <img src="assets/descargas/lecturayemocion-bono2.png" alt="Lectura y Emoción" class="descarga-portada"
+          onerror="this.outerHTML='<div class=\'descarga-portada-placeholder\'>❤️</div>'">
+        <div class="descarga-info">
+          <span class="descarga-badge badge-bono2">Bono 2</span>
+          <div class="descarga-titulo">Lectura y Emoción</div>
+          <div class="descarga-desc">Conectando con sentimientos a través de los libros — emociones, empatía, cuentos para sanar y comunicación familiar.</div>
+          <a href="assets/descargas/bono2.pdf" download class="descarga-btn btn-bono2">
+            ⬇️ Descargar PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- BONO 3 -->
+      <div class="descarga-card">
+        <img src="assets/descargas/portada-bono3.png" alt="Lectura sin Fronteras" class="descarga-portada"
+          onerror="this.outerHTML='<div class=\'descarga-portada-placeholder\'>🌍</div>'">
+        <div class="descarga-info">
+          <span class="descarga-badge badge-bono3">Bono 3</span>
+          <div class="descarga-titulo">Lectura sin Fronteras</div>
+          <div class="descarga-desc">Aprender a leer en diferentes contextos — en movimiento, con cultura, con materiales creativos y al aire libre.</div>
+          <a href="assets/descargas/bono3.pdf" download class="descarga-btn btn-bono3">
+            ⬇️ Descargar PDF
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('descargas');</script>
+</body>
+</html>

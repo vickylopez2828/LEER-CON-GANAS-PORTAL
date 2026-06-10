@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Bono 2 Cap 1: Emociones en las Historias</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  :root {
+    --naranja: #7C3AED;
+    --naranja-claro: #A78BFA;
+    --amarillo: #EDE9FE;
+  }
+  .chapter-header {
+    background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 50%, #C4B5FD 100%);
+  }
+  .next-btn {
+    background: linear-gradient(135deg, #7C3AED, #A78BFA);
+  }
+  .next-btn:hover {
+    box-shadow: 0 10px 28px rgba(124,58,237,0.45);
+  }
+</style>
+</head>
+<body>
+
+<button class="hamburger" id="hamburger">☰</button>
+<div class="overlay" id="overlay"></div>
+<div id="sidebar-container"></div>
+
+<main class="main">
+
+  <div class="chapter-header">
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+    <div class="bubble b4"></div>
+    <div class="chapter-badge">❤️ Bono 2 · Capítulo 1 de 4</div>
+    <h1 class="chapter-title">Emociones en las Historias: Un Puente hacia la Comprensión</h1>
+    <p class="chapter-quote">
+      "Leer no es solo abrir un libro, es abrir un mundo de emociones."
+      <span>— Anónimo</span>
+    </p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki"
+      onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>¿Alguna vez notaste cómo tu hijo se desconecta de lo que está leyendo? Muchas veces el problema no es la dificultad del texto — es que no hay una conexión emocional con la historia. Cuando los chicos sienten lo que sienten los personajes, la comprensión se multiplica.</p>
+        <p>Este capítulo del Bono 2 arranca desde ahí: las emociones como puerta de entrada a la lectura profunda. No se trata solo de descifrar palabras — se trata de sentir y comprender.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">🔍</div>
+          <h4>Identificar emociones</h4>
+          <p>Aprender a reconocer lo que sienten los personajes — y conectarlo con lo que el chico siente él.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🗺️</div>
+          <h4>Diagrama de emociones</h4>
+          <p>Mapear los cambios emocionales de los personajes a lo largo de la historia para entender la narrativa.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">📓</div>
+          <h4>Diario emocional</h4>
+          <p>Un cuaderno donde el chico registra cómo se sintió leyendo — y ve su evolución con el tiempo.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div>
+          <h4>Por qué las emociones mejoran la comprensión</h4>
+          <p>Cuando el chico conecta emocionalmente con un personaje, está más motivado para seguir leyendo y descubrir el desenlace. Esa motivación es la que transforma la lectura de una tarea en una experiencia que quiere repetir.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar</h4>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">✓</div>
+          <span>Entiendo que la conexión emocional mejora la comprensión lectora</span>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">✓</div>
+          <span>Voy a hacer pausas durante la lectura para preguntar sobre emociones</span>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">✓</div>
+          <span>Estoy dispuesta a compartir mis propias emociones también</span>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Las historias son más que palabras en una página — son vehículos de experiencias humanas. Cuando tu hijo aprende a sentirlas, aprende a comprenderlas.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- TAB CONTEXTO -->
+    <div class="section-panel" id="tab-contexto">
+      <div class="intro-card">
+        <p>Para entender por qué trabajar las emociones en la lectura es tan poderoso, hay que entender cómo funciona la conexión entre emoción y comprensión en el cerebro de un chico.</p>
+      </div>
+
+      <div class="section-title">Emoción y comprensión van juntas</div>
+
+      <div class="dos-col">
+        <div class="mini-card">
+          <div class="mini-icon">🧠</div>
+          <h4>Involucramiento emocional</h4>
+          <p>Cuando el chico siente la ansiedad del personaje, está más motivado para seguir leyendo. La emoción activa la atención de una forma que la lectura neutral no logra.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🤝</div>
+          <h4>Empatía como habilidad</h4>
+          <p>Identificar emociones en los personajes entrena la empatía en la vida real. Un chico que aprende a "leer" emociones en los libros aprende a leerlas en las personas.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">💬</div>
+          <h4>La conversación como herramienta</h4>
+          <p>Cuanto más hablás sobre las emociones en las historias, más cómodo se siente tu hijo para explorar sus propios sentimientos. La lectura se vuelve un espacio seguro.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🖼️</div>
+          <h4>Las ilustraciones hablan</h4>
+          <p>Las imágenes transmiten emociones de forma clara — expresiones faciales, colores, lenguaje corporal. Son una puerta de entrada perfecta para chicos que todavía no leen mucho texto.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">📖</div>
+        <div>
+          <h4>Ejemplo concreto</h4>
+          <p>Están leyendo "El Principito" y el protagonista se siente solo. Preguntás: "¿Cómo creés que se siente en este momento? ¿Te pasó algo similar alguna vez?" Esa pregunta simple conecta la historia con la vida del chico — y eso es lo que fija la comprensión.</p>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>La lectura no es solo un ejercicio académico — es una experiencia emocional. Cuando la tratamos así, los chicos quieren leer más.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- TAB ESTRATEGIAS -->
+    <div class="section-panel" id="tab-estrategias">
+      <div class="intro-card">
+        <p>Tres estrategias concretas para trabajar las emociones durante y después de la lectura. Se pueden usar con cualquier libro.</p>
+      </div>
+
+      <div class="section-title">Estrategias para conectar emocionalmente</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info">
+            <h3>Identificar emociones durante la lectura</h3>
+            <p>Pausas estratégicas · Preguntas guiadas · Cualquier libro</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>No hay que esperar a terminar el libro para hablar de emociones. Las pausas durante la lectura son el momento más poderoso para activar la conexión emocional.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí momentos clave de la historia para pausar — cuando el personaje enfrenta un problema, toma una decisión o siente algo intenso.</li>
+            <li><div class="step-num">2</div>Preguntá: "¿Cómo creés que se siente ahora? ¿Por qué?" — dejá que el chico responda sin apurarlo.</li>
+            <li><div class="step-num">3</div>Conectá con su experiencia: "¿A vos te pasó algo parecido alguna vez?"</li>
+            <li><div class="step-num">4</div>Usá las ilustraciones como apoyo — "mirá su cara, ¿qué emoción ves?"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info">
+            <h3>Diagrama de emociones</h3>
+            <p>Mapeo visual · Post-lectura · Papel y colores</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Un diagrama simple que muestra cómo cambian las emociones de los personajes a lo largo de la historia. Hacerlo visual ayuda al chico a entender la narrativa de una forma nueva.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Hacé una tabla simple: personajes en una columna, momentos clave de la historia en las otras.</li>
+            <li><div class="step-num">2</div>Juntos, completá qué emoción siente cada personaje en cada momento — con palabras o con emojis.</li>
+            <li><div class="step-num">3</div>Preguntá: "¿Por qué cambia la emoción del personaje en este punto? ¿Qué pasó?"</li>
+            <li><div class="step-num">4</div>Conectá las emociones con las acciones: "¿Creés que hizo lo que hizo por cómo se sentía?"</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">✨</div>
+            <div>
+              <h4>Ejemplo</h4>
+              <p>En "Caperucita Roja": Caperucita está feliz al salir, curiosa en el bosque, asustada con el lobo. Mapear eso ayuda al chico a entender que las emociones mueven la historia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info">
+            <h3>Conectar emociones con la vida real</h3>
+            <p>Puente historia-experiencia · Reflexión · Profundidad</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>El paso más poderoso es conectar lo que siente el personaje con algo que el chico vivió. Eso transforma la historia en algo personal — y lo personal no se olvida.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Después de identificar una emoción en el personaje, preguntá: "¿Vos alguna vez te sentiste así?"</li>
+            <li><div class="step-num">2</div>Si el chico comparte, escuchá sin interrumpir y validá lo que siente: "Tiene sentido que te hayas sentido así".</li>
+            <li><div class="step-num">3</div>Preguntá: "¿Qué hizo el personaje con esa emoción? ¿Vos hiciste algo parecido o diferente?"</li>
+            <li><div class="step-num">4</div>Compartí vos también — "a mí me pasó algo parecido cuando..." Eso normaliza el proceso y fortalece el vínculo.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>No hace falta usar las tres estrategias en cada lectura. Una sola pregunta bien hecha puede abrir una conversación que dure horas.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- TAB ACTIVIDADES -->
+    <div class="section-panel" id="tab-actividades">
+      <div class="intro-card">
+        <p>Cinco actividades concretas para explorar emociones durante y después de la lectura — y el plan de acción para arrancar esta semana.</p>
+      </div>
+
+      <div class="section-title">🎨 Actividades para explorar sentimientos</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info">
+            <h3>Diario de emociones lectoras</h3>
+            <p>Hábito semanal · Cuaderno + colores · Evolución visible</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Un cuaderno donde el chico registra sus experiencias emocionales con cada libro. Con el tiempo, se convierte en un mapa de su desarrollo emocional y lector.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí un cuaderno especial — que él lo decore con la tapa para que sienta que es suyo.</li>
+            <li><div class="step-num">2</div>Después de cada lectura: título del libro, fecha, y tres emociones que sintió — con dibujos, emojis o palabras.</li>
+            <li><div class="step-num">3</div>Una vez por semana, revisén juntos el diario. Ver la evolución es muy motivador.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info">
+            <h3>Caza de emociones</h3>
+            <p>Durante la lectura · Lista de emojis · Interactivo</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Mientras leen, hacen una lista de emociones que aparecen en la historia. Pueden usar emojis o dibujos para representar cada una — al final, revisan la lista juntos.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Prepará una hoja en blanco antes de empezar a leer.</li>
+            <li><div class="step-num">2</div>Cada vez que aparece una emoción en la historia, la anotan — con el nombre del personaje y el emoji correspondiente.</li>
+            <li><div class="step-num">3</div>Al terminar el capítulo, revisan: ¿qué emociones aparecieron más? ¿cuál sorprendió más?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info">
+            <h3>Mural de emociones</h3>
+            <p>Proyecto mensual · Cartulina · Visual y acumulativo</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Una cartulina en la pared con forma de árbol. Cada libro leído agrega "hojas" con las emociones que generó. Al final del mes, tienen un mapa visual de todo lo que sintieron leyendo.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Dibujá o pegá un árbol grande en cartulina en la pared del cuarto.</li>
+            <li><div class="step-num">2</div>Por cada libro, cortá hojas de papel de colores — un color por emoción (rojo=enojo, amarillo=alegría, azul=tristeza).</li>
+            <li><div class="step-num">3</div>Al terminar cada libro, peguen las hojas correspondientes con el título del libro escrito.</li>
+            <li><div class="step-num">4</div>Al final del mes, revisen el árbol: ¿qué libro generó más emociones? ¿cuál fue el más alegre? ¿cuál el más triste?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">🎯 Plan de acción rápido</div>
+
+      <div class="receta-box">
+        <h3>Acción 1 — Lectura con pausas emocionales</h3>
+        <div class="receta-meta">⏱ Esta semana · Con cualquier libro que estén leyendo</div>
+        <p>Elegí un libro y léanlo juntos haciendo pausas estratégicas para preguntar sobre emociones. No hace falta terminar el libro — con un capítulo alcanza para empezar.</p>
+        <div class="receta-tip">💡 Tip: al finalizar, preguntale qué parte lo hizo sentir algo y cómo lo relaciona con su propia vida.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 2 — Juego de roles emocional</h3>
+        <div class="receta-meta">⏱ 20 minutos · Después de una lectura</div>
+        <p>Elegí una escena del libro donde el personaje siente algo fuerte. Actuenla juntos — que él sea el personaje y exprese la emoción con el cuerpo y la voz.</p>
+        <div class="receta-tip">💡 Tip: después de actuar, preguntale cómo se sintió siendo ese personaje. Esa reflexión es donde ocurre el aprendizaje real.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 3 — Arrancá el diario de emociones</h3>
+        <div class="receta-meta">⏱ 10 minutos · Un cuaderno y colores</div>
+        <p>Conseguí un cuaderno esta semana y hacé la primera entrada juntos después de la próxima lectura. No tiene que ser perfecto — con el título, la fecha y un dibujo de cómo se sintió alcanza para empezar.</p>
+        <div class="receta-tip">💡 Tip: que él decida el diseño de la tapa — esa apropiación hace que quiera usarlo.</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">⚠️ Los 5 errores que hay que evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span><span><strong>Forzar la conversación emocional.</strong> Si el chico no quiere hablar de cómo se siente, no presiones. Plantá la semilla y dejá que florezca a su ritmo.</span></li>
+        <li><span class="num">2</span><span><strong>Invalidar sus emociones.</strong> Si dice que el personaje está "aburrido" cuando vos creés que está triste, no lo corrijas. Explorá su perspectiva — puede ser más interesante que la tuya.</span></li>
+        <li><span class="num">3</span><span><strong>Solo preguntar, nunca compartir.</strong> Si vos también compartís cómo te sentiste leyendo, el chico se siente acompañado — no interrogado.</span></li>
+        <li><span class="num">4</span><span><strong>Elegir libros que no conectan.</strong> Un libro que no resuena con el chico no va a generar conexión emocional. Que él participe en la elección.</span></li>
+        <li><span class="num">5</span><span><strong>Saltear la reflexión post-lectura.</strong> El momento después de terminar es el más rico para la conversación emocional. No lo dejés pasar.</span></li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Muy bien! Ya tenés todo para que la lectura sea una experiencia emocional real. Mirá el resumen visual y seguimos con el Cap 2.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume las estrategias para identificar y trabajar emociones en la lectura.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/bono2/cap1.png" alt="Infografía Bono 2 Cap 1" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Bono 2 Cap 1 — Emociones en las Historias</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Terminaste el Cap 1 del Bono 2! En el Cap 2 vemos cómo usar la lectura para desarrollar la empatía — una de las habilidades más importantes que podés regalarle a tu hijo.</p>
+        </div>
+      </div>
+      <a href="bono2-cap2.html" class="next-btn" style="margin-top:24px; text-decoration:none;">
+        Bono 2 Cap 2: Lectura Empática →
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('bono2-cap1');</script>
+</body>
+</html>

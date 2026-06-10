@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Cap 10: Viaje Familiar</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="sidebar-container"></div>
+
+<main class="main">
+  <div class="chapter-header">
+    <div class="bubble b1"></div><div class="bubble b2"></div>
+    <div class="bubble b3"></div><div class="bubble b4"></div>
+    <div class="chapter-badge">📖 Capítulo 10 de 10</div>
+    <h1 class="chapter-title">Transformando la Lectura en un Viaje Familiar</h1>
+    <p class="chapter-quote">"Los libros son un tipo de magia que nos permiten explorar realidades sin movernos de casa."<span>— Desconocido</span></p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>Imaginá una tarde de sábado: todos en el sofá, un libro en las manos, risas en el aire mientras cada uno comparte su parte favorita de la historia. Ahora pensá en el contraste: chicos que ven la lectura como una tarea aburrida y papás que prefieren que hagan cualquier otra cosa.</p>
+        <p>La diferencia entre esas dos escenas no es suerte — es una decisión. Transformar la lectura en un viaje familiar es posible, y este capítulo te muestra exactamente cómo.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">📖</div>
+          <h4>Lectura en voz alta familiar</h4>
+          <p>Un ritual que mejora la comprensión lectora y crea un espacio de conexión emocional donde el chico se siente seguro.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🔍</div>
+          <h4>Caza de palabras en equipo</h4>
+          <p>Un juego donde todos participan activamente — refuerza el aprendizaje de forma dinámica y divertida.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🎨</div>
+          <h4>Proyectos familiares</h4>
+          <p>Investigar un tema juntos, crear un mural, armar un libro — actividades que convierten la lectura en experiencia vivencial.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">📊</div>
+        <div>
+          <h4>Lo que dice la investigación</h4>
+          <p>Las familias que leen juntas tienen un 60% más de probabilidades de mantener una comunicación abierta y honesta. La lectura compartida no es solo una actividad educativa — es una herramienta para construir la relación con tu hijo.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar este capítulo</h4>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Entiendo que la lectura puede ser una actividad familiar, no solo individual</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a proponer una Noche de Cuentos esta semana</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Estoy dispuesta a que la lectura sea imperfecta y divertida al mismo tiempo</span></div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Leer juntos no se trata de leer más, sino de leer juntos y disfrutar cada página del camino. Porque leer en familia es construir un futuro lleno de historias.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- TAB CONTEXTO -->
+    <div class="section-panel" id="tab-contexto">
+      <div class="intro-card">
+        <p>Para entender por qué la lectura familiar tiene tanto impacto, hay que ver qué pasa cuando la lectura deja de ser una tarea individual y se convierte en una experiencia compartida.</p>
+      </div>
+
+      <div class="section-title">Por qué funciona la lectura en familia</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">❤️</div>
+          <div class="strategy-info"><h3>Beneficios emocionales de leer juntos</h3><p>Más que vocabulario — es conexión</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La lectura compartida va más allá de leer en voz alta. Es crear un ritual donde todos los miembros de la familia se sienten parte del proceso — donde se generan risas, preguntas, debates y recuerdos.</p>
+          <p>Las familias que leen juntas reportan niveles más altos de felicidad y satisfacción familiar. Esos momentos se convierten en recuerdos compartidos que fortalecen el vínculo mucho más allá del libro.</p>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">💡</div>
+            <div><h4>La lectura como refugio</h4><p>En momentos difíciles — mudanzas, cambios, conflictos — la rutina de lectura familiar puede ser un punto de estabilidad y conexión. Un espacio seguro donde todos están juntos, sin presiones.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🎨</div>
+          <div class="strategy-info"><h3>Proyectos familiares que amplifican la lectura</h3><p>Más allá del libro — experiencias vivenciales</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Los proyectos familiares relacionados con la lectura convierten el aprendizaje en una aventura colectiva. No se trata solo de leer — se trata de llevar la historia a la vida.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">📚</div><strong>Club de lectura familiar:</strong> eligen un libro por mes y lo discuten juntos. Si el libro habla de un lugar, planifican una excursión relacionada.</li>
+            <li><div class="step-num">🖼️</div><strong>Mural de libros leídos:</strong> cada miembro agrega el título y una reseña breve de cada libro que leyó. Se convierte en una conversación diaria.</li>
+            <li><div class="step-num">🔬</div><strong>Proyectos de investigación:</strong> eligen un tema del libro y lo investigan juntos — con otros libros, videos, documentales — y crean algo: un mural, un librito, una presentación.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🌍</div>
+            <div><h4>Ejemplo concreto</h4><p>Leen un libro sobre Egipto. Cada uno investiga algo diferente: uno las pirámides, otro los faraones, otro la comida. Al final, crean un libro casero sobre Egipto con todo lo que aprendieron. Es un objeto único que van a atesorar.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">👨‍👩‍👧</div>
+          <div class="strategy-info"><h3>Los hermanos como aliados lectores</h3><p>La dinámica entre hermanos a favor de la lectura</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Si hay hermanos en la familia, son un recurso enorme que muchos padres no aprovechan. Un hermano mayor que lee con el menor no solo ayuda al pequeño — también refuerza su propio aprendizaje al enseñar.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Creá momentos de "lectura entre hermanos" — 10 minutos antes de dormir donde el mayor le lee al menor.</li>
+            <li><div class="step-num">2</div>Hacé que el hermano mayor elija el libro — eso le da protagonismo y responsabilidad.</li>
+            <li><div class="step-num">3</div>Celebrá ese momento como algo especial — que el menor lo espere con ganas.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>La lectura familiar no se trata de leer más, sino de leer juntos. Cada página compartida es un recuerdo que dura para siempre.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- TAB ESTRATEGIAS -->
+    <div class="section-panel" id="tab-estrategias">
+      <div class="intro-card">
+        <p>Tres estrategias concretas para convertir la lectura en una actividad familiar real — lectura en voz alta, caza de palabras en equipo y proyectos de investigación compartidos.</p>
+      </div>
+
+      <div class="section-title">3 estrategias para leer en familia</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info"><h3>Lectura en voz alta — el ritual familiar</h3><p>Horario fijo · Conexión emocional · Participación activa</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La lectura en voz alta mejora la comprensión lectora y crea un ambiente de conexión emocional. Al leer juntos, tu hijo se siente seguro para hacer preguntas y expresar opiniones — eso fortalece su confianza.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí un horario fijo — antes de dormir o después de la cena. La constancia es la clave.</li>
+            <li><div class="step-num">2</div>Creá un rincón de lectura: cojines, manta, buena luz. Que el lugar invite a quedarse.</li>
+            <li><div class="step-num">3</div>Involucralo en la elección de los libros — alternás entre sus favoritos y otros nuevos.</li>
+            <li><div class="step-num">4</div>Hacé preguntas mientras lees: "¿qué pensás que va a pasar?", "¿qué harías vos en su lugar?"</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🦕</div>
+            <div><h4>Ejemplo concreto</h4><p>Le encantan los dinosaurios. Elegís un libro sobre dinosaurios y mientras leés, preguntás: "¿cuál creés que es el más fuerte?" o "¿cuál te gustaría tener de mascota?" La lectura se convierte en conversación familiar.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info"><h3>Caza de palabras en equipo</h3><p>Toda la familia busca · Competencia amistosa</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Este juego transforma la lectura en una búsqueda activa donde todos participan. Cada uno tiene un rol — y eso hace que la lectura sea dinámica y divertida para toda la familia.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí un lugar base: la heladera, una pizarra, un cuaderno especial — donde se van pegando las palabras encontradas.</li>
+            <li><div class="step-num">2</div>Hacé una lista de palabras nuevas que el chico esté aprendiendo.</li>
+            <li><div class="step-num">3</div>Compiten por puntos: el que encuentra una palabra en un libro, cartel o la tele, la dice en voz alta y la usa en una oración.</li>
+            <li><div class="step-num">4</div>Cuando se completa la lista, hay una pequeña celebración familiar — merienda, noche de cine, lo que elijan.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🔍</div>
+            <div><h4>Ejemplo concreto</h4><p>El chico está aprendiendo "perro". Cuando alguien lo encuentra en un libro o en la calle, lo grita, cuenta una anécdota sobre un perro y gana el punto. La lectura queda entretejida con los recuerdos familiares.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info"><h3>Proyectos de lectura en familia</h3><p>Un objetivo común · Investigación + creación</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Los proyectos permiten que todos trabajen hacia un objetivo común. Se crean memorias y experiencias compartidas que fomentan la lectura de forma profunda y significativa.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí un tema que le interese a toda la familia — un animal, un país, una época histórica.</li>
+            <li><div class="step-num">2</div>Investiguen juntos: libros, videos, documentales. Cada uno anota lo que aprende.</li>
+            <li><div class="step-num">3</div>Creá un producto final: mural, libro de recortes, presentación — donde cada uno contribuye con algo.</li>
+            <li><div class="step-num">4</div>Organizá una "presentación familiar" donde cada uno explica su parte. Podés invitar a abuelos o amigos.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🌍</div>
+            <div><h4>Ejemplo concreto</h4><p>Eligen Egipto. Uno dibuja una pirámide, otro escribe sobre un faraón, otro investiga la comida. Al final, crean un libro casero sobre Egipto. Es un objeto único que pueden atesorar — y que refuerza la comprensión lectora de todos.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Sé constante, sé flexible y celebrá el proceso. Lo importante es compartir — aunque la lectura sea imperfecta, el momento juntos vale todo.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- TAB ACTIVIDADES -->
+    <div class="section-panel" id="tab-actividades">
+      <div class="intro-card">
+        <p>Dos ejercicios para arrancar esta semana más las dos recetas del capítulo. El cierre perfecto para todo el viaje que recorrieron juntos.</p>
+      </div>
+
+      <div class="section-title">Ejercicios prácticos</div>
+
+      <div class="receta-box">
+        <h3>📚 Noche de Cuentos en Familia</h3>
+        <div class="receta-meta">⏱ 60 min · Materiales: un libro por miembro, almohadas, mantas, snacks opcionales</div>
+        <p><strong>¿Para qué sirve?</strong> Crear una experiencia de lectura compartida que refuerza habilidades lectoras y fortalece la comunicación familiar.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Elegí una noche fija de la semana y avisale a todos con anticipación — que lo marquen como un evento especial.</li>
+          <li><div class="step-num">2</div>Armá un espacio cómodo: almohadas, mantas, luz suave. Que invite a quedarse.</li>
+          <li><div class="step-num">3</div>Cada miembro elige un libro para compartir — pueden ser cuentos cortos, novelas gráficas, lo que cada uno prefiera.</li>
+          <li><div class="step-num">4</div>Cada uno tiene 10 minutos para leer en voz alta o contar de qué trata su libro — haciendo énfasis en lo que más le gusta.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Una experiencia de lectura compartida que refuerza habilidades lectoras y fomenta la comunicación y el intercambio de ideas en familia.</p>
+        <div class="receta-tip">💡 Tip: hacélo una tradición semanal. La repetición genera anticipación — y pronto todos van a esperarlo con ganas.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>📖 Proyecto de Lectura en Familia</h3>
+        <div class="receta-meta">⏱ 90 min en varias sesiones · Materiales: libro compartido, cuadernos, materiales de arte</div>
+        <p><strong>¿Para qué sirve?</strong> Fomentar el hábito lector en el hogar y cultivar un ambiente de debate y creatividad familiar.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Elegí un libro que sea adecuado para todos — puede ser una novela accesible o un libro de no ficción sobre un tema que le interese a la familia.</li>
+          <li><div class="step-num">2</div>Establecé un calendario: cuántos capítulos por semana, cuándo se reúnen para discutir.</li>
+          <li><div class="step-num">3</div>Después de cada sesión de lectura, durante la cena, cada uno comparte su opinión sobre los capítulos — animá a los chicos a hacer preguntas y expresar sentimientos.</li>
+          <li><div class="step-num">4</div>Al terminar el libro, organizá una pequeña ceremonia: discuten qué aprendieron y crean un mural con impresiones y dibujos sobre la historia.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Un hábito lector instalado en el hogar, un ambiente de debate y creatividad familiar, y lazos más fuertes entre todos.</p>
+        <div class="receta-tip">💡 Tip: que cada miembro elija el próximo libro — rotá la responsabilidad para que todos se sientan parte del proceso.</div>
+      </div>
+
+      <div class="section-title">Recetas del capítulo</div>
+
+      <div class="receta-box">
+        <h3>🌇 Tarde de Cuentos en Familia</h3>
+        <div class="receta-meta">⏱ 60 min · Materiales: 3 libros diferentes, manta grande, snacks</div>
+        <p><strong>¿Para qué sirve?</strong> Crear un momento especial y regular para disfrutar de la lectura en grupo.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Organizá una tarde específica y comunícalo con anticipación — que todos lo agenden.</li>
+          <li><div class="step-num">2</div>Preparà el espacio con la manta y los snacks — que sea acogedor y festivo.</li>
+          <li><div class="step-num">3</div>Cada miembro elige un libro para leer en voz alta, alternando entre todos.</li>
+          <li><div class="step-num">4</div>Después de cada lectura, unos minutos para discutir qué aprendieron o qué les gustó.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Mejora en la comprensión lectora y fortalecimiento de los lazos familiares.</p>
+        <div class="receta-tip">💡 Tip: convertíla en tradición semanal — la repetición genera anticipación y entusiasmo en todos.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>📚 Biblioteca Familiar</h3>
+        <div class="receta-meta">⏱ 30 min para armar · Materiales: estantería o espacio para libros, al menos 10 libros, etiquetas</div>
+        <p><strong>¿Para qué sirve?</strong> Crear un espacio físico dedicado a la lectura que invite a explorar y elegir.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Asigná un área de la casa como "la biblioteca familiar" — que sea accesible para todos.</li>
+          <li><div class="step-num">2</div>Reuní libros de interés general y diferentes niveles — involucrá a los chicos en la selección.</li>
+          <li><div class="step-num">3</div>Clasificá los libros por tema o nivel usando etiquetas o tarjetas de colores.</li>
+          <li><div class="step-num">4</div>Establecé un día por semana donde cada uno elige un libro de la biblioteca para leer y compartir.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Un espacio que fomenta el amor por la lectura y la exploración autónoma de libros.</p>
+        <div class="receta-tip">💡 Tip: renovà la colección cada tanto — eso mantiene el interés y la curiosidad vivos.</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">5 errores a evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span><strong>No involucrar a todos:</strong> si solo uno o dos participan, se pierde el propósito. Asegurate de que cada miembro tenga un rol activo — aunque sea pequeño.</li>
+        <li><span class="num">2</span><strong>Elegir libros inapropiados:</strong> evitá lecturas que no interesen a los chicos o que sean demasiado difíciles. Buscá títulos atractivos y accesibles para todos los niveles.</li>
+        <li><span class="num">3</span><strong>Metas poco realistas:</strong> no esperes que lean un libro completo en una noche. Objetivos pequeños y alcanzables mantienen la motivación viva.</li>
+        <li><span class="num">4</span><strong>Olvidar la diversidad de formatos:</strong> la lectura no solo son libros. Revistas, cómics, audiolibros — la variedad enriquece la experiencia y alcanza a más miembros de la familia.</li>
+        <li><span class="num">5</span><strong>Convertirlo en obligación:</strong> si la lectura familiar se siente como tarea, perdés el interés de todos. Que sea divertido, ligero y asociado a momentos de alegría.</li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Terminaste los 10 capítulos! 🎉 Ahora tenés todas las herramientas para transformar la lectura en un viaje familiar. No te olvidés de explorar los 3 bonos — ¡hay mucho más por descubrir!</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume las estrategias del capítulo final. Guardala como inspiración para cuando necesités ideas para leer en familia.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/infografia-cap10.png" alt="Infografía Capítulo 10 — Viaje Familiar" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Capítulo 10 — Transformando la Lectura en un Viaje Familiar</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Felicitaciones! Terminaste la guía completa. Ahora explorá los bonos — "Juegos que Enseñan", "Lectura y Emoción" y "Lectura sin Fronteras" — para seguir profundizando el viaje lector.</p>
+        </div>
+      </div>
+      <a href="index.html" class="next-btn" style="margin-top:24px;">🏠 Volver al inicio →</a>
+    </div>
+
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('cap10');</script>
+</body>
+</html>

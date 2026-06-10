@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Bono 1 Cap 3: Tecnología y Lectura</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  :root { --naranja: #16A34A; --naranja-claro: #4ADE80; --amarillo: #DCFCE7; }
+  .chapter-header { background: linear-gradient(135deg, #16A34A 0%, #4ADE80 50%, #86EFAC 100%); }
+  .next-btn { background: linear-gradient(135deg, #16A34A, #4ADE80); }
+  .next-btn:hover { box-shadow: 0 10px 28px rgba(22,163,74,0.45); }
+  .tab.active { background: #16A34A; border-color: #16A34A; box-shadow: 0 4px 12px rgba(22,163,74,0.3); }
+  .tab:hover:not(.active) { border-color: #16A34A; color: #16A34A; }
+  .intro-card { border-left-color: #16A34A; }
+  .strategy-num { background: #14532D; color: #4ADE80; }
+  .step-dot.active { background: #16A34A; box-shadow: 0 3px 10px rgba(22,163,74,0.4); }
+  .step-dot.done { background: #14532D; }
+  .progress-fill { background: linear-gradient(90deg, #14532D, #16A34A); }
+  .tuki-tip { border-color: rgba(22,163,74,0.25); }
+  .tuki-tip .tt-text h4 { color: #4ADE80; }
+  .receta-box { border-color: #86EFAC; }
+  .check-item.checked .check-box { background: #16A34A; border-color: #16A34A; }
+  .mini-card { border-top-color: #16A34A; }
+  .resumen-box ul li::before { color: #16A34A; }
+</style>
+</head>
+<body>
+
+<button class="hamburger" id="hamburger">☰</button>
+<div class="overlay" id="overlay"></div>
+<div id="sidebar-container"></div>
+
+<main class="main">
+
+  <!-- HEADER -->
+  <div class="chapter-header">
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+    <div class="bubble b4"></div>
+    <div class="chapter-badge">🎮 Bono 1 · Capítulo 3 de 4</div>
+    <h1 class="chapter-title">Tecnología y Lectura: Aplicaciones que Enganchan</h1>
+    <p class="chapter-quote">
+      "La lectura no se trata solo de palabras, se trata de aventuras."
+      <span>— Anónimo</span>
+    </p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki"
+      onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         TAB 1 — INTRO
+    ══════════════════════════════════════════ -->
+    <div class="section-panel active" id="tab-intro">
+
+      <div class="intro-card">
+        <p>La tecnología está en el centro de la vida de tus hijos — y eso no es un problema, es una oportunidad. Las apps y recursos digitales pueden ser aliados poderosos para que la lectura se sienta como un juego, no como una tarea.</p>
+        <p>No se trata de reemplazar los libros físicos. Se trata de sumar herramientas que enganchan, que se adaptan al nivel de cada chico y que hacen que cada sesión de lectura sea un momento esperado — no evitado.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">📱</div>
+          <h4>Apps que enganchan</h4>
+          <p>Aplicaciones diseñadas específicamente para hacer la lectura interactiva, divertida y adaptada al nivel de tu hijo.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🎮</div>
+          <h4>Gamificación</h4>
+          <p>Convertir la lectura en un juego con puntos, desafíos y recompensas que mantienen la motivación alta.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">⚖️</div>
+          <h4>Uso responsable</h4>
+          <p>Cómo equilibrar lo digital y lo físico para que la tecnología potencie — y no reemplace — el amor por los libros.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div>
+          <h4>La clave está en el equilibrio</h4>
+          <p>20-30 minutos de app bien usada, seguidos de un libro físico relacionado con el tema, es una combinación que refuerza lo aprendido y mantiene vivo el amor por los libros impresos.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar</h4>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">✓</div>
+          <span>Entiendo que la tecnología puede ser aliada — no enemiga — de la lectura</span>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">✓</div>
+          <span>Voy a probar al menos una app nueva esta semana con mi hijo</span>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">✓</div>
+          <span>Me comprometo a participar activamente — no solo a dejarle la pantalla</span>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>La tecnología no es buena ni mala — depende de cómo la usás. Con las apps correctas y tu participación, puede ser el empujón que tu hijo necesitaba para amar la lectura.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         TAB 2 — CONTEXTO
+    ══════════════════════════════════════════ -->
+    <div class="section-panel" id="tab-contexto">
+
+      <div class="intro-card">
+        <p>Antes de ver las apps y estrategias, entendamos por qué la tecnología funciona tan bien como herramienta de lectura — y cuáles son sus límites.</p>
+      </div>
+
+      <div class="section-title">Por qué la tecnología engancha</div>
+
+      <div class="dos-col">
+        <div class="mini-card">
+          <div class="mini-icon">🎯</div>
+          <h4>Adaptación al nivel</h4>
+          <p>Las mejores apps se ajustan automáticamente al nivel del chico — siempre le presentan un desafío adecuado, ni muy fácil ni frustrante.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">⚡</div>
+          <h4>Feedback inmediato</h4>
+          <p>A diferencia del libro físico, la app celebra cada acierto en el momento. Ese refuerzo instantáneo es muy poderoso para mantener la motivación.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🎨</div>
+          <h4>Estímulo visual y auditivo</h4>
+          <p>Animaciones, sonidos y colores activan más canales de aprendizaje al mismo tiempo — especialmente útil para chicos visuales y auditivos.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🔄</div>
+          <h4>Repetición sin aburrimiento</h4>
+          <p>Repasar sílabas o palabras en un libro puede aburrir. En una app con formato de juego, el chico repite sin darse cuenta — y eso consolida el aprendizaje.</p>
+        </div>
+      </div>
+
+      <div class="section-title">Los límites de la tecnología</div>
+
+      <div class="intro-card">
+        <p>La tecnología es una herramienta, no una solución mágica. Su efectividad depende completamente de cómo la usés. Una app sin tu participación es solo tiempo de pantalla. Una app donde vos participás, preguntás y conectás lo que aprende con un libro físico — eso es aprendizaje real.</p>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">⚖️</div>
+        <div>
+          <h4>La regla del equilibrio</h4>
+          <p>Sesiones de 20-30 minutos máximo. Siempre con vos presente o cerca. Y siempre complementando con un libro físico — no reemplazando. La pantalla abre la puerta; el libro la atraviesa.</p>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>La mejor app del mundo no reemplaza diez minutos de lectura compartida con vos. Usala como trampolín — no como destino.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las apps y estrategias →</button>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         TAB 3 — ESTRATEGIAS
+    ══════════════════════════════════════════ -->
+    <div class="section-panel" id="tab-estrategias">
+
+      <div class="intro-card">
+        <p>Acá están las apps más recomendadas y las estrategias de gamificación que mejor funcionan. No necesitás usarlas todas — elegí una o dos que encajen con el estilo de tu hijo y arrancá por ahí.</p>
+      </div>
+
+      <div class="section-title">📱 Apps recomendadas</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info">
+            <h3>Starfall</h3>
+            <p>Clásico de la lectura · Fonética + libros en voz alta · Con seguimiento para padres</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Un clásico probado. A través de juegos y canciones introduce a los chicos en el mundo de las letras. Tiene una sección de libros que se pueden leer en voz alta — ideal para reforzar comprensión auditiva y visual al mismo tiempo.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">✓</div>Permite monitorear el progreso desde una cuenta de padres.</li>
+            <li><div class="step-num">✓</div>Combina fonética, lectura y comprensión en un solo lugar.</li>
+            <li><div class="step-num">✓</div>Ideal para arrancar — es de los más completos para primeros lectores.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info">
+            <h3>Endless Alphabet</h3>
+            <p>Vocabulario visual · Animaciones · Para los más chicos</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Personajes adorables y animaciones que dan vida a las palabras. No solo aprenden a leer — juegan con el lenguaje. Perfecta para usar juntos: explorá las palabras con él y preguntale qué cree que significan antes de que la app lo muestre.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">✓</div>Vocabulario amplio con definiciones visuales y animadas.</li>
+            <li><div class="step-num">✓</div>Muy intuitiva — los chicos la aprenden solos en minutos.</li>
+            <li><div class="step-num">✓</div>Ideal para ampliar vocabulario antes de leer libros más complejos.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info">
+            <h3>Reading Eggs</h3>
+            <p>Plataforma completa · Se adapta al nivel · Fonética + cuentos</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Una de las más completas. Combina juegos, canciones y libros interactivos. Lo mejor es que se adapta automáticamente al nivel de lectura del chico — siempre tiene un desafío justo.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">✓</div>Desde fonética básica hasta cuentos que puede leer solo.</li>
+            <li><div class="step-num">✓</div>Reportes para padres con detalle del progreso.</li>
+            <li><div class="step-num">✓</div>Ideal para chicos que ya tienen algo de base y quieren avanzar.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">4</div>
+          <div class="strategy-info">
+            <h3>Book Creator</h3>
+            <p>Crear sus propios libros · Escritura + ilustración + audio</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Una app donde el chico no solo lee — crea. Puede escribir su propia historia, agregar ilustraciones y grabar su voz leyendo en voz alta. Esa combinación de lectura + creación es muy poderosa para consolidar el aprendizaje.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">✓</div>Estimula la creatividad y la escritura al mismo tiempo que la lectura.</li>
+            <li><div class="step-num">✓</div>El libro terminado lo puede compartir con la familia — eso es muy motivador.</li>
+            <li><div class="step-num">✓</div>Ideal como actividad semanal especial, no diaria.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">✨</div>
+            <div>
+              <h4>Tip de uso</h4>
+              <p>Invitalo a hacer una pequeña "presentación" del libro que creó para la familia. Esa audiencia real es uno de los motivadores más poderosos que existen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">🎮 Estrategias de gamificación</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">A</div>
+          <div class="strategy-info">
+            <h3>Desafíos semanales de lectura</h3>
+            <p>Metas diarias · Calendario visual · Sentido de logro</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Creá un "reto semanal de lectura" con metas diarias claras y alcanzables. Una estrella en el calendario por cada día cumplido — simple, visual y muy efectivo.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Definí la meta diaria con él — que sea alcanzable. Dos páginas, un capítulo corto, 15 minutos.</li>
+            <li><div class="step-num">2</div>Que él marque el calendario cuando cumple — eso le da agencia sobre su propio progreso.</li>
+            <li><div class="step-num">3</div>Al completar la semana, celebrá con algo que él elija.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">B</div>
+          <div class="strategy-info">
+            <h3>Caza del tesoro literaria</h3>
+            <p>Pistas en libros · Exploración · Una vez por mes</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Una búsqueda del tesoro donde cada pista está relacionada con un libro o una palabra que aprendió. Leer para encontrar la siguiente pista convierte la lectura en una aventura real.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Preparás pistas escritas que llevan de un libro al siguiente — la pista puede estar escondida dentro del libro.</li>
+            <li><div class="step-num">2</div>Cada pista requiere que lea algo para poder seguir.</li>
+            <li><div class="step-num">3</div>Al final del recorrido hay un pequeño premio que él ya conoce — eso mantiene la motivación alta desde el principio.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🗺️</div>
+            <div>
+              <h4>Ejemplo concreto</h4>
+              <p>Pista 1 lleva a un libro de animales. Dentro de ese libro está la pista 2. Y así hasta llegar al tesoro. Sin darse cuenta, leyó partes de tres libros distintos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">C</div>
+          <div class="strategy-info">
+            <h3>Competencias amistosas</h3>
+            <p>Con primos, amigos o hermanos · Quiz post-lectura · Sin presión</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Leer el mismo libro que un primo o amigo y después hacerse preguntas mutuamente sobre la historia. La competencia amistosa activa la motivación de una forma que la lectura sola no logra.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Coordiná con otro adulto para que sus hijos lean el mismo libro.</li>
+            <li><div class="step-num">2</div>Al terminar, los chicos se hacen preguntas sobre la historia por videollamada o en persona.</li>
+            <li><div class="step-num">3</div>El foco es la conversación y el disfrute — no quién "gana".</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>No hace falta usar todas las apps ni todas las estrategias. Probá una cosa por vez, observá qué le engancha más a tu hijo y profundizás por ahí.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         TAB 4 — ACTIVIDADES
+    ══════════════════════════════════════════ -->
+    <div class="section-panel" id="tab-actividades">
+
+      <div class="intro-card">
+        <p>Tres acciones concretas para arrancar esta semana — una app para probar, un sistema de seguimiento y una actividad de cierre.</p>
+      </div>
+
+      <div class="section-title">🎯 Plan de acción rápido</div>
+
+      <div class="receta-box">
+        <h3>Acción 1 — Probá una app esta semana</h3>
+        <div class="receta-meta">⏱ 20 minutos · Con tu hijo · Hoy mismo</div>
+        <p>Elegí una de las apps recomendadas y hacé una sesión juntos. No lo dejés solo frente a la pantalla — participá, preguntá, comentá lo que van viendo.</p>
+        <ul class="steps-list" style="margin-top:10px;">
+          <li><div class="step-num">1</div>Elegí la app con él — que él elija cuál probar primero.</li>
+          <li><div class="step-num">2</div>Establecé el tiempo: 20 minutos y después cerramos. Usá un timer visible.</li>
+          <li><div class="step-num">3</div>Durante la sesión: hacé preguntas, reíte con él, participá activamente.</li>
+          <li><div class="step-num">4</div>Al terminar, preguntale qué fue lo que más le gustó — esa info te sirve para las próximas sesiones.</li>
+        </ul>
+        <div class="receta-tip">💡 Tip: la primera sesión es para explorar juntos, no para que aprenda algo específico. El objetivo es que quede con ganas de volver.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 2 — Seguimiento semanal</h3>
+        <div class="receta-meta">⏱ 5 minutos por día · Calendario en la pared</div>
+        <p>Durante la semana, hacé un seguimiento simple del tiempo que usa apps de lectura. No para controlarlo — para que él vea su propio progreso.</p>
+        <ul class="steps-list" style="margin-top:10px;">
+          <li><div class="step-num">1</div>Pegá un calendario pequeño en la pared, cerca del lugar donde usa la tablet o celular.</li>
+          <li><div class="step-num">2</div>Cada día que completa su sesión de app, él mismo marca el día con un sticker o color.</li>
+          <li><div class="step-num">3</div>Anotá también cualquier cambio que notes en su interés o comprensión lectora.</li>
+          <li><div class="step-num">4</div>Al final de la semana, revisén juntos el calendario y celebrá lo que logró.</li>
+        </ul>
+        <div class="receta-tip">💡 Tip: que él decida el sticker o símbolo que va a usar — ese pequeño detalle aumenta mucho el compromiso.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 3 — Conectá la app con un libro físico</h3>
+        <div class="receta-meta">⏱ Al final de la semana · 15-20 minutos</div>
+        <p>Al terminar la semana de uso de la app, elegí un libro físico relacionado con el tema que exploró. Leánlo juntos y hacé preguntas sobre la historia para reforzar la comprensión.</p>
+        <ul class="steps-list" style="margin-top:10px;">
+          <li><div class="step-num">1</div>Identificá el tema principal que exploró durante la semana en la app.</li>
+          <li><div class="step-num">2</div>Buscá un libro físico relacionado — puede ser de la biblioteca, prestado o de los que ya tienen en casa.</li>
+          <li><div class="step-num">3</div>Lean juntos. Al terminar, preguntá: "¿En qué se parece esto a lo que vimos en la app?" y "¿Qué te gustó más — la app o el libro?"</li>
+        </ul>
+        <div class="receta-tip">💡 Tip: si la app fue sobre animales, el libro puede ser un cuento donde el protagonista es un animal. No tiene que ser el mismo tema exacto — solo relacionado.</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">⚠️ Los 5 errores que hay que evitar</div>
+
+      <ul class="errores-list">
+        <li><span class="num">1</span><span><strong>Dejarle la pantalla solo.</strong> La tecnología sin tu participación es solo entretenimiento. Tu presencia es lo que convierte la app en aprendizaje real.</span></li>
+        <li><span class="num">2</span><span><strong>Sesiones demasiado largas.</strong> Más de 30 minutos seguidos frente a la pantalla satura. Sesiones cortas y frecuentes son mucho más efectivas.</span></li>
+        <li><span class="num">3</span><span><strong>No seleccionar las apps con criterio.</strong> No todas las apps son educativas aunque parezcan serlo. Investigá antes de descargar — buscá reseñas de otros padres.</span></li>
+        <li><span class="num">4</span><span><strong>Usar la tecnología como reemplazo del libro físico.</strong> La pantalla abre la puerta; el libro la atraviesa. Siempre complementá, nunca reemplaces.</span></li>
+        <li><span class="num">5</span><span><strong>No reflexionar después.</strong> La conversación post-app es donde se consolida lo aprendido. "¿Qué te gustó? ¿Qué aprendiste?" — dos preguntas que valen oro.</span></li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Muy bien! Ya tenés todo para usar la tecnología a favor de la lectura. Mirá el resumen visual y después pasamos al último capítulo del Bono 1.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         TAB 5 — RESUMEN VISUAL
+    ══════════════════════════════════════════ -->
+    <div class="section-panel" id="tab-resumen">
+
+      <div class="intro-card">
+        <p>Esta infografía resume las apps recomendadas, las estrategias de gamificación y las claves del uso responsable de la tecnología.</p>
+      </div>
+
+      <div class="infografia-wrap">
+        <img src="assets/bono1/cap3.png"
+          alt="Infografía Bono 1 Cap 3 — Tecnología y Lectura"
+          onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Bono 1 Cap 3 — Tecnología y Lectura</p>
+      </div>
+
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Terminaste el Cap 3 del Bono 1! En el último capítulo vemos actividades prácticas concretas para aplicar todo lo aprendido en este bono.</p>
+        </div>
+      </div>
+
+      <a href="bono1-cap4.html" class="next-btn" style="margin-top:24px; text-decoration:none;">
+        Bono 1 Cap 4: Actividades Prácticas →
+      </a>
+    </div>
+
+  </div><!-- /content -->
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('bono1-cap3');</script>
+</body>
+</html>

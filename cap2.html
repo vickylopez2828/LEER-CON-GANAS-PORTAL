@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Cap 2: Ambiente de Lectura</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="sidebar-container"></div>
+
+
+<main class="main">
+  <div class="chapter-header">
+    <div class="bubble b1"></div><div class="bubble b2"></div>
+    <div class="bubble b3"></div><div class="bubble b4"></div>
+    <div class="chapter-badge">📖 Capítulo 2 de 10</div>
+    <h1 class="chapter-title">Creando un Ambiente de Lectura Atractivo</h1>
+    <p class="chapter-quote">
+      "Un niño que lee será un adulto que piensa."
+      <span>— Anónimo</span>
+    </p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('elementos')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">4</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('elementos')">🏠 El espacio</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>¿Tu hijo llega a casa con ganas de leer pero termina viendo la tele? Muchas veces el problema no es la motivación — es el ambiente. El espacio donde se fomenta la lectura puede hacer toda la diferencia.</p>
+        <p>No se trata solo de tener libros. Se trata de crear un rincón que invite a tu hijo a explorar, a sentarse, a quedarse. Un lugar que él sienta como suyo.</p>
+      </div>
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div>
+          <h4>¿Por qué importa tanto el ambiente?</h4>
+          <p>Los chicos que tienen un lugar designado para leer en casa muestran mucho más interés en leer por placer. Un entorno cómodo y estimulante actúa como catalizador — reduce la resistencia y aumenta el tiempo que el nene dedica a los libros.</p>
+        </div>
+      </div>
+      <div class="checklist">
+        <h4>✅ Antes de arrancar este capítulo</h4>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Entiendo que el entorno influye en las ganas de leer</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Estoy dispuesta a crear un espacio especial en casa</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a involucrar a mi hijo en el diseño de su rincón lector</span></div>
+      </div>
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Un ambiente de lectura atractivo no se crea de la noche a la mañana. Pequeños cambios constantes pueden transformar la lectura en una aventura emocionante.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('elementos', document.querySelectorAll('.tab')[1])">Ver los elementos clave →</button>
+    </div>
+
+    <!-- TAB ELEMENTOS -->
+    <div class="section-panel" id="tab-elementos">
+      <div class="intro-card">
+        <p>Un buen rincón de lectura no necesita ser perfecto ni costoso. Necesita tres cosas fundamentales: comodidad, organización y un toque personal. Con eso alcanza para que tu hijo quiera volver ahí.</p>
+      </div>
+
+      <div class="section-title">3 elementos clave</div>
+      <div class="elementos-grid">
+        <div class="elemento-card">
+          <div class="elemento-icon">🛋️</div>
+          <h4>Comodidad ante todo</h4>
+          <p>Sillón, cojines, manta suave. Buena iluminación con luz cálida. El cuerpo cómodo = mente abierta a leer.</p>
+        </div>
+        <div class="elemento-card">
+          <div class="elemento-icon">📚</div>
+          <h4>Organización accesible</h4>
+          <p>Libros a su altura, visibles y fáciles de elegir. Organizados por tema o colores para que sea divertido elegir.</p>
+        </div>
+        <div class="elemento-card">
+          <div class="elemento-icon">🎨</div>
+          <h4>Toque personal</h4>
+          <p>Dejá que tu hijo decore su espacio con dibujos, fotos o posters de sus personajes favoritos. Que sienta que es suyo.</p>
+        </div>
+      </div>
+      <div class="tip-box">
+        <div class="tip-icon">📊</div>
+        <div>
+            <h4>Lo que dice la investigación</h4>
+            <p>Un estudio de la Universidad de Oxford encontró que los chicos que leen en espacios con buena iluminación, asientos cómodos y variedad de libros tienden a leer durante el doble de tiempo que los que no tienen esas condiciones. No es un detalle menor — es el doble.</p>
+        </div>
+        </div>
+
+        <div class="section-title">Rincón de estímulos</div>
+        <div class="intro-card">
+        <p>Un rincón de lectura que incorpora distintos materiales capta la atención de manera mucho más efectiva que solo un par de libros parados en una repisa.</p>
+        </div>
+        <div class="tres-col">
+        <div class="mini-card">
+            <div class="mini-icon">📚</div>
+            <h4>Variedad de materiales</h4>
+            <p>Cuentos, enciclopedias, cómics y revistas. Cada formato invita a un tipo diferente de lectura.</p>
+        </div>
+        <div class="mini-card">
+            <div class="mini-icon">🎲</div>
+            <h4>Elementos interactivos</h4>
+            <p>Juegos de palabras o puzzles relacionados con los libros que está leyendo. Conecta el juego con la lectura.</p>
+        </div>
+        <div class="mini-card">
+            <div class="mini-icon">🔄</div>
+            <h4>Rotación de materiales</h4>
+            <p>Cambiá libros y materiales cada dos semanas. La novedad genera anticipación y ganas de volver.</p>
+        </div>
+        </div>
+      <div class="section-title">Seleccionando libros</div>
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">📖</div>
+          <div class="strategy-info"><h3>¿Qué libros poner en el rincón?</h3><p>Criterios para elegir bien · Sin desperdiciar plata</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Seguí sus intereses:</strong> si le gustan los animales, la ciencia o el fútbol — buscá libros de esos temas. El interés es el motor.</li>
+            <li><div class="step-num">2</div><strong>Mezclá géneros:</strong> ficción y no ficción pueden convivir. Las novelas gráficas son excelentes para chicos que se intimidan con libros de mucho texto.</li>
+            <li><div class="step-num">3</div><strong>Calidad sobre cantidad:</strong> 10 libros bien elegidos valen más que 50 que no le interesan.</li>
+            <li><div class="step-num">4</div><strong>Rotá los libros:</strong> cambiá los que están a la vista cada dos o tres semanas para mantener la novedad.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">📱</div>
+          <div class="strategy-info"><h3>La tecnología como aliada</h3><p>Equilibrio digital y físico · Sin reemplazar el libro</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La tecnología puede enriquecer la experiencia de lectura — siempre que no la reemplace. La clave está en el equilibrio.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>E-readers y apps de lectura son válidos, especialmente para los chicos más tecnológicos.</li>
+            <li><div class="step-num">2</div>Audiolibros funcionan muy bien para chicos auditivos o para los momentos en que no quieren leer solos.</li>
+            <li><div class="step-num">3</div>Establecé momentos específicos para cada formato — el libro físico tiene su propio ritual y eso vale.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">⚖️</div>
+            <div><h4>La clave del equilibrio</h4><p>La tecnología debe complementar la lectura, no reemplazarla. Si tu hijo escucha un audiolibro hoy, mañana puede leer el mismo libro en papel — compara las experiencias juntos.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('estrategias', document.querySelectorAll('.tab')[2])">Ver las estrategias →</button>
+    </div>
+
+    <!-- TAB ESTRATEGIAS -->
+    <div class="section-panel" id="tab-estrategias">
+      <div class="intro-card">
+        <p>Ya sabés qué elementos necesita el rincón. Ahora veamos cómo implementarlo paso a paso y qué actividades concretas podés hacer para que la lectura en ese espacio se convierta en un hábito.</p>
+      </div>
+
+      <div class="section-title">Estrategias probadas</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info"><h3>Creá el rincón con tu hijo</h3><p>Participación activa · Sentido de pertenencia</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Un espacio que él ayudó a crear es un espacio que va a querer usar. No lo armes solo y se lo mostrés — hacélo junto a él.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí juntos el lugar: ¿un rincón de su cuarto, la sala, el pasillo? Que él decida.</li>
+            <li><div class="step-num">2</div>Dejalo decorar: dibujos suyos, fotos, personajes favoritos, stickers. Sin limite de creatividad.</li>
+            <li><div class="step-num">3</div>Que él organice los libros como quiera — por color, por tamaño, por tema. Lo que le guste.</li>
+            <li><div class="step-num">4</div>Añadí elementos de confort: una mantita, una lámpara especial, su taza o vaso favorito para tener cerca.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info"><h3>La hora mágica de lectura</h3><p>Rutina diaria · 20-30 minutos</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>El rincón solo funciona si hay un momento fijo para usarlo. Sin rutina, el espacio más lindo del mundo pierde efecto.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí el momento del día donde tu hijo esté más receptivo: después del almuerzo, antes de dormir, al volver del colegio.</li>
+            <li><div class="step-num">2</div>Empezá con 15-20 minutos y aumentá gradualmente.</li>
+            <li><div class="step-num">3</div>Leé con él — no lo dejés solo. La lectura compartida en el rincón crea el hábito mucho más rápido.</li>
+            <li><div class="step-num">4</div>Al terminar, preguntale qué fue lo que más le gustó. Ese intercambio hace que quiera volver.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">⏰</div>
+            <div><h4>Tip de rutina</h4><p>Mantené una variedad de libros en el rincón para que la curiosidad de tu hijo se despierte cada día. Cambiá los que están a la vista cada dos semanas.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info"><h3>Caza de libros temática</h3><p>Actividad especial · Una vez por mes</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Una vez por mes, hacé una "caza de libros" en casa o en la biblioteca. Creá una lista de categorías (aventura, animales, humor, ciencia) y que tu hijo encuentre un libro de cada una.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Definí juntos 3-4 categorías para el mes.</li>
+            <li><div class="step-num">2</div>Salgan a buscar libros — biblioteca, librería o incluso entre los que ya tienen en casa.</li>
+            <li><div class="step-num">3</div>Cada libro encontrado va al rincón con un lugar de honor.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">5 errores a evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span>No personalizar el espacio — si no refleja los gustos de tu hijo, no va a querer usarlo.</li>
+        <li><span class="num">2</span>Sobrecargar el rincón con demasiados libros o decoraciones que distraigan.</li>
+        <li><span class="num">3</span>No establecer un horario fijo — sin rutina, el rincón queda abandonado.</li>
+        <li><span class="num">4</span>Elegir todos los libros vos — involucrar a tu hijo en la selección es clave para que lea.</li>
+        <li><span class="num">5</span>Ver la tecnología como enemiga — usada bien, puede ser una gran aliada del hábito lector.</li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Muy bien! Ya tenés todo para crear el rincón lector perfecto. Mirá el resumen visual y después pasamos al Cap 3 donde vemos los métodos más divertidos para leer.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('resumen', document.querySelectorAll('.tab')[3])">Ver resumen visual →</button>
+    </div>
+
+    <div class="section-panel" id="tab-actividades">
+
+    <div class="intro-card">
+        <p>Dos ejercicios concretos para arrancar esta semana. El primero lo hacés una vez, el segundo se convierte en rutina.</p>
+    </div>
+
+    <div class="section-title">🛠️ Ejercicios prácticos</div>
+
+    <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+        <div class="strategy-num">1</div>
+        <div class="strategy-info">
+            <h3>Creando tu Rincón de Lectura</h3>
+            <p>Ejercicio único · 45 minutos · Con tu hijo</p>
+        </div>
+        <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+        <p>Este ejercicio se hace una sola vez — y define todo lo demás. El objetivo es crear un espacio que tu hijo sienta como propio.</p>
+        <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí juntos un rincón tranquilo y bien iluminado. Puede ser su cuarto, la sala o un pasillo. Que él decida.</li>
+            <li><div class="step-num">2</div>Agregá un sillón o cojines grandes donde pueda sentarse cómodo. Si hay una mesita cerca, mejor.</li>
+            <li><div class="step-num">3</div>Organizá los libros en una estantería o caja a su altura — que pueda ver las tapas y elegir sin ayuda.</li>
+            <li><div class="step-num">4</div>Decorá juntos: posters de personajes favoritos, dibujos suyos, una lámpara especial, una planta. Todo suma.</li>
+        </ul>
+        <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🎯</div>
+            <div><p><strong>Resultado esperado:</strong> Un espacio acogedor que invite a tu hijo a explorar los libros y querer quedarse ahí.</p></div>
+        </div>
+        </div>
+    </div>
+
+  <div class="strategy-card" onclick="toggleStrategy(this)">
+    <div class="strategy-header">
+      <div class="strategy-num">2</div>
+      <div class="strategy-info">
+        <h3>La Hora de Lectura Familiar</h3>
+        <p>Hábito diario · 30 minutos · Juntos</p>
+      </div>
+      <div class="strategy-toggle">▼</div>
+    </div>
+    <div class="strategy-body">
+      <p>Una vez que el rincón existe, necesita un momento fijo para usarlo. Este ejercicio convierte el espacio en un hábito real.</p>
+      <ul class="steps-list">
+        <li><div class="step-num">1</div>Definí un momento del día donde ambos estén disponibles y tranquilos: antes de dormir, después de la cena, al volver del colegio.</li>
+        <li><div class="step-num">2</div>Que tu hijo elija el libro — siempre. Eso le da propiedad sobre la experiencia.</li>
+        <li><div class="step-num">3</div>Leé con él en voz alta, turnándose. La lectura compartida crea el hábito mucho más rápido que leer solo.</li>
+        <li><div class="step-num">4</div>Al terminar, preguntale qué fue lo que más le gustó. Ese intercambio es lo que hace que quiera volver mañana.</li>
+      </ul>
+      <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+        <div class="tip-icon">🎯</div>
+        <div><p><strong>Resultado esperado:</strong> Tu hijo va a asociar la lectura con momentos de conexión y disfrute, no con obligación.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title" style="margin-top:32px;">⚠️ Los 5 errores que hay que evitar</div>
+  <ul class="errores-list">
+    <li><span class="num">1</span><span><strong>No personalizar el espacio.</strong> Si no refleja los gustos de tu hijo, no va a querer usarlo. El sello personal es lo que genera pertenencia.</span></li>
+    <li><span class="num">2</span><span><strong>Sobrecargar el rincón.</strong> Demasiados libros o decoraciones que compiten entre sí generan distracción. Menos es más — rotá en vez de acumular.</span></li>
+    <li><span class="num">3</span><span><strong>No tener un horario fijo.</strong> Sin rutina, el rincón más lindo del mundo queda abandonado. La consistencia es lo que convierte un espacio en un hábito.</span></li>
+    <li><span class="num">4</span><span><strong>Elegir todos los libros vos.</strong> Involucrar a tu hijo en la selección es clave. Si él eligió el libro, tiene muchas más ganas de leerlo.</span></li>
+    <li><span class="num">5</span><span><strong>Ver la tecnología como enemiga.</strong> Usada con criterio, puede ser una gran aliada. Un audiolibro hoy puede llevar al libro físico mañana.</span></li>
+  </ul>
+
+  <div class="tuki-tip">
+    <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+      onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+    <div class="tt-text">
+      <h4>Tuki te dice:</h4>
+      <p>¡Muy bien! Ya tenés todo para crear el rincón lector perfecto. Mirá el resumen visual y después pasamos al Cap 3.</p>
+    </div>
+  </div>
+
+  <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+</div>
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume todo lo que vimos en el capítulo. Guardala o compartila — es tu guía rápida para crear el ambiente de lectura ideal para tu hijo.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/infografia-cap2.png" alt="Infografía Capítulo 2 — Ambiente de Lectura" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Capítulo 2 — Creando un Ambiente de Lectura Atractivo</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Terminaste el Capítulo 2! Ya tenés el espacio listo. En el Cap 3 vemos los métodos más divertidos para que la lectura sea un juego, no una obligación.</p>
+        </div>
+      </div>
+      <a href="cap3.html" class="next-btn" style="margin-top:24px;">Capítulo 3: Métodos divertidos →</a>
+    </div>
+
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('cap2');</script>
+</body>
+</html>

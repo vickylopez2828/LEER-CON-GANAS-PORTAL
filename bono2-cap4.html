@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Bono 2 Cap 4: Lectura y Comunicación Familiar</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  :root { --naranja: #7C3AED; --naranja-claro: #A78BFA; --amarillo: #EDE9FE; }
+  .chapter-header { background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 50%, #C4B5FD 100%); }
+  .next-btn { background: linear-gradient(135deg, #7C3AED, #A78BFA); }
+  .next-btn:hover { box-shadow: 0 10px 28px rgba(124,58,237,0.45); }
+</style>
+</head>
+<body>
+<div id="sidebar-container"></div>
+
+<main class="main">
+  <div class="chapter-header">
+    <div class="bubble b1"></div><div class="bubble b2"></div>
+    <div class="bubble b3"></div><div class="bubble b4"></div>
+    <div class="chapter-badge">❤️ Bono 2 · Capítulo 4 de 4</div>
+    <h1 class="chapter-title">La Lectura como Herramienta de Comunicación Familiar</h1>
+    <p class="chapter-quote">"Las palabras son la llave que abre las puertas del corazón."<span>— Anónimo</span></p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>La lectura no es solo un acto individual — es una experiencia que puede unir a la familia de maneras profundas y significativas. Una simple historia puede abrir conversaciones que la rutina diaria no permite.</p>
+        <p>En este capítulo vemos cómo usar los libros como puentes para conectar emocionalmente con tu hijo. No se trata de forzar un diálogo sobre emociones — se trata de crear un espacio donde esas conversaciones puedan surgir de forma natural, a través de los personajes y las historias.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">💬</div>
+          <h4>Libros disparadores</h4>
+          <p>Historias que tocan temas difíciles de abordar directamente — y que abren la puerta a conversaciones profundas.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🎭</div>
+          <h4>Ejercicios en familia</h4>
+          <p>Diario emocional, teatro de lectura, círculo familiar — actividades que convierten la lectura en experiencia compartida.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🏠</div>
+          <h4>Espacio seguro</h4>
+          <p>Un rincón de lectura emocional donde todos saben que pueden hablar de lo que sienten sin ser juzgados.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div>
+          <h4>Por qué los libros abren conversaciones</h4>
+          <p>Hablar de las emociones de un personaje es mucho menos amenazante que hablar de las propias. El libro actúa como un espejo indirecto — el chico puede explorar lo que siente a través del personaje, sin sentirse expuesto.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar</h4>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Entiendo que los libros pueden abrir conversaciones que la rutina no permite</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a crear un rincón de lectura emocional en casa esta semana</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a programar la primera Hora de las Emociones familiar</span></div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Leer juntos y conversar, preguntar y sentir — cada historia es una oportunidad para crecer como familia.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- TAB CONTEXTO -->
+    <div class="section-panel" id="tab-contexto">
+      <div class="intro-card">
+        <p>Para entender cómo usar la lectura como herramienta de comunicación, veamos primero qué hace que algunos libros sean mejores disparadores de conversación que otros.</p>
+      </div>
+
+      <div class="section-title">Libros que abren conversaciones</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">📚</div>
+          <div class="strategy-info"><h3>Qué buscar en un libro disparador</h3><p>Emociones reales · Situaciones cotidianas · Personajes identificables</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Los mejores libros para abrir conversaciones familiares tienen personajes que enfrentan situaciones emocionales reales — miedo, amistad difícil, pérdida, cambios — y que lo hacen de forma accesible y sin moralejas forzadas.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">📖</div><strong>"El monstruo de colores"</strong> (Anna Llenas) — Para explorar y nombrar emociones de forma visual y divertida. Preguntas disparadoras: "¿Qué color te hace sentir feliz?" "¿Qué emoción representa el negro para vos?"</li>
+            <li><div class="step-num">📖</div><strong>"La casa de la mosca fosca"</strong> — Para abordar amistad y resolución de conflictos. "¿Qué harías si fueras la mosca?" "¿Por qué creés que los personajes no se entendían?"</li>
+            <li><div class="step-num">📖</div><strong>Cualquier libro que él elija</strong> — A veces el mejor disparador es el que el chico trae con entusiasmo. Seguí su interés.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🔑</div>
+            <div><h4>La clave</h4><p>Involucrá a tu hijo en la selección de los libros para la "biblioteca emocional familiar". Que él elija títulos que hablen de distintas emociones y situaciones — eso ya es una conversación en sí misma.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🏠</div>
+          <div class="strategy-info"><h3>El rincón de lectura emocional</h3><p>Un espacio físico que invita a abrirse</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Un espacio físico dedicado a la lectura emocional hace que todos — vos y tu hijo — asocien ese lugar con la apertura y la confianza. No tiene que ser grande ni costoso.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí un rincón cómodo — cojines, manta, buena luz.</li>
+            <li><div class="step-num">2</div>Poné ahí los libros que van a usar para las lecturas emocionales.</li>
+            <li><div class="step-num">3</div>Cada vez que lean algo juntos, dirigite a ese rincón para conversar.</li>
+            <li><div class="step-num">4</div>Con el tiempo, el chico va a asociar ese espacio con "puedo decir lo que siento" — y eso es invaluable.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Crear un espacio seguro para discutir emociones es uno de los regalos más grandes que le podés dar a tu hijo. Y la lectura es la excusa perfecta para construirlo.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- TAB ESTRATEGIAS -->
+    <div class="section-panel" id="tab-estrategias">
+      <div class="intro-card">
+        <p>Tres estrategias concretas para usar la lectura como herramienta de comunicación familiar — libros disparadores, ejercicios en familia y la Hora de las Emociones.</p>
+      </div>
+
+      <div class="section-title">3 estrategias para comunicarse a través de los libros</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info"><h3>Libros como disparadores de conversación</h3><p>El personaje habla por él</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Los libros tienen la magia de tocar fibras emocionales que la rutina diaria no permite abordar. La clave es elegir los libros correctos y hacer las preguntas que abran — no que cierren.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Leé el libro juntos — sin apuro, con expresión.</li>
+            <li><div class="step-num">2</div>Hacé preguntas abiertas después: "¿Cómo creés que se siente este personaje?" "¿Te pasó algo parecido?"</li>
+            <li><div class="step-num">3</div>Escuchá activamente — sin completar sus frases, sin minimizar lo que dice.</li>
+            <li><div class="step-num">4</div>Mostrá interés genuino — que sienta que lo que dice te importa de verdad.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">💬</div>
+            <div><h4>La biblioteca emocional familiar</h4><p>Creá una colección de libros que aborden distintas emociones y situaciones. Un día por semana, cada miembro elige un libro y lo comparte. Eso abre un espacio de intercambio que la conversación directa rara vez logra.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info"><h3>Ejercicios familiares de lectura compartida</h3><p>Diario · Teatro · Círculo familiar</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Tres ejercicios que convierten la lectura en una actividad familiar interactiva y enriquecedora.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Diario de Emociones Literarias:</strong> después de cada lectura, que elija tres emociones que sintió durante la historia. Al final del mes, revisen juntos cómo esas emociones cambiaron o evolucionaron.</li>
+            <li><div class="step-num">2</div><strong>Teatro de Lectura:</strong> elegí un cuento y en vez de solo leerlo, actúen las partes. Después preguntá: "¿Cómo te sentiste al ser ese personaje?" Esto facilita la conversación emocional de forma lúdica.</li>
+            <li><div class="step-num">3</div><strong>Círculo de Lectura Familiar:</strong> cada miembro elige un libro o un capítulo para leer en voz alta. Después, espacio abierto para que todos compartan pensamientos y emociones — sin juicios.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info"><h3>La Hora de las Emociones</h3><p>Un ritual semanal de apertura familiar</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Una vez por semana, toda la familia se reúne en el rincón de lectura emocional para compartir. Empieza con un libro sobre sentimientos y termina con cada uno compartiendo una emoción que vivió esa semana.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Programala con anticipación — que todos sepan que ese momento existe y lo esperen.</li>
+            <li><div class="step-num">2</div>Elegí un libro sobre emociones para arrancar — puede rotar quién elige cada semana.</li>
+            <li><div class="step-num">3</div>Después de la lectura, cada uno comparte una emoción que vivió esa semana — sin presión, con espacio para el silencio.</li>
+            <li><div class="step-num">4</div>Validá cada sentimiento expresado — sin juzgar, sin minimizar, sin ofrecer soluciones si no las pidieron.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">✨</div>
+            <div><h4>Lo que construye</h4><p>Con el tiempo, la Hora de las Emociones se convierte en un espacio donde todos saben que pueden hablar de lo que sienten — y eso cambia la dinámica familiar de forma profunda.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>La lectura no une porque es "educativa" — une porque es una experiencia compartida. Y las experiencias compartidas son el material del que están hechos los vínculos.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- TAB ACTIVIDADES -->
+    <div class="section-panel" id="tab-actividades">
+      <div class="intro-card">
+        <p>Tres acciones concretas para arrancar esta semana — el rincón, el libro disparador y la primera Hora de las Emociones.</p>
+      </div>
+
+      <div class="section-title">🎯 Plan de acción rápido</div>
+
+      <div class="receta-box">
+        <h3>Acción 1 — Creá el Rincón de Lectura Emocional</h3>
+        <div class="receta-meta">⏱ 10 minutos hoy · Cojines, mantas, libros</div>
+        <p>Dedicá 10 minutos hoy a crear el rincón. No tiene que ser perfecto — con dos cojines y una manta ya funciona. Poné ahí algunos libros. Que él lo sepa y lo sienta como un espacio especial.</p>
+        <div class="receta-tip">💡 Tip: que él decore el rincón con algo suyo — un dibujo, un juguete, lo que quiera. Eso lo hace sentir propio.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 2 — Elegí un libro disparador esta semana</h3>
+        <div class="receta-meta">⏱ Esta semana · Preparà 3 preguntas abiertas</div>
+        <p>Elegí un libro sobre emociones para leer en familia. Antes de leerlo, preparà al menos tres preguntas abiertas que puedan guiar la conversación después. Leánlo en el rincón de lectura emocional.</p>
+        <div class="receta-tip">💡 Tip: preguntas como "¿Cómo creés que se siente?" son mejores que "¿Estaba triste?" — las abiertas generan conversación, las cerradas la cortan.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 3 — Programá la primera Hora de las Emociones</h3>
+        <div class="receta-meta">⏱ Este fin de semana · Avisale a toda la familia</div>
+        <p>Programá la primera Hora de las Emociones para este fin de semana. Avisale a todos con anticipación. Preparà un libro sobre sentimientos y pensá en una emoción que quieras compartir vos también — eso modela la apertura.</p>
+        <div class="receta-tip">💡 Tip: empezá vos compartiendo una emoción — que vea que todos pueden hacerlo, incluso los adultos.</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">⚠️ Los 5 errores que hay que evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span><strong>Forzar el diálogo emocional:</strong> si el chico no quiere hablar, respetá ese silencio. El espacio seguro se construye con el tiempo, no con la presión.</li>
+        <li><span class="num">2</span><strong>Juzgar lo que expresa:</strong> si dice algo inesperado sobre la historia o sus emociones, no lo corrijas. Explorá con curiosidad — "¿Por qué pensás eso?"</li>
+        <li><span class="num">3</span><strong>Hacer preguntas cerradas:</strong> "¿Estaba triste el personaje?" tiene una sola respuesta. "¿Cómo creés que se sentía?" abre un mundo de posibilidades.</li>
+        <li><span class="num">4</span><strong>No participar vos:</strong> si solo el chico comparte y vos escuchás sin aportar, el intercambio pierde profundidad. Compartí tus propias emociones también — eso normaliza y profundiza el vínculo.</li>
+        <li><span class="num">5</span><strong>Saltear la Hora de las Emociones:</strong> la consistencia es lo que construye el espacio seguro. Si se cancela seguido, el ritual pierde su poder.</li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Terminaste el Bono 2! 🎉 Ya tenés todas las herramientas para conectar emocionalmente a través de la lectura. En el Bono 3 vemos cómo leer en cualquier contexto — en movimiento, en la naturaleza y en el mundo.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume las estrategias para usar la lectura como herramienta de comunicación familiar.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/infografia-bono2-cap4.png" alt="Infografía Bono 2 Cap 4 — Comunicación Familiar" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Bono 2 Cap 4 — La Lectura como Herramienta de Comunicación Familiar</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Completaste el Bono 2! En el Bono 3 vemos cómo leer más allá de la casa — en movimiento, en la naturaleza y en contacto con otras culturas.</p>
+        </div>
+      </div>
+      <a href="bono3-cap1.html" class="next-btn" style="margin-top:24px;">Bono 3: Lectura sin Fronteras →</a>
+    </div>
+
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('bono2-cap4');</script>
+</body>
+</html>

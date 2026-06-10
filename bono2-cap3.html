@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Bono 2 Cap 3: Cuentos para Sanar</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  :root { --naranja: #7C3AED; --naranja-claro: #A78BFA; --amarillo: #EDE9FE; }
+  .chapter-header { background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 50%, #C4B5FD 100%); }
+  .next-btn { background: linear-gradient(135deg, #7C3AED, #A78BFA); }
+  .next-btn:hover { box-shadow: 0 10px 28px rgba(124,58,237,0.45); }
+</style>
+</head>
+<body>
+<div id="sidebar-container"></div>
+
+<main class="main">
+  <div class="chapter-header">
+    <div class="bubble b1"></div><div class="bubble b2"></div>
+    <div class="bubble b3"></div><div class="bubble b4"></div>
+    <div class="chapter-badge">❤️ Bono 2 · Capítulo 3 de 4</div>
+    <h1 class="chapter-title">Cuentos para Sanar: Usando la Lectura para Manejar Emociones</h1>
+    <p class="chapter-quote">"La lectura no solo abre puertas al conocimiento, sino también a la comprensión de uno mismo."<span>— Anónimo</span></p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>La lectura puede ser una herramienta poderosa para ayudar a los chicos a navegar el mar de emociones que enfrentan a diario. Hay momentos en que las palabras directas se quedan cortas — y ahí es donde entran los cuentos terapéuticos.</p>
+        <p>Historias cuidadosamente seleccionadas que no solo entretienen, sino que permiten a tu hijo verse reflejado, entenderse mejor y encontrar formas de procesar lo que siente. Sin terapia, sin dramatismo — simplemente a través de un cuento.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">🎯</div>
+          <h4>Seleccionar el cuento correcto</h4>
+          <p>El libro adecuado en el momento adecuado puede abrir puertas que ninguna conversación directa lograría.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🪞</div>
+          <h4>Reflexión post-lectura</h4>
+          <p>Actividades para profundizar la experiencia — preguntas, dibujos, dramatización — que ayudan a procesar lo que la historia despertó.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">📔</div>
+          <h4>Diario emocional</h4>
+          <p>Un espacio propio donde el chico puede explorar sus sentimientos a través de las historias que lee.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div>
+          <h4>¿Cuándo usar cuentos terapéuticos?</h4>
+          <p>Cuando el chico está viviendo algo difícil que no sabe cómo expresar — un cambio en la familia, miedo, conflictos con amigos, pérdidas. El cuento le da un espejo donde ver su emoción sin sentirse expuesto.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar</h4>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Entiendo que los cuentos pueden ayudar a procesar emociones difíciles</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a identificar qué está sintiendo mi hijo ahora para elegir el libro correcto</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a crear un diario emocional con él esta semana</span></div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Los cuentos terapéuticos ayudan a los chicos a identificar, comprender y expresar sus emociones en un espacio seguro y amoroso. No hace falta tener todo resuelto — solo abrirles la puerta.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- TAB CONTEXTO -->
+    <div class="section-panel" id="tab-contexto">
+      <div class="intro-card">
+        <p>Para elegir bien los cuentos terapéuticos, primero hay que entender cómo funcionan — y por qué algunas historias conectan emocionalmente mucho más que otras.</p>
+      </div>
+
+      <div class="section-title">Cómo seleccionar cuentos terapéuticos</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info"><h3>Identificá la emoción primero</h3><p>El diagnóstico emocional antes de la búsqueda</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Antes de buscar un libro, preguntale a tu hijo cómo se siente. Si está triste, ansioso, enojado o asustado, esa emoción es la brújula para encontrar la historia adecuada.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Identifica la emoción:</strong> "¿Cómo te sentiste hoy?" — sin forzar, con curiosidad genuina.</li>
+            <li><div class="step-num">2</div><strong>Buscá libros que reflejen esa emoción:</strong> situaciones similares a las que está viviendo, personajes que sientan lo mismo.</li>
+            <li><div class="step-num">3</div><strong>Diversidad de personajes:</strong> cuentos con personajes de diferentes contextos enseñan que esas emociones las siente todo el mundo — eso normaliza y acompaña.</li>
+            <li><div class="step-num">4</div><strong>Lenguaje accesible:</strong> que la historia conecte emocionalmente importa más que sea "literariamente rica". Simple pero profundo es lo que funciona.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">📚</div>
+            <div><h4>Algunos ejemplos</h4>
+            <p><strong>"El cazo de Lorenzo"</strong> — para chicos que se sienten diferentes o que cargan con algo difícil.<br>
+            <strong>"La pequeña oruga glotona"</strong> — para momentos de cambio y transformación.<br>
+            <strong>Libros de Mo Willems o Julia Donaldson</strong> — para ansiedad, amistad y diversidad de forma palpable.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info"><h3>Prueba y error — sin culpa</h3><p>No todos los libros van a conectar</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>A veces un libro que parece perfecto no conecta con el chico. Y a veces uno que parecía inadecuado resulta ser el que más le impacta. La clave es observar las reacciones — no anticiparlas.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Si después de dos capítulos no hay ninguna reacción emocional, cambien de libro — sin dramatismo.</li>
+            <li><div class="step-num">2</div>Observá qué libros generan más preguntas, más silencios o más conversaciones — esos son los que están tocando algo.</li>
+            <li><div class="step-num">3</div>No te limitás a los clásicos — hay muchos libros contemporáneos que abordan emociones modernas de forma muy efectiva.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>El mejor cuento terapéutico es el que el chico no sabe que es terapéutico — simplemente le gusta, lo atrapa y le hace sentir algo.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- TAB ESTRATEGIAS -->
+    <div class="section-panel" id="tab-estrategias">
+      <div class="intro-card">
+        <p>Tres estrategias para aprovechar los cuentos terapéuticos al máximo — actividades de reflexión post-lectura y la creación de un diario emocional.</p>
+      </div>
+
+      <div class="section-title">Estrategias probadas</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info"><h3>Actividades de reflexión post-lectura</h3><p>Seis formas de profundizar la experiencia</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La lectura por sí sola ya es poderosa. Pero con una actividad de reflexión después, el impacto se multiplica. Estas son las más efectivas:</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Preguntas abiertas:</strong> "¿Qué parte te hizo sentir algo especial?" o "¿Cómo creés que se sintió el personaje?" — sin respuestas correctas o incorrectas.</li>
+            <li><div class="step-num">2</div><strong>Dramatización:</strong> representar una escena del cuento — con marionetas, juguetes o en persona. Lo que se actúa se recuerda y se procesa más profundamente.</li>
+            <li><div class="step-num">3</div><strong>Dibujo de emociones:</strong> que dibuje su parte favorita o cómo se sintió durante la historia. El arte expresa lo que las palabras a veces no pueden.</li>
+            <li><div class="step-num">4</div><strong>Diálogo tranquilo:</strong> sin apuro, sin interrupciones. Escuchá y compartí tus propias reflexiones — el diálogo bidireccional valida sus emociones.</li>
+            <li><div class="step-num">5</div><strong>Conectar con la vida real:</strong> "¿Te pasó algo parecido alguna vez? ¿Cómo te sentiste?" — ese puente es donde se consolida el aprendizaje emocional.</li>
+            <li><div class="step-num">6</div><strong>Árbol de emociones:</strong> en papel de colores, cada hoja representa una emoción de la historia. Escriben o dibujan qué relacionan con cada emoción.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info"><h3>El diario emocional de lectura</h3><p>Un espacio propio para explorar sentimientos</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Un diario emocional no es solo un cuaderno — es un espacio seguro donde el chico puede explorar sus sentimientos a través de las historias que lee.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Elegí un cuaderno especial:</strong> que sea visualmente atractivo para él. Que lo sienta suyo desde el primer momento.</li>
+            <li><div class="step-num">2</div><strong>Registrá las lecturas:</strong> título, autor y fecha después de cada lectura — crea sentido de logro y continuidad.</li>
+            <li><div class="step-num">3</div><strong>Reflexión sobre personajes:</strong> que elija un personaje con el que se identificó. "¿Qué sentía ese personaje? ¿Vos te sentiste así alguna vez?" Anotá sus respuestas.</li>
+            <li><div class="step-num">4</div><strong>Dibujá y escribí:</strong> un dibujo simple o una frase corta. Preguntale qué color representa ese sentimiento y por qué.</li>
+            <li><div class="step-num">5</div><strong>Revisión semanal:</strong> un momento fijo cada semana para revisar el diario juntos. Eso permite ver la evolución emocional y estar más en sintonía con él.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">✨</div>
+            <div><h4>Lo que el diario revela</h4><p>Con el tiempo, el diario emocional se convierte en un mapa del mundo interior de tu hijo. Vas a ver qué temas lo preocupan, qué emociones aparecen más seguido y cómo va procesando las cosas.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Un diario emocional de lectura fortalece la conexión, la expresión y el aprendizaje emocional. No hace falta escribir mucho — un dibujo y una frase por semana ya construyen algo poderoso.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- TAB ACTIVIDADES -->
+    <div class="section-panel" id="tab-actividades">
+      <div class="intro-card">
+        <p>Tres acciones concretas para arrancar esta semana — el diario, la reflexión post-lectura y la rutina de revisión.</p>
+      </div>
+
+      <div class="section-title">🎯 Plan de acción rápido</div>
+
+      <div class="receta-box">
+        <h3>Acción 1 — Creá el diario emocional</h3>
+        <div class="receta-meta">⏱ Hoy · Un cuaderno atractivo</div>
+        <p>Conseguí un cuaderno que a él le guste visualmente. Explícale que es su "diario de emociones" — un espacio solo suyo donde puede escribir o dibujar cómo se siente después de cada lectura.</p>
+        <div class="receta-tip">💡 Tip: que él decore la tapa — eso lo hace suyo desde el principio.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 2 — Primera entrada del diario</h3>
+        <div class="receta-meta">⏱ Después de la próxima lectura · 15 minutos</div>
+        <p>Después de leer un cuento juntos, sentate con él y pedile que elija un personaje con el que se identificó. Anotá sus sentimientos en el diario. Preguntá: "¿Cómo hubieras actuado vos en su lugar?"</p>
+        <div class="receta-tip">💡 Tip: si no quiere escribir, que dibuje — el dibujo es tan válido como las palabras.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 3 — Revisión semanal del diario</h3>
+        <div class="receta-meta">⏱ Un momento fijo por semana · 10-15 minutos</div>
+        <p>Establecé un momento fijo por semana para revisar el diario juntos. Puede ser con una merienda de por medio. Leé las entradas anteriores y preguntá si algo cambió en cómo se siente.</p>
+        <div class="receta-tip">💡 Tip: hacelo en el mismo lugar y horario — la rutina hace que llegue ya predispuesto a abrirse.</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">⚠️ Los 5 errores que hay que evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span><strong>Elegir el libro por vos, no por él:</strong> un cuento que no conecta no va a generar ningún proceso emocional. Involucrálo en la elección siempre que sea posible.</li>
+        <li><span class="num">2</span><strong>Forzar la reflexión:</strong> si no quiere hablar después de la lectura, respetá ese silencio. A veces el proceso es interno y necesita tiempo.</li>
+        <li><span class="num">3</span><strong>Interrumpir cuando habla:</strong> cuando el chico empiece a compartir, escuchá sin corregir ni completar sus frases. Esa escucha activa es lo más valioso que podés dar.</li>
+        <li><span class="num">4</span><strong>No conectar con la vida real:</strong> el aprendizaje emocional se consolida cuando se vincula con su experiencia cotidiana — no te olvides del puente.</li>
+        <li><span class="num">5</span><strong>Abandonar el diario:</strong> la revisión semanal es lo que le da continuidad y poder al diario. Sin esa rutina, se convierte en un cuaderno más.</li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Muy bien! En el último capítulo del bono vemos cómo usar la lectura como herramienta de comunicación familiar — para que toda la familia se conecte a través de los libros.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume cómo seleccionar cuentos terapéuticos y las actividades para profundizar la experiencia emocional.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/infografia-bono2-cap3.png" alt="Infografía Bono 2 Cap 3 — Cuentos para Sanar" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Bono 2 Cap 3 — Cuentos para Sanar</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Terminaste el Cap 3! Solo falta el último del bono — cómo usar la lectura como herramienta de comunicación familiar.</p>
+        </div>
+      </div>
+      <a href="bono2-cap4.html" class="next-btn" style="margin-top:24px;">Bono 2 Cap 4: Lectura y Comunicación Familiar →</a>
+    </div>
+
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('bono2-cap3');</script>
+</body>
+</html>

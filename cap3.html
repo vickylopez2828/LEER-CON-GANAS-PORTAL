@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Cap 3: Métodos Divertidos</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="sidebar-container"></div>
+
+<main class="main">
+  <div class="chapter-header">
+    <div class="bubble b1"></div><div class="bubble b2"></div><div class="bubble b3"></div><div class="bubble b4"></div>
+    <div class="chapter-badge">📖 Capítulo 3 de 10</div>
+    <h1 class="chapter-title">Métodos Divertidos para Aprender a Leer</h1>
+    <p class="chapter-quote">"La lectura es la llave que abre las puertas del mundo."<span>— Anónimo</span></p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('metodos')">2</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">3</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">4</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('metodos')">🎯 Los métodos</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>¿Tu hijo se frustra cuando intenta leer? ¿Lo ves tenso, con ganas de escapar del libro? La mayoría de las veces el problema no es el nene — es que la lectura se siente como una obligación y no como un juego.</p>
+        <p>Cuando los chicos se divierten, su cerebro libera dopamina — eso mejora el estado de ánimo, la memoria y el aprendizaje. La clave es convertir la lectura en una experiencia emocionante, no en una tarea.</p>
+      </div>
+      <div class="tip-box">
+        <div class="tip-icon">🧠</div>
+        <div>
+          <h4>La psicología del aprendizaje a través del juego</h4>
+          <p>El 90% de los educadores coinciden en que el aprendizaje basado en juegos mejora la comprensión y el rendimiento. Los juegos crean un ambiente seguro donde el chico puede equivocarse sin miedo — y eso acelera el aprendizaje.</p>
+        </div>
+      </div>
+      <div class="tip-box">
+        <div class="tip-icon">🗣️</div>
+        <div>
+          <h4>La importancia de la lectura en voz alta</h4>
+          <p>Leer en voz alta con tu hijo aumenta su vocabulario y mejora la comprensión lectora. No se trata solo de que él lea — se trata de que dialoguen sobre la historia. Eso activa el pensamiento crítico y lo engancha con el relato.</p>
+        </div>
+      </div>
+      <div class="checklist">
+        <h4>✅ Antes de arrancar este capítulo</h4>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Entiendo que el juego es una herramienta de aprendizaje real</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Estoy dispuesta a hacer el ridículo jugando con mi hijo</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a probar al menos un método nuevo esta semana</span></div>
+      </div>
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>No se trata de que aprendan a leer perfecto, sino de que disfruten el camino. Tu paciencia, creatividad y participación son la clave para abrirles las puertas al mundo de la lectura.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('metodos',document.querySelectorAll('.tab')[1])">Ver los métodos →</button>
+    </div>
+    <!-- TAB CONTEXTO -->
+    <div class="section-panel" id="tab-contexto">
+
+        <div class="intro-card">
+            <p>Los chicos retienen mejor la información cuando están involucrados emocionalmente en el proceso. Cuando se divierten, el cerebro libera dopamina — eso mejora el estado de ánimo, la memoria y el aprendizaje. El juego no es un recreo del aprendizaje: es el aprendizaje mismo.</p>
+        </div>
+
+        <div class="section-title">La psicología del juego</div>
+
+        <div class="tres-col">
+            <div class="mini-card">
+            <div class="mini-icon">🧠</div>
+            <h4>Dopamina y memoria</h4>
+            <p>Cuando el nene se divierte, su cerebro libera dopamina. Eso mejora la memoria y acelera el aprendizaje de forma natural.</p>
+            </div>
+            <div class="mini-card">
+            <div class="mini-icon">🛡️</div>
+            <h4>Ambiente seguro</h4>
+            <p>El juego crea un entorno donde equivocarse no da miedo. Sin miedo al error, el aprendizaje va mucho más rápido.</p>
+            </div>
+            <div class="mini-card">
+            <div class="mini-icon">🤝</div>
+            <h4>Interacción social</h4>
+            <p>Jugar juntos fortalece la comunicación y la colaboración — habilidades que después aparecen en la lectura comprensiva.</p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <div class="tip-icon">📊</div>
+            <div>
+            <h4>Lo que dice la investigación</h4>
+            <p>El 90% de los educadores coinciden en que el aprendizaje basado en juegos mejora la comprensión y el rendimiento académico. No es una moda — es lo que muestra la evidencia.</p>
+            </div>
+        </div>
+
+        <div class="section-title">La interacción como motor</div>
+
+        <div class="intro-card">
+            <p>La lectura en voz alta es clave, pero lo que marca la diferencia es la interacción. Cuando vos y tu hijo participan juntos en la lectura, se generan diálogos que enriquecen toda la experiencia.</p>
+            <p>Ana, una mamá que lo probó, combinó la lectura en voz alta con preguntas interactivas. Al principio su hijo mostraba poco interés. Pero al involucrarlo en la historia — haciéndolo parte del relato — comenzó a mostrar entusiasmo inesperado. Pasó de ver la lectura como una tarea a disfrutarla como pasatiempo. Un cambio simple, una diferencia enorme.</p>
+        </div>
+
+        <div class="tuki-tip">
+            <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+            onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+            <div class="tt-text">
+            <h4>Tuki te dice:</h4>
+            <p>No se trata de que lean perfecto — se trata de que disfruten el camino. Tu participación es la clave para abrirles las puertas al mundo de la lectura.</p>
+            </div>
+        </div>
+
+        <button class="next-btn" onclick="switchTab('metodos')">Ver los métodos →</button>
+    </div>
+    <!-- TAB MÉTODOS -->
+    <div class="section-panel" id="tab-metodos">
+      <div class="intro-card">
+        <p>Acá van los 5 métodos más efectivos para hacer que la lectura sea divertida. No tenés que usar todos — elegí el que mejor encaje con el estilo de tu hijo y empezá por ahí.</p>
+      </div>
+
+            <div class="section-title">5 métodos probados</div>
+            <div class="dos-col">
+        <div class="mini-card">
+            <div class="mini-icon">🎯</div>
+            <h4>Juegos de palabras</h4>
+            <p>Scrabble, Boggle, apps de palabras. Activan el cerebro de forma dinámica y reducen la ansiedad frente a la lectura.</p>
+        </div>
+        <div class="mini-card">
+            <div class="mini-icon">📖</div>
+            <h4>Lectura en voz alta interactiva</h4>
+            <p>Leés vos, él lee, hacen preguntas, actúan los personajes. La interacción es lo que hace que funcione.</p>
+        </div>
+        <div class="mini-card">
+            <div class="mini-icon">🎵</div>
+            <h4>Rimas y canciones</h4>
+            <p>La música mejora la memoria y el ritmo del lenguaje. Las rimas ayudan a reconocer patrones fonéticos clave para la lectura.</p>
+        </div>
+        <div class="mini-card">
+            <div class="mini-icon">✍️</div>
+            <h4>Crear cuentos juntos</h4>
+            <p>Empezás vos una historia, él la continúa. Desarrolla la narrativa, la comprensión y el amor por las palabras.</p>
+        </div>
+        </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info"><h3>Juegos de palabras</h3><p>15-20 min por día · Sin materiales especiales</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Los juegos de palabras motivan a interactuar con el lenguaje y reducen la ansiedad frente a la lectura. El componente lúdico hace que el aprendizaje se dé sin que el nene lo note.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí un juego adecuado: Scrabble, Boggle, o apps de formación de palabras en la tablet.</li>
+            <li><div class="step-num">2</div>Dedicá 15-20 minutos al día — creá una rutina para que el nene lo espere con ganas.</li>
+            <li><div class="step-num">3</div>Usá palabras de su entorno o de temas que le gusten (animales, superhéroes, deportes).</li>
+            <li><div class="step-num">4</div>Introducí un sistema de recompensas simple: elegir la cena, ver un episodio extra de su serie.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">✨</div>
+            <div><h4>Ejemplo concreto</h4><p>Si le gustan los dinosaurios, formen palabras relacionadas con ellos y al final construyan una frase divertida: "El Tiranosaurio Rex baila". Esto activa la imaginación mientras practica lectura.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info"><h3>Lectura en voz alta interactiva</h3><p>Todos los días · El método más poderoso</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La lectura en voz alta fomenta la conexión entre la palabra escrita y su significado. Pero lo que marca la diferencia es la interacción — las preguntas y el diálogo sobre la historia.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí un libro que le interese — con ilustraciones coloridas si es más chico.</li>
+            <li><div class="step-num">2</div>Leé en voz alta con expresión. Detente y preguntá: "¿Qué crees que va a pasar?", "¿Cómo se siente este personaje?"</li>
+            <li><div class="step-num">3</div>Animalo a imitar las voces de los personajes — que sea él el lobo, el rey, el detective.</li>
+            <li><div class="step-num">4</div>Repetí pasajes favoritos. La repetición consolida el reconocimiento de palabras.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🎭</div>
+            <div><h4>Ejemplo concreto</h4><p>Si están leyendo un libro sobre un viaje en tren, vos sos el narrador y él es el tren haciendo ruidos de locomotora. Ridículo, divertido y efectivo — así se crean los recuerdos de lectura.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info"><h3>Rimas y canciones</h3><p>Aprendizaje musical · Ideal para auditivos</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La musicalidad de las palabras ayuda a reconocer patrones fonéticos — crucial para descifrar palabras nuevas. Además, las canciones son fáciles de recordar y se repiten naturalmente.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí canciones infantiles que le gusten y buscá la letra juntos.</li>
+            <li><div class="step-num">2</div>Cantá juntos siguiendo la letra con el dedo — eso conecta sonido con palabra escrita.</li>
+            <li><div class="step-num">3</div>Inventá movimientos o gestos para acompañar las palabras — suma el aprendizaje kinestésico.</li>
+            <li><div class="step-num">4</div>Animalo a inventar sus propias rimas — empezá vos con una palabra y que él encuentre otra que rime.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+            <div class="strategy-num">4</div>
+            <div class="strategy-info">
+            <h3>Crear cuentos juntos</h3>
+            <p>Narrativa colaborativa · Desarrolla comprensión y creatividad</p>
+            </div>
+            <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+            <p>Crear historias juntos desarrolla la estructura narrativa de forma natural — el nene aprende que toda historia tiene inicio, nudo y desenlace sin que nadie se lo explique.</p>
+            <ul class="steps-list">
+            <li><div class="step-num">1</div>Empezás vos con una oración disparadora: "Un día, un dragón decidió volar por la ciudad…"</li>
+            <li><div class="step-num">2</div>Tu hijo agrega la siguiente oración. Se turnan hasta terminar la historia.</li>
+            <li><div class="step-num">3</div>Al terminar, él ilustra las partes que más le gustaron.</li>
+            <li><div class="step-num">4</div>Leen el cuento completo juntos en voz alta, con voces y expresión.</li>
+            </ul>
+            <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">✨</div>
+            <div>
+                <h4>Ejemplo concreto</h4>
+                <p>Usá palabras o frases que rimen para hacer la historia más divertida — eso activa la conciencia fonética mientras crea.</p>
+            </div>
+            </div>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('actividades',document.querySelectorAll('.tab')[2])">Ver las actividades →</button>
+    </div>
+
+    <!-- TAB ACTIVIDADES -->
+    <div class="section-panel" id="tab-actividades">
+      <div class="intro-card">
+        <p>Acá van las actividades concretas para aplicar hoy mismo. Tienen tiempo estimado, materiales y resultado esperado — todo lo que necesitás para arrancar sin vueltas.</p>
+      </div>
+
+      <div class="section-title">Recetas para aplicar ya</div>
+
+      <div class="receta-box">
+        <h3>🃏 El juego de las palabras perdidas</h3>
+        <div class="receta-meta">⏱ 20 min · Materiales: tarjetas en blanco, marcador, cronómetro</div>
+        <p><strong>¿Para qué sirve?</strong> Fomenta el vocabulario y la comprensión de palabras en formato de juego activo.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Escribí palabras en tarjetas — algunas que ya conoce y algunas nuevas.</li>
+          <li><div class="step-num">2</div>Esparcí las tarjetas por la habitación.</li>
+          <li><div class="step-num">3</div>Ponés el cronómetro en 2 minutos y él recoge todas las que puede.</li>
+          <li><div class="step-num">4</div>Por cada tarjeta que encuentre, tiene que leerla en voz alta y usarla en una oración.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Aumenta el vocabulario y mejora la capacidad de formar oraciones.</p>
+        <div class="receta-tip">💡 Tip: ofrecé pistas o definiciones de las palabras para que se sienta más seguro al elegirlas.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>📝 Cuento colaborativo</h3>
+        <div class="receta-meta">⏱ 30 min · Materiales: cuaderno, lápices de colores</div>
+        <p><strong>¿Para qué sirve?</strong> Desarrolla la narrativa, la comprensión lectora y la creatividad de forma conjunta.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Empezás vos con una oración: "Un día, un dragón decidió volar por la ciudad…"</li>
+          <li><div class="step-num">2</div>Tu hijo agrega la siguiente oración. Se turnan hasta completar la historia.</li>
+          <li><div class="step-num">3</div>Al terminar, él ilustra las partes que más le gustaron.</li>
+          <li><div class="step-num">4</div>Leen el cuento juntos en voz alta, con voces y expresión.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Mejora la comprensión de la estructura narrativa y el amor por crear historias.</p>
+        <div class="receta-tip">💡 Tip: usá palabras o frases que rimen para hacer la historia más divertida y memorable.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>🎵 Cantar y leer</h3>
+        <div class="receta-meta">⏱ 20 min · Materiales: letra impresa o en pantalla</div>
+        <p><strong>¿Para qué sirve?</strong> Refuerza la lectura a través del ritmo y la música — ideal para chicos que resisten los libros.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Elegí una canción popular que le guste a tu hijo.</li>
+          <li><div class="step-num">2</div>Buscá la letra juntos e imprimíla o mostránosla en pantalla.</li>
+          <li><div class="step-num">3</div>Canten juntos mientras él sigue la letra con el dedo.</li>
+          <li><div class="step-num">4</div>Seleccioná algunas palabras de la canción y pedile que las repita, las escriba o busque su significado.</li>
+        </ul>
+        <div class="receta-tip">💡 Tip: podés modificar la letra con su nombre o situaciones cotidianas — eso lo engancha mucho más.</div>
+            </div>
+            <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+            <div class="strategy-num">3</div>
+            <div class="strategy-info">
+            <h3>La Búsqueda de Palabras</h3>
+            <p>Ejercicio de movimiento · 30 minutos · Tarjetas y marcador</p>
+            </div>
+            <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+            <p>Una variante del juego de palabras perdidas pero con más movimiento — ideal para chicos kinestésicos que necesitan moverse para aprender.</p>
+            <ul class="steps-list">
+            <li><div class="step-num">1</div>Escribí palabras clave de la semana en tarjetas de colores — nombres de objetos de la casa, palabras de un cuento que estén leyendo.</li>
+            <li><div class="step-num">2</div>Escondé las tarjetas en distintos lugares de la casa — no muy difíciles pero sí un desafío.</li>
+            <li><div class="step-num">3</div>Cada tarjeta que encuentra la lee en voz alta y la usa en una oración. Podés dar puntos por oración correcta.</li>
+            <li><div class="step-num">4</div>Al terminar, revisen juntos todas las palabras y hablen de su significado.</li>
+            </ul>
+            <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🎯</div>
+            <div><p><strong>Resultado esperado:</strong> Practicó la lectura en contexto divertido y mejoró la comprensión usando las palabras en oraciones propias.</p></div>
+            </div>
+        </div>
+        </div>
+      <div class="section-title" style="margin-top:32px;">5 errores a evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span><strong>No diferenciar niveles:</strong> cada chico tiene su ritmo. Evitá presionarlo para que lea como otro nene de su edad.</li>
+        <li><span class="num">2</span><strong>Ignorar sus intereses:</strong> si no le gusta un método, buscá alternativas. El interés es el motor del aprendizaje.</li>
+        <li><span class="num">3</span><strong>No hacer pausas:</strong> aprender a leer cansa. Programá descansos breves para mantener la concentración.</li>
+        <li><span class="num">4</span><strong>Olvidar el refuerzo positivo:</strong> cada pequeño avance cuenta. Celebrá cada logro — eso construye confianza.</li>
+        <li><span class="num">5</span><strong>Subestimar el juego:</strong> si te enfocás demasiado en los resultados, perdés la magia del momento. El juego ES el aprendizaje.</li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Excelente! Ya tenés métodos y actividades concretas para esta semana. Mirá el resumen visual para fijar todo y después seguimos con la motivación en el Cap 4.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('resumen',document.querySelectorAll('.tab')[3])">Ver resumen visual →</button>
+    </div>
+
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume los métodos y actividades del capítulo. Guardala para tenerla a mano cuando necesites inspiración rápida.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/infografia-cap3.png" alt="Infografía Capítulo 3 — Métodos Divertidos" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Capítulo 3 — Métodos Divertidos para Aprender a Leer</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Terminaste el Cap 3! En el Cap 4 vemos algo fundamental: cómo construir la motivación y la confianza de tu hijo para que quiera seguir leyendo solo.</p>
+        </div>
+      </div>
+      <button class="next-btn locked" style="margin-top:24px;">🔒 Capítulo 4: Motivación y confianza</button>
+    </div>
+
+  </div>
+</main>
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('cap3');</script>
+<!-- <script>
+  const hamburger=document.getElementById('hamburger'),sidebar=document.getElementById('sidebar'),overlay=document.getElementById('overlay');
+  hamburger.addEventListener('click',()=>{sidebar.classList.toggle('open');overlay.classList.toggle('open');});
+  overlay.addEventListener('click',()=>{sidebar.classList.remove('open');overlay.classList.remove('open');});
+  const tabs=['intro','metodos','actividades','resumen'];
+  function switchTab(id,el){
+    document.querySelectorAll('.section-panel').forEach(p=>p.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    document.getElementById('tab-'+id).classList.add('active');
+    if(el)el.classList.add('active');
+    else document.querySelectorAll('.tab')[tabs.indexOf(id)]?.classList.add('active');
+    const idx=tabs.indexOf(id);
+    document.getElementById('progressFill').style.width=((idx+1)/tabs.length*100)+'%';
+    document.querySelectorAll('.step-dot').forEach((d,i)=>{d.className='step-dot';if(i<idx)d.classList.add('done');else if(i===idx)d.classList.add('active');else d.classList.add('locked');});
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function toggleStrategy(card){card.classList.toggle('expanded');}
+  function toggleCheck(item){item.classList.toggle('checked');}
+</script> -->
+</body>
+</html>

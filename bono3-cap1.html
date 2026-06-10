@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Bono 3 Cap 1: Lectura en Movimiento</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  :root { --naranja: #0284C7; --naranja-claro: #38BDF8; --amarillo: #E0F2FE; }
+  .chapter-header { background: linear-gradient(135deg, #0284C7 0%, #38BDF8 50%, #7DD3FC 100%); }
+  .next-btn { background: linear-gradient(135deg, #0284C7, #38BDF8); }
+  .next-btn:hover { box-shadow: 0 10px 28px rgba(2,132,199,0.45); }
+  .tab.active { background: #0284C7; border-color: #0284C7; box-shadow: 0 4px 12px rgba(2,132,199,0.3); }
+  .tab:hover:not(.active) { border-color: #0284C7; color: #0284C7; }
+  .nav-item.active { background: #0284C7; }
+  .intro-card { border-left-color: #0284C7; }
+  .strategy-num { background: #0C4A6E; color: #38BDF8; }
+  .mini-num { background: #0C4A6E; color: #38BDF8; }
+  .step-dot.active { background: #0284C7; box-shadow: 0 3px 10px rgba(2,132,199,0.4); }
+  .step-dot.done { background: #0C4A6E; }
+  .progress-fill { background: linear-gradient(90deg, #0C4A6E, #0284C7); }
+  .section-title::after { background: #BFDBFE; }
+  .tuki-tip { border-color: rgba(2,132,199,0.25); }
+  .tuki-tip .tt-text h4 { color: #38BDF8; }
+  .receta-box { border-color: #7DD3FC; }
+  .resumen-box { border-left-color: #0C4A6E; }
+  .resumen-box ul li::before { color: #0284C7; }
+  .check-item.checked .check-box { background: #0284C7; border-color: #0284C7; }
+  .cap-num { background: #0C4A6E; color: #38BDF8; }
+  .mini-card { border-top-color: #0284C7; }
+</style>
+</head>
+<body>
+<div id="sidebar-container"></div>
+
+<main class="main">
+  <div class="chapter-header">
+    <div class="bubble b1"></div><div class="bubble b2"></div>
+    <div class="bubble b3"></div><div class="bubble b4"></div>
+    <div class="chapter-badge">🌍 Bono 3 · Capítulo 1 de 4</div>
+    <h1 class="chapter-title">Lectura en Movimiento: Aprendiendo Fuera del Aula</h1>
+    <p class="chapter-quote">"La lectura no solo abre puertas, también abre mundos."<span>— Anónimo</span></p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>¿Alguna vez imaginaste que leer puede ser mucho más que un ejercicio en casa? La lectura no tiene que estar confinada a las paredes del aula o a la tranquilidad del salón. Cada rincón de la vida cotidiana puede transformarse en una oportunidad para jugar con las palabras.</p>
+        <p>Desde el bullicioso parque hasta el supermercado, desde la cocina hasta el patio — cualquier lugar puede ser un aula de lectura. Lo único que necesitás es un poco de creatividad y ganas de salir de la zona de confort.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">🌳</div>
+          <h4>En el parque</h4>
+          <p>Cuentos en el banco, lectura temática sobre lo que ven, caminatas literarias buscando palabras en los carteles.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🛒</div>
+          <h4>En el supermercado</h4>
+          <p>Listas de compras que él arma y lee, etiquetas como búsqueda del tesoro, historias sobre los alimentos.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🏠</div>
+          <h4>En casa — caza literaria</h4>
+          <p>Pistas escondidas que llevan a libros. Una caza del tesoro donde cada descubrimiento es una lectura nueva.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div>
+          <h4>La clave del aprendizaje en movimiento</h4>
+          <p>Cuando la lectura se conecta con el entorno real, las palabras dejan de ser abstractas. El chico ve la relación entre lo que lee y lo que vive — y eso es lo que hace que el aprendizaje se fije de verdad.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar</h4>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Entiendo que la lectura puede suceder en cualquier lugar</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a convertir la próxima salida en una oportunidad de lectura</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a armar una caza del tesoro literaria en casa esta semana</span></div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>La lectura no debería sentirse como una tarea — debería sentirse como una aventura. Cuanto más entretenido sea el proceso, más va a querer tu hijo involucrarse con los libros y las palabras.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- TAB CONTEXTO -->
+    <div class="section-panel" id="tab-contexto">
+      <div class="intro-card">
+        <p>Para entender por qué la lectura en movimiento funciona tan bien, veamos qué pasa cuando sacamos el aprendizaje de la mesa y lo llevamos al mundo real.</p>
+      </div>
+
+      <div class="section-title">Por qué funciona aprender leyendo fuera</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🌍</div>
+          <div class="strategy-info"><h3>El contexto real hace que las palabras cobren vida</h3><p>Aprendizaje situado · Mayor retención</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Cuando el chico lee sobre mariposas mientras observa una, o descifra la etiqueta de un producto que está sosteniendo, la palabra deja de ser abstracta. Tiene forma, color, textura, contexto. Y eso hace que se recuerde de forma completamente diferente.</p>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🔗</div>
+            <div><h4>La conexión clave</h4><p>No se trata de reemplazar la lectura en casa — se trata de ampliarla. El mundo exterior refuerza lo que aprendió adentro y abre puertas a preguntas que los libros todavía no respondieron.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🏃</div>
+          <div class="strategy-info"><h3>El movimiento activa el aprendizaje</h3><p>Kinestésico · Atención · Memoria</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Para los chicos kinestésicos — que necesitan moverse para aprender — la lectura estática puede ser un obstáculo. Cuando combinamos lectura con movimiento, ese obstáculo desaparece.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>El movimiento mejora la atención y la concentración — el cuerpo activo mantiene la mente activa.</li>
+            <li><div class="step-num">2</div>La experiencia física crea memorias más fuertes — lo que se vive se recuerda mejor que lo que se lee sentado.</li>
+            <li><div class="step-num">3</div>El entorno cambiante mantiene la novedad — y la novedad es uno de los mayores activadores del aprendizaje.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>No hace falta ir lejos. Un recorrido a la vuelta de la manzana con ojos lectores puede ser tan poderoso como una excursión al zoológico.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- TAB ESTRATEGIAS -->
+    <div class="section-panel" id="tab-estrategias">
+      <div class="intro-card">
+        <p>Tres escenarios concretos con estrategias específicas — el parque, el supermercado y la caza del tesoro en casa.</p>
+      </div>
+
+      <div class="section-title">3 escenarios de lectura en movimiento</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info"><h3>Lectura en el parque</h3><p>Naturaleza + libros · Observación + lectura</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <ul class="steps-list">
+            <li><div class="step-num">📖</div><strong>Cuentos en el banco:</strong> llevá un libro ilustrado. Encontrá un banco cómodo y leé juntos — preguntá qué va a pasar, pedile que describa los personajes que ve en las ilustraciones.</li>
+            <li><div class="step-num">🦋</div><strong>Lectura temática:</strong> si están rodeados de naturaleza, elegí libros sobre animales o plantas. Leé sobre mariposas mientras observan una real — la conexión es instantánea.</li>
+            <li><div class="step-num">🔤</div><strong>Caminata literaria:</strong> mientras caminan, buscá palabras en carteles, letreros o nombres de calles. Cada vez que encuentren una palabra que empiece con cierta letra, hacen un pequeño desafío.</li>
+            <li><div class="step-num">📚</div><strong>Kiosco de lectura:</strong> usá el picnic como excusa. Llevá varios libros, que él elija uno. Lean alternando turnos — al final, cada uno comparte qué le gustó más.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info"><h3>Lecciones en el supermercado</h3><p>Lectura funcional · Sin que lo note</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <ul class="steps-list">
+            <li><div class="step-num">📝</div><strong>Lista de compras literaria:</strong> antes de salir, hacen la lista juntos — él escribe o dibuja lo que necesitan. En el súper, es él quien lee y busca cada producto.</li>
+            <li><div class="step-num">🏷️</div><strong>Etiquetas como búsqueda del tesoro:</strong> que busque etiquetas que empiecen con cierta letra o que contengan una palabra que esté aprendiendo.</li>
+            <li><div class="step-num">🍅</div><strong>Historias de alimentos:</strong> contale historias sobre los alimentos — de dónde vienen, cómo se cultivan. Lean las etiquetas de ingredientes juntos y conversen sobre qué significan.</li>
+            <li><div class="step-num">💰</div><strong>Juegos de precios:</strong> que estime el precio de productos y después verifiquen. Arman una tabla con nombre, precio estimado y real. Matemática + lectura en un solo juego.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info"><h3>Caza del tesoro literaria en casa</h3><p>Movimiento + lectura + resolución de problemas</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La caza del tesoro convierte la casa entera en un escenario de lectura. Cada pista es una lectura, cada descubrimiento es un logro.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Creá el mapa:</strong> dibujá un plano simple de la casa marcando los puntos donde están escondidas las pistas. Que él ayude a diseñarlo.</li>
+            <li><div class="step-num">2</div><strong>Pistas escritas:</strong> en papel de colores o post-its, con lenguaje que él pueda leer — palabras conocidas más alguna nueva. Cada pista lleva a un libro o a una página específica.</li>
+            <li><div class="step-num">3</div><strong>Variedad de géneros:</strong> que las pistas lleven a distintos tipos de textos — cuentos, poemas, recetas, revistas. La diversidad mantiene la sorpresa.</li>
+            <li><div class="step-num">4</div><strong>El tesoro final:</strong> algo simbólico relacionado con la lectura — un libro nuevo, un marcapáginas hecho por vos, una tarjeta para la biblioteca.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🎯</div>
+            <div><h4>Plan de acción rápido</h4><p>Hoy: sentate con tu hijo y creen el mapa juntos. Escribí al menos 5 pistas que lo lleven a diferentes libros o áreas de lectura. Organizá la búsqueda en el primer momento libre que tengan.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>La lectura en movimiento convierte cualquier lugar en un aula. El mundo está lleno de palabras esperando ser leídas.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- TAB ACTIVIDADES -->
+    <div class="section-panel" id="tab-actividades">
+      <div class="intro-card">
+        <p>Tres acciones concretas para arrancar esta semana — la caza del tesoro, la salida lectora y la lista de compras literaria.</p>
+      </div>
+
+      <div class="section-title">🎯 Plan de acción rápido</div>
+
+      <div class="receta-box">
+        <h3>Acción 1 — Caza del tesoro literaria</h3>
+        <div class="receta-meta">⏱ 30 min para armar + 20 min de juego · Materiales: papel, marcadores, libros</div>
+        <p>Creá el mapa, escribí las pistas, escondélas. Al final de la caza, el tesoro es un libro nuevo o una actividad lectora especial. Hacélo en el primer momento libre que tengas.</p>
+        <div class="receta-tip">💡 Tip: que él ayude a esconder las pistas para la próxima ronda — invertir los roles es muy motivador.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 2 — Salida lectora al parque</h3>
+        <div class="receta-meta">⏱ La próxima vez que salgan · Un libro + ojos lectores</div>
+        <p>Llevá un libro relacionado con lo que van a ver. En cada parada relevante, leé un fragmento. Al volver, preguntá qué fue lo que más le gustó — del lugar Y de la historia.</p>
+        <div class="receta-tip">💡 Tip: empezá con 10 minutos de lectura en el parque. No hace falta más para crear el hábito.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 3 — Lista de compras literaria</h3>
+        <div class="receta-meta">⏱ Antes de la próxima compra · Papel y lápiz</div>
+        <p>Esta semana, que él arme la lista de compras — escribiendo o dibujando cada producto. En el supermercado, es él quien lee y busca. Convertí la compra en una misión de lectura.</p>
+        <div class="receta-tip">💡 Tip: agregá una "palabra secreta" en la lista — una palabra nueva que tenga que encontrar en alguna etiqueta del súper.</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">⚠️ Los 5 errores que hay que evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span><strong>Convertirlo en obligación:</strong> si se siente como tarea, pierde toda la magia. Que sea una aventura — no una lección disfrazada.</li>
+        <li><span class="num">2</span><strong>Ir demasiado lejos:</strong> no hace falta una excursión especial. La vuelta a la manzana con ojos lectores ya funciona.</li>
+        <li><span class="num">3</span><strong>No conectar con sus intereses:</strong> si le gustan los dinosaurios, que los carteles y las pistas sean sobre dinosaurios. La personalización es lo que activa la motivación.</li>
+        <li><span class="num">4</span><strong>Sobrecargar la actividad:</strong> una estrategia bien hecha vale más que cinco a medias. Elegí una por salida y hacéla bien.</li>
+        <li><span class="num">5</span><strong>No celebrar los logros:</strong> cada pista encontrada, cada etiqueta leída, cada palabra descubierta merece un reconocimiento. Eso alimenta las ganas de seguir.</li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>En el próximo capítulo vemos cómo la diversidad cultural puede enriquecer la experiencia lectora — viajes literarios a otros mundos sin moverse de casa.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume los escenarios y estrategias de lectura en movimiento. Guardala para tenerla a mano en la próxima salida.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/bono3/cap1.png" alt="Infografía Bono 3 Cap 1 — Lectura en Movimiento" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Bono 3 Cap 1 — Lectura en Movimiento</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Muy bien! En el Cap 2 vemos cómo incorporar la diversidad cultural a través de la lectura — viajes literarios a otros mundos y tradiciones.</p>
+        </div>
+      </div>
+      <a href="bono3-cap2.html" class="next-btn" style="margin-top:24px;">Bono 3 Cap 2: Lectura y Cultura →</a>
+    </div>
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('bono3-cap1');</script>
+</body>
+</html>

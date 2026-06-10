@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Cap 9: Celebrar el Progreso</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="sidebar-container"></div>
+
+<main class="main">
+  <div class="chapter-header">
+    <div class="bubble b1"></div><div class="bubble b2"></div>
+    <div class="bubble b3"></div><div class="bubble b4"></div>
+    <div class="chapter-badge">📖 Capítulo 9 de 10</div>
+    <h1 class="chapter-title">Celebrando el Progreso y Manteniendo el Momentum</h1>
+    <p class="chapter-quote">"Si amás lo que hacés, tendrás éxito."<span>— Albert Schweitzer</span></p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>Tu hijo sostiene un libro, sus ojos brillan mientras descifra las palabras en voz alta. Esa escena es el resultado de semanas de esfuerzo — tuyo y de él. Pero si no celebrás ese momento, corrés el riesgo de que pierda la chispa que lo llevó hasta ahí.</p>
+        <p>Celebrar el progreso no es un lujo — es una estrategia. Cada pequeño avance reconocido es un ladrillo más en la confianza de tu hijo como lector. Y esa confianza es lo que lo va a llevar a seguir leyendo cuando ya no estés ahí para empujarlo.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">🎉</div>
+          <h4>Celebrar cada avance</h4>
+          <p>No solo los grandes logros. Cada palabra nueva, cada página terminada, cada libro cerrado merece su reconocimiento.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🔄</div>
+          <h4>Mantener la rutina</h4>
+          <p>La consistencia es la clave. Una rutina lectora flexible pero sostenida construye el hábito que dura toda la vida.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🎯</div>
+          <h4>Metas a largo plazo</h4>
+          <p>Tener un objetivo claro — "quiero leer 10 libros este año" — le da propósito y dirección al esfuerzo diario.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">🧠</div>
+        <div>
+          <h4>Lo que dice la neurociencia</h4>
+          <p>Cuando celebramos un logro, el cerebro libera dopamina — el neurotransmisor del placer y la motivación. Los chicos que reciben reconocimiento por sus logros tienen un 40% más de probabilidades de continuar aprendiendo. Celebrar no es un capricho — es activar el sistema de recompensa del cerebro a favor del aprendizaje.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar este capítulo</h4>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Entiendo que celebrar los logros pequeños es tan importante como los grandes</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a establecer un ritual semanal de celebración con mi hijo</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a definir una meta lectora concreta junto a él esta semana</span></div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Celebrá el esfuerzo y cada pequeño logro. Enséñale a ver los desafíos como oportunidades para crecer. La motivación y la confianza no son magia — son práctica diaria, amor y paciencia.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- TAB CONTEXTO -->
+    <div class="section-panel" id="tab-contexto">
+      <div class="intro-card">
+        <p>Antes de ver las estrategias concretas, entendamos por qué celebrar tiene tanto impacto — y cómo la rutina y las metas a largo plazo se conectan con el momentum lector.</p>
+      </div>
+
+      <div class="section-title">Por qué celebrar cambia todo</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🎉</div>
+          <div class="strategy-info"><h3>El ciclo de la celebración</h3><p>Dopamina, motivación y aprendizaje</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Cuando celebrás un logro de tu hijo, no es solo una muestra de afecto — es una intervención neurológica. La dopamina que se libera crea una asociación positiva entre el esfuerzo y el placer.</p>
+          <p>El ciclo funciona así: celebrás → él se siente bien → asocia la lectura con emociones positivas → quiere repetir la experiencia → mejora más → hay más para celebrar. El momentum se construye solo una vez que arranca.</p>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">⚠️</div>
+            <div><h4>El riesgo de no celebrar</h4><p>Si los logros no se reconocen, el chico puede empezar a sentir que su esfuerzo no vale la pena. Eso no es solo desmotivación — es el inicio de la evitación lectora.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🔄</div>
+          <div class="strategy-info"><h3>El poder de la rutina</h3><p>Hábitos que se sostienen solos</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Las rutinas consolidan hábitos — y los hábitos son la base del aprendizaje sostenible. Un horario fijo de lectura crea una expectativa positiva: el chico espera ese momento porque lo asocia con algo agradable.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Empezá con sesiones cortas: 10-15 minutos son suficientes al principio.</li>
+            <li><div class="step-num">2</div>Elegí un momento del día libre de distracciones — antes de dormir o después de la cena suelen funcionar bien.</li>
+            <li><div class="step-num">3</div>Hacélo interactivo: preguntas, predicciones, conversaciones sobre la historia.</li>
+            <li><div class="step-num">4</div>Sé flexible: si un día no pueden leer, no pasa nada. Lo importante es la constancia a largo plazo.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🎯</div>
+          <div class="strategy-info"><h3>Metas a largo plazo</h3><p>La visión que motiva el esfuerzo diario</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Un objetivo claro le da propósito al esfuerzo diario. "Quiero leer 10 libros este año" convierte cada libro en un paso visible hacia algo más grande. Eso es mucho más motivador que leer "porque sí".</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Definí el objetivo juntos — que él lo proponga o al menos lo elija.</li>
+            <li><div class="step-num">2</div>Desglosalo en metas mensuales: si la meta es 10 libros al año, es 1 libro por mes.</li>
+            <li><div class="step-num">3</div>Creá un seguimiento visual — un gráfico, un mapa, una lista que pueda marcar.</li>
+            <li><div class="step-num">4</div>Revisá juntos cada mes: ¿llegaron a la meta? ¿Qué ajustan para el próximo?</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">✨</div>
+            <div><h4>Ejemplo concreto</h4><p>Al final de cada mes, revisan cuántos libros leyeron y qué les gustaría leer el próximo. Esa revisión es una celebración en sí misma — y una oportunidad de planificar juntos el siguiente tramo del viaje.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>La rutina crea hábitos, los hábitos crean lectores, y los lectores crean su propio futuro. Cada noche de lectura es una inversión que rinde para siempre.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- TAB ESTRATEGIAS -->
+    <div class="section-panel" id="tab-estrategias">
+      <div class="intro-card">
+        <p>Tres estrategias concretas para celebrar el progreso y mantener el momentum — celebraciones semanales, rutina de lectura y metas a largo plazo.</p>
+      </div>
+
+      <div class="section-title">3 estrategias para mantener el momentum</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info"><h3>Viernes de Logros — el ritual semanal</h3><p>Un día fijo para reconocer y celebrar</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Elegí un día fijo de la semana para celebrar los logros lectores. No tiene que ser grande ni costoso — lo que importa es que sea consistente y que el chico lo espere con ganas.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí el día — puede ser el viernes, el sábado, lo que mejor encaje con su rutina.</li>
+            <li><div class="step-num">2</div>Creá un "tablero de éxitos": cartulina o pizarrón donde agreguen stickers, dibujos o notas con los logros de la semana — palabras aprendidas, libros terminados, hitos alcanzados.</li>
+            <li><div class="step-num">3</div>Hacé una celebración simbólica: un baile, una canción favorita, la comida que más le gusta. Que sea un momento especial.</li>
+            <li><div class="step-num">4</div>Involucralo en la creación: preguntale qué quiere hacer para celebrar. Eso le da control y multiplica el entusiasmo.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🎉</div>
+            <div><h4>Ejemplo concreto</h4><p>Si aprendió 5 palabras nuevas en la semana, el Viernes de Logros puede incluir su comida favorita y un baile improvisado. Ridículo, divertido y poderoso — así se crean los recuerdos asociados a la lectura.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info"><h3>Rutina de lectura nocturna</h3><p>El ritual que más dura · Consistencia ante todo</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La rutina nocturna de lectura es una de las tradiciones más poderosas que podés instalar. Calma, conecta y abre mundos — todo al mismo tiempo.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí un horario fijo — idealmente antes de dormir, en un ambiente tranquilo y sin pantallas.</li>
+            <li><div class="step-num">2</div>Preparà el rincón: cojines, luz suave, los libros a mano.</li>
+            <li><div class="step-num">3</div>Empezá con 10-15 minutos y aumentá gradualmente a medida que se engancha.</li>
+            <li><div class="step-num">4</div>Al terminar: "¿qué fue lo que más te gustó?" — ese intercambio es tan valioso como la lectura misma.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🌙</div>
+            <div><h4>Tip de consistencia</h4><p>Cambiá los libros regularmente para mantener el interés. Que él elija el libro de vez en cuando — eso aumenta enormemente su compromiso con el momento de lectura.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info"><h3>Mural de logros lectores</h3><p>Visualizar el camino recorrido</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Un mural visible del progreso no solo motiva al chico — también celebra el esfuerzo frente a toda la familia. Ver cuánto avanzó es uno de los motivadores más poderosos que existen.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Conseguí una cartulina grande o usá una pared con papel afiche.</li>
+            <li><div class="step-num">2</div>Por cada libro terminado, agregan la portada, un dibujo del personaje favorito o una frase corta con lo que más les gustó.</li>
+            <li><div class="step-num">3</div>Decoren el mural juntos — que sea un proyecto compartido, no solo un registro.</li>
+            <li><div class="step-num">4</div>Al llegar a hitos (5, 10, 20 libros), hacen una celebración especial.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Cada avance merece ser reconocido. La consistencia y el amor son el mejor regalo que podés darle a tu hijo para que se convierta en un lector seguro, motivado y feliz.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- TAB ACTIVIDADES -->
+    <div class="section-panel" id="tab-actividades">
+      <div class="intro-card">
+        <p>Dos ejercicios para aplicar esta semana más las dos recetas del capítulo. Todo con materiales simples y tiempo acotado.</p>
+      </div>
+
+      <div class="section-title">Ejercicios prácticos</div>
+
+      <div class="receta-box">
+        <h3>🎊 Fiesta de Lectura</h3>
+        <div class="receta-meta">⏱ 30 min · Materiales: libros favoritos, snacks, decoraciones simples, música opcional</div>
+        <p><strong>¿Para qué sirve?</strong> Crear un recuerdo positivo y emocional asociado a la lectura — el tipo de recuerdo que dura toda la vida.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Elegí un momento libre de interrupciones — puede ser un sábado a la tarde.</li>
+          <li><div class="step-num">2</div>Preparà un espacio cómodo y decorado — dibujos de él, globos, lo que tengas. Que se sienta especial.</li>
+          <li><div class="step-num">3</div>Elegí juntos los libros — uno que ya leyó y quiera releer, y uno nuevo que quiera explorar.</li>
+          <li><div class="step-num">4</div>Mientras leen, hacé pausas para conversar sobre la historia y ofrecé snacks como pequeñas recompensas por cada capítulo o página.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Un recuerdo positivo y motivador asociado a la lectura — exactamente lo que construye el amor por los libros a largo plazo.</p>
+        <div class="receta-tip">💡 Tip: repetí la Fiesta de Lectura cada vez que termine un libro importante — que se convierta en un ritual esperado.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>🗺️ Mapa de Progreso Lector</h3>
+        <div class="receta-meta">⏱ 20 min · Materiales: cartulina grande, marcadores de colores, stickers</div>
+        <p><strong>¿Para qué sirve?</strong> Visualizar el progreso de forma concreta y motivadora — que él pueda VER cuánto avanzó.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>En la parte superior escribí "¡Mi Aventura de Lectura!" — que él dibuje algo que represente su amor por los libros.</li>
+          <li><div class="step-num">2</div>Dibujá un camino o ruta a lo largo de la cartulina — cada parada es un libro leído.</li>
+          <li><div class="step-num">3</div>Por cada libro completado, agregán una estrella o sticker en la parada correspondiente.</li>
+          <li><div class="step-num">4</div>Colgalo en un lugar visible — que lo vea todos los días.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Una visualización clara del progreso que lo motiva a continuar llenando el mapa.</p>
+        <div class="receta-tip">💡 Tip: hacé que el destino final del camino sea algo especial — una salida, un libro que él eligió, lo que lo motive más.</div>
+      </div>
+
+      <div class="section-title">Recetas del capítulo</div>
+
+      <div class="receta-box">
+        <h3>⭐ Celebración de los Éxitos</h3>
+        <div class="receta-meta">⏱ 15 min · Materiales: cartulina o pizarrón, stickers, música</div>
+        <p><strong>¿Para qué sirve?</strong> Reforzar el aprendizaje positivo a través de un ritual semanal de celebración.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Elegí un día fijo de la semana para celebrar.</li>
+          <li><div class="step-num">2</div>Recopilá los logros de la semana — palabras aprendidas, libros terminados, hitos alcanzados.</li>
+          <li><div class="step-num">3</div>Completá el tablero de éxitos con stickers y anotaciones.</li>
+          <li><div class="step-num">4</div>Celebración: música, baile, lo que él elija.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Más motivación y amor por la lectura — el aprendizaje asociado a emociones positivas.</p>
+        <div class="receta-tip">💡 Tip: que él participe en la creación del tablero — eso aumenta su conexión emocional con el proceso.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>🌙 Ritual de Lectura Nocturna</h3>
+        <div class="receta-meta">⏱ 15-20 min · Materiales: 2 libros de su interés, rincón cómodo, reloj</div>
+        <p><strong>¿Para qué sirve?</strong> Crear un hábito saludable de lectura que fomente el aprendizaje sostenido.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Establecé un horario fijo — antes de dormir es ideal.</li>
+          <li><div class="step-num">2</div>Preparà el rincón con confort: cojines, luz suave, sin pantallas.</li>
+          <li><div class="step-num">3</div>Leé 10-15 minutos al principio, aumentando gradualmente.</li>
+          <li><div class="step-num">4</div>Al terminar, discutí brevemente el contenido — que sea una conversación, no un interrogatorio.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Un hábito diario de lectura que fomenta la comprensión y el disfrute.</p>
+        <div class="receta-tip">💡 Tip: cambiá los libros regularmente para mantener el interés y la curiosidad vivos.</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">5 errores a evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span><strong>No celebrar los logros pequeños:</strong> enfocarse solo en metas grandes hace que el chico sienta que nunca llega. Cada pequeño paso merece su reconocimiento.</li>
+        <li><span class="num">2</span><strong>Ser demasiado rígida con la rutina:</strong> la flexibilidad es clave. Si un día no pueden leer, no pasa nada — lo importante es la consistencia a largo plazo.</li>
+        <li><span class="num">3</span><strong>No ajustar las estrategias:</strong> lo que funciona para un chico puede no funcionar para otro. Observá, escuchá y ajustá según lo que veas que lo engancha.</li>
+        <li><span class="num">4</span><strong>Ignorar sus intereses:</strong> forzarlo a leer libros que no le gustan apaga la motivación. Sus preferencias son la brújula — seguílas.</li>
+        <li><span class="num">5</span><strong>Perder de vista el objetivo final:</strong> enseñar a leer es importante, pero el objetivo real es que ame leer. La diversión y el placer son parte del aprendizaje, no extras.</li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Terminaste el Cap 9! Solo falta el último — el Cap 10, donde vemos cómo transformar la lectura en un viaje familiar que une y enriquece a toda la familia.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume las estrategias de celebración y momentum del capítulo. Guardala como recordatorio de que cada avance merece ser festejado.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/infografia-cap9.png" alt="Infografía Capítulo 9 — Celebrar el Progreso" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Capítulo 9 — Celebrando el Progreso y Manteniendo el Momentum</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Ya casi llegás! En el Cap 10, el último, vemos cómo hacer de la lectura un viaje familiar que une y transforma a toda la familia.</p>
+        </div>
+      </div>
+      <a href="cap10.html" class="next-btn" style="margin-top:24px;">Capítulo 10: Viaje familiar →</a>
+    </div>
+
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('cap9');</script>
+</body>
+</html>

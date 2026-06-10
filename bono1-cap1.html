@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Bono 1 Cap 1: Juegos de Palabras</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  :root { --naranja: #16A34A; --naranja-claro: #4ADE80; --amarillo: #DCFCE7; }
+  .chapter-header { background: linear-gradient(135deg, #16A34A 0%, #4ADE80 50%, #86EFAC 100%); }
+  .next-btn { background: linear-gradient(135deg, #16A34A, #4ADE80); }
+  .next-btn:hover { box-shadow: 0 10px 28px rgba(22,163,74,0.45); }
+  .tab.active { background: #16A34A; border-color: #16A34A; box-shadow: 0 4px 12px rgba(22,163,74,0.3); }
+  .tab:hover:not(.active) { border-color: #16A34A; color: #16A34A; }
+  .intro-card { border-left-color: #16A34A; }
+  .strategy-num { background: #14532D; color: #4ADE80; }
+  .step-dot.active { background: #16A34A; box-shadow: 0 3px 10px rgba(22,163,74,0.4); }
+  .step-dot.done { background: #14532D; }
+  .progress-fill { background: linear-gradient(90deg, #14532D, #16A34A); }
+  .tuki-tip { border-color: rgba(22,163,74,0.25); }
+  .tuki-tip .tt-text h4 { color: #4ADE80; }
+  .receta-box { border-color: #86EFAC; }
+  .check-item.checked .check-box { background: #16A34A; border-color: #16A34A; }
+  .mini-card { border-top-color: #16A34A; }
+  .resumen-box ul li::before { color: #16A34A; }
+</style>
+</head>
+<body>
+<div id="sidebar-container"></div>
+
+<main class="main">
+  <div class="chapter-header">
+    <div class="bubble b1"></div><div class="bubble b2"></div>
+    <div class="bubble b3"></div><div class="bubble b4"></div>
+    <div class="chapter-badge">🎮 Bono 1 · Capítulo 1 de 4</div>
+    <h1 class="chapter-title">Juegos de Palabras: Divertidos y Efectivos</h1>
+    <p class="chapter-quote">"Aprender es un juego, así que jugá, explorá y divertite mientras lo hacés."<span>— Anónimo</span></p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>¿Te sentaste alguna vez a intentar enseñarle a tu hijo a leer y te sentiste más perdida que un pez en un árbol? No estás sola. La buena noticia es que aprender a leer no tiene que ser una tarea aburrida y tediosa — puede ser una aventura llena de risas y diversión.</p>
+        <p>Los juegos de palabras son una de las herramientas más poderosas que tenés a disposición. Combinan repetición con diversión, reducen la ansiedad frente al aprendizaje y crean recuerdos positivos asociados a la lectura.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">🃏</div>
+          <h4>Juegos de memoria</h4>
+          <p>El clásico "Memory" con palabras e imágenes. Refuerza la conexión visual y la retención de vocabulario.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">✏️</div>
+          <h4>Crucigramas</h4>
+          <p>Adaptados al nivel del chico. Refuerzan vocabulario, ortografía y pensamiento crítico al mismo tiempo.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🔍</div>
+          <h4>Caza de palabras</h4>
+          <p>Esconder tarjetas por la casa y salir a buscarlas. Movimiento + lectura = aprendizaje kinestésico.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">🧠</div>
+        <div>
+          <h4>Por qué funcionan los juegos</h4>
+          <p>Los juegos permiten explorar conceptos sin la presión del entorno académico formal. Al jugar, los chicos se relajan y se sienten libres de experimentar — y eso hace que su estilo de aprendizaje aparezca de forma natural y clara.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar</h4>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Entiendo que el juego es una herramienta de aprendizaje real, no un recreo</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a personalizar los juegos con temas que le gusten a mi hijo</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a probar al menos uno de estos juegos esta semana</span></div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Aprender jugando es efectivo. Personalizá las actividades según los intereses de tu hijo y cada juego va a estimular la lectura, la conversación y su desarrollo integral.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- TAB CONTEXTO -->
+    <div class="section-panel" id="tab-contexto">
+      <div class="intro-card">
+        <p>Para sacar el máximo provecho de los juegos de palabras, primero entendamos cómo funcionan en el cerebro — y por qué son tan efectivos para distintos estilos de aprendizaje.</p>
+      </div>
+
+      <div class="section-title">Cómo aprenden los chicos jugando</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🧠</div>
+          <div class="strategy-info"><h3>El cerebro en modo juego</h3><p>Dopamina, memoria y aprendizaje</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Cuando el chico juega, su cerebro libera dopamina — eso mejora el estado de ánimo, facilita la memoria y hace que quiera repetir la experiencia. El juego no es el opuesto del aprendizaje — es el vehículo más efectivo para él.</p>
+          <p>Los juegos también crean un ambiente seguro donde equivocarse no da miedo. Eso reduce la ansiedad frente a la lectura y permite que el chico experimente sin presión.</p>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🎯</div>
+            <div><h4>La clave</h4><p>Conectá el juego con los intereses de tu hijo. Si le gustan los dinosaurios, todos los juegos son con dinosaurios. Si le gusta el fútbol, con palabras de fútbol. Esa personalización multiplica el engagement.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">👁️</div>
+          <div class="strategy-info"><h3>Juegos para cada estilo de aprendizaje</h3><p>Visual, auditivo, kinestésico</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>No todos los juegos funcionan igual para todos los chicos. La clave es elegir el formato que mejor encaje con el estilo de aprendizaje que identificaste en el Cap 1.</p>
+          <div class="tres-col" style="margin-top:14px;">
+            <div class="mini-card">
+              <div class="mini-icon">👁️</div>
+              <h4>Visual</h4>
+              <p>Memory con imágenes y palabras, crucigramas coloridos, mapas de palabras con dibujos.</p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-icon">👂</div>
+              <h4>Auditivo</h4>
+              <p>Juegos de rimas, adivinanzas, leer las tarjetas en voz alta con distintas voces.</p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-icon">🤸</div>
+              <h4>Kinestésico</h4>
+              <p>Caza de palabras por la casa, escritura en el aire, armar palabras con letras físicas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>El mejor juego es el que a él le divierte. Probá varios y observá cuál lo engancha más — ese es el que tenés que usar más seguido.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- TAB ESTRATEGIAS -->
+    <div class="section-panel" id="tab-estrategias">
+      <div class="intro-card">
+        <p>Tres juegos concretos con instrucciones paso a paso — Memory de palabras, Crucigramas para principiantes y Caza de palabras en casa.</p>
+      </div>
+
+      <div class="section-title">3 juegos probados</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info"><h3>Memory de palabras</h3><p>Memoria visual · Vocabulario · Para todas las edades</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>El clásico Memory adaptado para aprender palabras. Combina repetición con diversión — y cada vez que el chico encuentra un par, refuerza la conexión entre la palabra escrita y su significado.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Preparà las tarjetas:</strong> cortá cartulina en cuadrados manejables. En la mitad escribí palabras simples (sol, perro, gato). En la otra mitad, dibujá o pegá imágenes de esos objetos.</li>
+            <li><div class="step-num">2</div><strong>Creá el ambiente:</strong> lugar tranquilo, sin distracciones. Música suave de fondo si ayuda.</li>
+            <li><div class="step-num">3</div><strong>Explicà las reglas:</strong> todas las tarjetas boca abajo. Se turnan dando vuelta dos. Si hacen pareja, las guardan. Si no, vuelven boca abajo.</li>
+            <li><div class="step-num">4</div><strong>Reforzá el aprendizaje:</strong> cada vez que encuentre un par, tiene que leer la palabra en voz alta antes de guardarlo.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">✨</div>
+            <div><h4>Variaciones para avanzar</h4><p>Con chicos más avanzados: usá sinónimos o antónimos en lugar de imagen + palabra. O frases cortas en lugar de palabras aisladas.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info"><h3>Crucigramas para principiantes</h3><p>Vocabulario + escritura + pensamiento crítico</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Los crucigramas refuerzan vocabulario, ortografía y pensamiento crítico al mismo tiempo. Adaptados al nivel del chico, se convierten en un desafío divertido y alcanzable.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Elegí un tema:</strong> animales, colores, su programa favorito, superhéroes. Que sea algo que le entusiasme.</li>
+            <li><div class="step-num">2</div><strong>Elegí las palabras:</strong> 5-8 palabras de 3 a 5 letras apropiadas para su nivel.</li>
+            <li><div class="step-num">3</div><strong>Diseñá el crucigrama:</strong> podés hacerlo a mano o con herramientas online gratuitas.</li>
+            <li><div class="step-num">4</div><strong>Escribí las pistas:</strong> simples y creativas — "Es un animal que dice miau" para "gato".</li>
+            <li><div class="step-num">5</div><strong>Resolvélo juntos:</strong> leé las pistas en voz alta y que él escriba las respuestas.</li>
+            <li><div class="step-num">6</div><strong>Hacélo hábito:</strong> un crucigrama por semana con tema diferente — la variedad mantiene el interés.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info"><h3>Caza de palabras en casa</h3><p>Movimiento + lectura · Ideal para kinestésicos</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Esconder tarjetas por la casa y salir a buscarlas combina movimiento con lectura — perfecto para los chicos que necesitan moverse para aprender.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Preparà las tarjetas:</strong> escribí palabras en cartulina — nombres de objetos de la casa, palabras que esté aprendiendo. Podés agregar un dibujo al reverso.</li>
+            <li><div class="step-num">2</div><strong>Distribuí las tarjetas:</strong> escondélas en distintos lugares — cocina, baño, cuarto. No muy difícil, pero con algo de desafío.</li>
+            <li><div class="step-num">3</div><strong>¡A cazar!</strong> Cuando encuentre una tarjeta, la lee en voz alta y cuenta algo relacionado con esa palabra.</li>
+            <li><div class="step-num">4</div><strong>Recompensas:</strong> aplausos, puntos, o un pequeño premio por cada 5 palabras encontradas.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🎯</div>
+            <div><h4>Plan de acción rápido</h4><p>Elegí 10 palabras de uso diario. Preparà las tarjetas, escondélas y ponés 15 minutos en el cronómetro. Al terminar, revisan juntas cuántas palabras leyó correctamente.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Las cacerías de palabras pueden personalizarse según los intereses de tu hijo. Eso aumenta la motivación y hace que cada juego sea una aventura única.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- TAB ACTIVIDADES -->
+    <div class="section-panel" id="tab-actividades">
+      <div class="intro-card">
+        <p>Dos ejercicios concretos para aplicar esta semana. Con tiempo estimado, materiales y resultado esperado.</p>
+      </div>
+
+      <div class="section-title">Actividades para arrancar ya</div>
+
+      <div class="receta-box">
+        <h3>🃏 Memory de Palabras Personalizado</h3>
+        <div class="receta-meta">⏱ 20 min para armar + 15 min de juego · Materiales: cartulina, marcadores, tijeras</div>
+        <p><strong>¿Para qué sirve?</strong> Reforzar vocabulario y la conexión entre palabra escrita e imagen de forma divertida.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Elegí 8-10 palabras que tu hijo esté aprendiendo o que quieras introducir.</li>
+          <li><div class="step-num">2</div>Hacé dos tarjetas por palabra: una con la palabra escrita, otra con un dibujo o imagen.</li>
+          <li><div class="step-num">3</div>Jugá al Memory clásico — cada par encontrado se lee en voz alta.</li>
+          <li><div class="step-num">4</div>Guardá las tarjetas para seguir jugando — cambiá las palabras cada semana.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Mayor vocabulario y reconocimiento de palabras en un contexto divertido y sin presión.</p>
+        <div class="receta-tip">💡 Tip: si le gustan los dinosaurios, todas las palabras son de dinosaurios. La personalización es la clave del engagement.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>🔍 Caza de Palabras Cronometrada</h3>
+        <div class="receta-meta">⏱ 15 min · Materiales: tarjetas de palabras, cronómetro</div>
+        <p><strong>¿Para qué sirve?</strong> Practicar el reconocimiento de palabras con movimiento — ideal para chicos kinestésicos.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Escribí 10 palabras en tarjetas — mezcla conocidas y nuevas.</li>
+          <li><div class="step-num">2</div>Escondélas por la casa.</li>
+          <li><div class="step-num">3</div>15 minutos en el cronómetro — ¿cuántas puede encontrar?</li>
+          <li><div class="step-num">4</div>Al terminar, revisan juntas: lee cada palabra y hace una oración con las que son nuevas.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Practica la lectura en movimiento y refuerza vocabulario nuevo en contexto divertido.</p>
+        <div class="receta-tip">💡 Tip: después de la caza, pedile que dibuje lo que más le gustó o que escriba una frase con las palabras encontradas.</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">5 errores a evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span><strong>No personalizar los juegos:</strong> un juego genérico aburre rápido. Adaptarlo a sus intereses lo hace irresistible.</li>
+        <li><span class="num">2</span><strong>Sesiones demasiado largas:</strong> 15-20 minutos es suficiente. Mejor terminar cuando todavía quiere más que cuando ya está cansado.</li>
+        <li><span class="num">3</span><strong>No variar los juegos:</strong> la repetición del mismo juego cansa. Rotá entre Memory, caza de palabras, crucigramas para mantener la novedad.</li>
+        <li><span class="num">4</span><strong>Palabras demasiado difíciles:</strong> empezá con palabras que ya conoce y agregá nuevas de a poco. El éxito construye confianza.</li>
+        <li><span class="num">5</span><strong>Olvidar celebrar:</strong> cada palabra encontrada, cada par del Memory, cada crucigrama completado merece un reconocimiento. Eso alimenta las ganas de seguir.</li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>En el próximo capítulo vemos el poder de la narrativa interactiva — cómo crear historias juntos para que la lectura sea una aventura que él vive desde adentro.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume los juegos y estrategias del capítulo. Guardala para tenerla a mano cuando necesités ideas de juegos rápidos.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/bono1/cap1.png" alt="Infografía Bono 1 Cap 1 — Juegos de Palabras" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Bono 1 Cap 1 — Juegos de Palabras: Divertidos y Efectivos</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Excelente! Ya tenés los juegos de palabras listos para usar. En el Cap 2 del bono vemos cómo la narrativa interactiva lleva la lectura a otro nivel.</p>
+        </div>
+      </div>
+      <a href="bono1-cap2.html" class="next-btn" style="margin-top:24px;">Bono 1 Cap 2: Narrativa Interactiva →</a>
+    </div>
+
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('bono1-cap1');</script>
+</body>
+</html>

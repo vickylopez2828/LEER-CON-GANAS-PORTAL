@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Bono 1 Cap 2: Narrativa Interactiva</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  :root { --naranja: #16A34A; --naranja-claro: #4ADE80; --amarillo: #DCFCE7; }
+  .chapter-header { background: linear-gradient(135deg, #16A34A 0%, #4ADE80 50%, #86EFAC 100%); }
+  .next-btn { background: linear-gradient(135deg, #16A34A, #4ADE80); }
+  .next-btn:hover { box-shadow: 0 10px 28px rgba(22,163,74,0.45); }
+  .tab.active { background: #16A34A; border-color: #16A34A; box-shadow: 0 4px 12px rgba(22,163,74,0.3); }
+  .tab:hover:not(.active) { border-color: #16A34A; color: #16A34A; }
+  .intro-card { border-left-color: #16A34A; }
+  .strategy-num { background: #14532D; color: #4ADE80; }
+  .step-dot.active { background: #16A34A; box-shadow: 0 3px 10px rgba(22,163,74,0.4); }
+  .step-dot.done { background: #14532D; }
+  .progress-fill { background: linear-gradient(90deg, #14532D, #16A34A); }
+  .tuki-tip { border-color: rgba(22,163,74,0.25); }
+  .tuki-tip .tt-text h4 { color: #4ADE80; }
+  .receta-box { border-color: #86EFAC; }
+  .check-item.checked .check-box { background: #16A34A; border-color: #16A34A; }
+  .mini-card { border-top-color: #16A34A; }
+  .resumen-box ul li::before { color: #16A34A; }
+</style>
+</head>
+<body>
+<div id="sidebar-container"></div>
+
+<main class="main">
+  <div class="chapter-header">
+    <div class="bubble b1"></div><div class="bubble b2"></div>
+    <div class="bubble b3"></div><div class="bubble b4"></div>
+    <div class="chapter-badge">🎮 Bono 1 · Capítulo 2 de 4</div>
+    <h1 class="chapter-title">El Poder de la Narrativa Interactiva</h1>
+    <p class="chapter-quote">"La lectura es a la mente lo que el ejercicio es al cuerpo."<span>— Anónimo</span></p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>¿Alguna vez te diste cuenta de cómo una buena historia puede transportarte a otro mundo? La narrativa interactiva no solo capta la atención del chico — se convierte en una herramienta poderosa para mejorar la comprensión lectora.</p>
+        <p>Al involucrar a los chicos en historias donde pueden tomar decisiones, crear personajes y vivir aventuras, les estás enseñando a leer de una manera que se siente más como un juego que como una tarea. Y esa es exactamente la diferencia que estamos buscando.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">✍️</div>
+          <h4>Crear tu propia historia</h4>
+          <p>Construir un relato juntos — con personajes, problemas y soluciones. Desarrolla la narrativa de forma natural.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">📚</div>
+          <h4>Libros con decisiones</h4>
+          <p>Historias donde el lector elige el rumbo. Fomentan la anticipación, el pensamiento crítico y las ganas de releer.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🎭</div>
+          <h4>Teatro en casa</h4>
+          <p>Actuar los personajes de un cuento. Lo que se vive desde adentro se recuerda para siempre.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div>
+          <h4>Por qué funciona la narrativa interactiva</h4>
+          <p>Cuando el chico puede tomar decisiones en una historia, se involucra emocionalmente con ella. Ese involucramiento emocional es exactamente lo que transforma la lectura de una tarea en una experiencia que quiere repetir.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar</h4>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Entiendo que involucrarlo en la historia aumenta la comprensión</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a crear una historia corta con mi hijo esta semana</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Estoy dispuesta a hacer el ridículo actuando personajes</span></div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>La narrativa interactiva capta la atención, crea historias para la imaginación y el pensamiento crítico. Y el teatro en casa es vivencial y divertido — ¡imposible de olvidar!</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- TAB CONTEXTO -->
+    <div class="section-panel" id="tab-contexto">
+      <div class="intro-card">
+        <p>Para entender por qué la narrativa interactiva funciona tan bien, veamos qué pasa en el cerebro cuando el chico es parte activa de la historia — no solo espectador.</p>
+      </div>
+
+      <div class="section-title">Por qué la narrativa interactiva funciona</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🎭</div>
+          <div class="strategy-info"><h3>El chico como protagonista</h3><p>De espectador a participante activo</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Cuando el chico es solo lector, puede desconectarse. Cuando es parte de la historia — toma decisiones, inventa personajes, actúa escenas — su nivel de atención y comprensión sube dramáticamente.</p>
+          <p>Esto se debe a que el involucramiento emocional activa más áreas del cerebro que la lectura pasiva. La historia se vive, no solo se lee — y lo que se vive se recuerda.</p>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🧠</div>
+            <div><h4>La clave</h4><p>No se trata de interrumpir la historia — se trata de hacer que él sea parte de ella. Preguntas como "¿qué harías vos en su lugar?" o "¿cómo creés que termina?" transforman la lectura pasiva en activa.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">📖</div>
+          <div class="strategy-info"><h3>Libros con decisiones — por qué enganchan tanto</h3><p>Anticipación, agencia y relectura</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Los libros del tipo "Elige tu propia aventura" son irresistibles para los chicos porque les dan algo que muy pocos libros dan: control. Ellos deciden qué pasa. Y eso los hace querer leer más — y releer para ver qué hubiera pasado si elegían diferente.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Antes de empezar, hacé preguntas de anticipación: "¿qué creés que va a pasar si elige este camino?"</li>
+            <li><div class="step-num">2</div>Anotá las decisiones que van tomando y sus consecuencias — eso crea un registro visual de la lectura.</li>
+            <li><div class="step-num">3</div>Al terminar, relean eligiendo caminos diferentes — ¿cómo cambia la historia?</li>
+            <li><div class="step-num">4</div>Involucrá a otros miembros de la familia para debatir qué decisión tomar en cada encrucijada.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>No se trata de cuentos aburridos que se leen de una vez y se olvidan. Se trata de historias que él vive, decide y recuerda.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- TAB ESTRATEGIAS -->
+    <div class="section-panel" id="tab-estrategias">
+      <div class="intro-card">
+        <p>Tres estrategias concretas de narrativa interactiva — crear historias juntos, usar libros con decisiones y hacer teatro en casa.</p>
+      </div>
+
+      <div class="section-title">3 estrategias de narrativa interactiva</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info"><h3>Crear tu propia historia</h3><p>Co-autoría · Creatividad · Estructura narrativa</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Crear una historia juntos desarrolla la estructura narrativa de forma natural — el chico aprende que toda historia tiene inicio, nudo y desenlace sin que nadie se lo explique.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Elegí el tema o personaje:</strong> preguntale qué le gustaría que fuera la historia — un dragón, un detective, un astronauta. Dale rienda suelta.</li>
+            <li><div class="step-num">2</div><strong>Hacé un mapa simple:</strong> dibujen juntos el esquema — ¿qué problema enfrenta el personaje? ¿cómo lo resuelve? Cuanto más visual, mejor.</li>
+            <li><div class="step-num">3</div><strong>Escriban juntos:</strong> un cuaderno, una pizarra, la app de notas del celular — lo que sea. Que él lea en voz alta lo que van escribiendo.</li>
+            <li><div class="step-num">4</div><strong>Ilustraciones:</strong> que dibuje escenas o personajes. Eso lo involucra más y activa la visualización.</li>
+            <li><div class="step-num">5</div><strong>Final alternativo:</strong> al terminar, preguntale cómo podría haber terminado diferente. Eso activa el pensamiento crítico sobre la narrativa.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">✨</div>
+            <div><h4>El objetivo</h4><p>No es crear una obra maestra — es disfrutar el proceso de contar historias. Guardá los cuentos que hagan juntos: con el tiempo arman su propia biblioteca de historias inventadas.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info"><h3>Libros con decisiones</h3><p>Elige tu propia aventura · Agencia y relectura</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Los libros interactivos donde el lector toma decisiones son perfectos para chicos que se aburren con la lectura lineal. La posibilidad de elegir los hace sentir protagonistas.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí juntos el libro — que él decida cuál quiere explorar primero.</li>
+            <li><div class="step-num">2</div>Antes de leer, preguntá: "¿qué creés que va a pasar si elige el camino A?" — activá la anticipación.</li>
+            <li><div class="step-num">3</div>Llevá un registro: tabla simple con las decisiones tomadas y los resultados. Eso crea un visual de la lectura.</li>
+            <li><div class="step-num">4</div>Relean eligiendo caminos diferentes — comparar finales distintos es fascinante para los chicos.</li>
+            <li><div class="step-num">5</div>Involucrá a otros: hermanos, papá, abuelos — los debates sobre qué decisión tomar son parte del aprendizaje.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info"><h3>Teatro en casa</h3><p>Actuar los personajes · Lo que se vive se recuerda</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Actuar las escenas de un cuento es una de las experiencias más ricas que podés ofrecerle. Lo que el chico vive desde adentro de un personaje se queda grabado de una forma que la lectura pasiva no logra.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Elegí el cuento:</strong> un clásico con personajes claros funciona muy bien — "Caperucita", "Los tres cerditos", cualquier historia que ya conozca.</li>
+            <li><div class="step-num">2</div><strong>Asigná roles:</strong> que él elija quién quiere ser. Vos tomás otro personaje. Los peluches pueden ser los demás.</li>
+            <li><div class="step-num">3</div><strong>Creá el escenario:</strong> mantas, cojines, sillas — improvisar el escenario es parte de la diversión.</li>
+            <li><div class="step-num">4</div><strong>Actuá con expresión:</strong> diferentes voces, movimientos, emociones. Que sea teatral y divertido.</li>
+            <li><div class="step-num">5</div><strong>Reflexioná al final:</strong> "¿cómo te sentiste siendo ese personaje? ¿qué hubieras hecho diferente?"</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🎭</div>
+            <div><h4>Ejemplo concreto</h4><p>Si él es Caperucita y vos el lobo — actuar la historia les ayuda a recordar palabras, secuencia de eventos y emociones. Y crea un recuerdo ridículo y divertido asociado a ese cuento.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>No se trata de la perfección — se trata de la experiencia. Una historia mal actuada pero disfrutada vale más que una perfecta y aburrida.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- TAB ACTIVIDADES -->
+    <div class="section-panel" id="tab-actividades">
+      <div class="intro-card">
+        <p>Dos actividades concretas para aplicar esta semana — una representación teatral y una revisión de la obra.</p>
+      </div>
+
+      <div class="section-title">Actividades para arrancar ya</div>
+
+      <div class="receta-box">
+        <h3>🎭 Representación Teatral en Casa</h3>
+        <div class="receta-meta">⏱ 30-40 min · Materiales: un cuento conocido, elementos para improvisar disfraces</div>
+        <p><strong>¿Para qué sirve?</strong> Conectar emocionalmente con la historia y reforzar la comprensión a través de la experiencia vivencial.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Elegí un cuento que él ya conozca — la familiaridad con la historia libera energía para la actuación.</li>
+          <li><div class="step-num">2</div>Que él haga una lista de personajes y elija el suyo.</li>
+          <li><div class="step-num">3</div>Improvisá el escenario con lo que tengan — no necesitás nada especial.</li>
+          <li><div class="step-num">4</div>Actuá la historia completa con expresión y entusiasmo — que sea ridícula y divertida.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Comprensión profunda de la historia, vocabulario reforzado y un recuerdo divertido asociado a la lectura.</p>
+        <div class="receta-tip">💡 Tip: grabá un video corto de la actuación. Verlo después es una experiencia muy motivadora para el chico.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>✍️ Historia Colaborativa Ilustrada</h3>
+        <div class="receta-meta">⏱ 30 min · Materiales: cuaderno, lápices de colores</div>
+        <p><strong>¿Para qué sirve?</strong> Desarrollar la estructura narrativa y el amor por crear historias propias.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Elegí juntos un tema — animal, superhéroe, aventura espacial, lo que le guste.</li>
+          <li><div class="step-num">2</div>Empezás vos con la primera oración. Él agrega la siguiente. Se turnan.</li>
+          <li><div class="step-num">3</div>Al terminar la historia, él ilustra las escenas que más le gustaron.</li>
+          <li><div class="step-num">4</div>Leen el cuento completo juntos en voz alta — con voces y expresión.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Una historia propia que puede releer y compartir — y que refuerza comprensión, escritura y creatividad al mismo tiempo.</p>
+        <div class="receta-tip">💡 Tip: guardá todos los cuentos que hagan juntos en una carpeta. Con el tiempo, arman su propia "biblioteca de historias inventadas".</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">5 errores a evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span><strong>Imponer el tema:</strong> si el tema no le interesa, no va a involucrarse. Que él proponga o elija — eso es lo que activa la motivación.</li>
+        <li><span class="num">2</span><strong>Corregir demasiado:</strong> en el teatro y en la creación de historias, lo importante es la experiencia. Las correcciones interrumpen el flujo creativo.</li>
+        <li><span class="num">3</span><strong>No registrar las historias:</strong> guardar lo que crean juntos es muy motivador. Ver su propio libro o releer su actuación en video lo impulsa a seguir.</li>
+        <li><span class="num">4</span><strong>Exigir perfección:</strong> una historia "mala" creada con entusiasmo vale más que una "perfecta" hecha con desgano.</li>
+        <li><span class="num">5</span><strong>No reflexionar al final:</strong> la conversación post-actividad es donde se consolida el aprendizaje. No te saltees ese momento.</li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>En el próximo capítulo vemos cómo la tecnología puede ser una gran aliada — apps que enganchan y estrategias de gamificación para hacer la lectura irresistible.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume las estrategias de narrativa interactiva. Guardala para tenerla a mano cuando necesités ideas creativas.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/bono1/cap2.png" alt="Infografía Bono 1 Cap 2 — Narrativa Interactiva" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Bono 1 Cap 2 — El Poder de la Narrativa Interactiva</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Muy bien! En el Cap 3 del bono vemos cómo usar la tecnología a favor de la lectura — apps que enganchan y gamificación que hace que pida más.</p>
+        </div>
+      </div>
+      <a href="bono1-cap3.html" class="next-btn" style="margin-top:24px;">Bono 1 Cap 3: Tecnología y Lectura →</a>
+    </div>
+
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('bono1-cap2');</script>
+</body>
+</html>

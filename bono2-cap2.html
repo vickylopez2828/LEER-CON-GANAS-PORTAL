@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Bono 2 Cap 2: Lectura Empática</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  :root { --naranja: #7C3AED; --naranja-claro: #A78BFA; --amarillo: #EDE9FE; }
+  .chapter-header { background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 50%, #C4B5FD 100%); }
+  .next-btn { background: linear-gradient(135deg, #7C3AED, #A78BFA); }
+  .next-btn:hover { box-shadow: 0 10px 28px rgba(124,58,237,0.45); }
+</style>
+</head>
+<body>
+
+<button class="hamburger" id="hamburger">☰</button>
+<div class="overlay" id="overlay"></div>
+<div id="sidebar-container"></div>
+
+<main class="main">
+
+  <div class="chapter-header">
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+    <div class="bubble b4"></div>
+    <div class="chapter-badge">❤️ Bono 2 · Capítulo 2 de 4</div>
+    <h1 class="chapter-title">Lectura Empática: Fomentando la Empatía a Través de los Libros</h1>
+    <p class="chapter-quote">
+      "La empatía no solo se enseña, se vive."
+      <span>— Anónimo</span>
+    </p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki"
+      onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>Cuando tu hijo se adentra en un libro, no solo está aprendiendo a leer — está explorando experiencias ajenas y desarrollando algo que lo va a acompañar toda la vida: la capacidad de entender cómo se siente otra persona.</p>
+        <p>Fomentar la empatía a través de la lectura es uno de los regalos más grandes que podés darle. Un chico que aprende a ponerse en los zapatos de los personajes aprende a ponerse en los zapatos de las personas reales que lo rodean.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">👟</div>
+          <h4>Ponerse en los zapatos</h4>
+          <p>Ejercicios para que el chico imagine cómo se siente el personaje — y qué haría él en su lugar.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🤔</div>
+          <h4>Decisiones de personajes</h4>
+          <p>Analizar por qué los personajes hacen lo que hacen — y qué consecuencias tienen esas decisiones.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🌉</div>
+          <h4>Conexión con la vida real</h4>
+          <p>Relacionar las experiencias de los personajes con situaciones que el chico vive — eso es lo que consolida la empatía.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div>
+          <h4>La empatía como superpoder</h4>
+          <p>Un chico empático no solo comprende mejor los libros — comprende mejor a las personas. Esa habilidad lo va a acompañar en la escuela, en las amistades y en toda su vida social.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar</h4>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">✓</div>
+          <span>Entiendo que la lectura puede desarrollar empatía real</span>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">✓</div>
+          <span>Voy a elegir libros con personajes que enfrenten desafíos reales</span>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">✓</div>
+          <span>Voy a hacer preguntas que conecten la historia con la vida de mi hijo</span>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>La lectura empática no se trata solo de entender libros — se trata de comprender la vida misma. Cada historia es una oportunidad de ensayar la empatía en un espacio seguro.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- TAB CONTEXTO -->
+    <div class="section-panel" id="tab-contexto">
+      <div class="intro-card">
+        <p>Para entender cómo funciona la lectura empática, hay que entender qué pasa cuando un chico se identifica con un personaje — y por qué eso tiene un impacto que va mucho más allá de la comprensión lectora.</p>
+      </div>
+
+      <div class="section-title">Por qué la empatía literaria funciona</div>
+
+      <div class="dos-col">
+        <div class="mini-card">
+          <div class="mini-icon">🪞</div>
+          <h4>Identificación con el personaje</h4>
+          <p>Cuando el chico se ve reflejado en un personaje, baja la guardia y se abre emocionalmente. Esa apertura es lo que hace posible el aprendizaje empático.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🧪</div>
+          <h4>Espacio seguro para ensayar</h4>
+          <p>Los libros permiten "ensayar" situaciones difíciles en un entorno seguro. El chico puede explorar cómo reaccionar ante el miedo, la pérdida o el conflicto sin consecuencias reales.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🌍</div>
+          <h4>Diversidad de perspectivas</h4>
+          <p>Los libros con personajes de diferentes contextos amplían el mapa mental del chico sobre cómo es el mundo — y cómo se sienten las personas que son distintas a él.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🔗</div>
+          <h4>Transferencia a la vida real</h4>
+          <p>La empatía entrenada en los libros se transfiere a la vida cotidiana. Los chicos que leen mucho suelen ser más capaces de entender y validar los sentimientos de otros.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">📚</div>
+        <div>
+          <h4>Qué libros elegir para desarrollar empatía</h4>
+          <p>Buscá libros con personajes que enfrenten desafíos similares a los que vive tu hijo — miedo, soledad, conflictos con amigos. También libros con personajes de realidades distintas a la suya — eso amplía la empatía hacia lo diferente.</p>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>No hace falta un libro "serio" para desarrollar empatía. Un cuento simple sobre un elefante que se siente solo puede generar una conversación más profunda que muchos libros "importantes".</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- TAB ESTRATEGIAS -->
+    <div class="section-panel" id="tab-estrategias">
+      <div class="intro-card">
+        <p>Tres estrategias concretas para desarrollar la empatía a través de la lectura — ejercicios para ponerse en los zapatos del personaje, análisis de decisiones y conexión con la vida real.</p>
+      </div>
+
+      <div class="section-title">Estrategias de lectura empática</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info">
+            <h3>Ejercicios de empatía con personajes</h3>
+            <p>Ponerse en los zapatos · Expresión emocional · Cualquier cuento</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Tres ejercicios simples que se pueden hacer con cualquier libro y que activan la empatía de forma progresiva.</p>
+
+          <p><strong>Ejercicio 1 — ¿Qué harías vos?</strong></p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Después de un fragmento donde el personaje siente algo fuerte, preguntá: "¿Qué harías vos si fueras ese personaje? ¿Cómo te sentirías?"</li>
+            <li><div class="step-num">2</div>Anotá sus respuestas. Al final del libro, comparen cómo cambió su perspectiva sobre el personaje.</li>
+          </ul>
+
+          <p style="margin-top:14px;"><strong>Ejercicio 2 — Dibujá las emociones</strong></p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Pedile que dibuje lo que siente el personaje en distintos momentos de la historia usando colores.</li>
+            <li><div class="step-num">2</div>Al terminar, preguntá por qué eligió esos colores — esa conversación es muy reveladora.</li>
+          </ul>
+
+          <p style="margin-top:14px;"><strong>Ejercicio 3 — Role-playing</strong></p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí una escena difícil del libro y actuenla juntos — él es el personaje, vos el resto.</li>
+            <li><div class="step-num">2</div>Preguntale cómo se sintió siendo ese personaje y qué haría diferente.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info">
+            <h3>Discusión sobre decisiones de personajes</h3>
+            <p>Pensamiento crítico · Alternativas · Post-lectura</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Analizar por qué los personajes hacen lo que hacen es una de las formas más poderosas de desarrollar empatía y pensamiento crítico al mismo tiempo.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Preguntas abiertas:</strong> "¿Por qué creés que el personaje tomó esa decisión? ¿Vos qué habrías hecho?" — dejá tiempo para pensar antes de responder.</li>
+            <li><div class="step-num">2</div><strong>Debate sobre alternativas:</strong> "Si el personaje hubiera hecho algo diferente, ¿cómo cambiaría la historia?" Esto activa el pensamiento sobre consecuencias.</li>
+            <li><div class="step-num">3</div><strong>Conexión con la vida real:</strong> "¿Alguna vez tuviste que tomar una decisión difícil parecida? ¿Cómo te sentiste?" Esto valida su experiencia y profundiza la empatía.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">✨</div>
+            <div>
+              <h4>Ejemplo concreto</h4>
+              <p>El elefante decide no decirle a nadie que está triste. Preguntás: "¿Por qué creés que no se lo contó a nadie? ¿Vos alguna vez guardaste algo triste para no preocupar a alguien?" Esa conversación vale más que diez páginas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info">
+            <h3>Crear conexiones emocionales con la lectura</h3>
+            <p>Selección de libros · Diario emocional · Representación</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Para que la empatía se desarrolle de verdad, el chico necesita libros con los que pueda identificarse — y un espacio para procesar lo que siente.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Elegí libros que resuenen:</strong> si está lidiando con el miedo a la oscuridad, buscá un cuento donde el protagonista enfrente ese miedo. La identificación es instantánea.</li>
+            <li><div class="step-num">2</div><strong>Pausas estratégicas:</strong> "¿Cómo crees que se siente ahora? ¿Qué harías vos?" — esas preguntas durante la lectura mantienen viva la conexión emocional.</li>
+            <li><div class="step-num">3</div><strong>Representación post-lectura:</strong> actuá escenas clave. Lo que el chico vive desde adentro de un personaje se queda grabado de una forma que la lectura pasiva no logra.</li>
+            <li><div class="step-num">4</div><strong>Diario emocional:</strong> un espacio donde pueda escribir o dibujar cómo se sintió con la historia. Con el tiempo, ese diario se convierte en un mapa de su desarrollo empático.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>La clave no es hacer todas las actividades — es elegir una y hacerla bien. Una conversación genuina después de la lectura vale más que tres actividades apresuradas.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- TAB ACTIVIDADES -->
+    <div class="section-panel" id="tab-actividades">
+      <div class="intro-card">
+        <p>Tres acciones concretas para esta semana — una para durante la lectura, una para después y una para construir el hábito.</p>
+      </div>
+
+      <div class="section-title">🎯 Plan de acción rápido</div>
+
+      <div class="receta-box">
+        <h3>Acción 1 — Libro que resuene</h3>
+        <div class="receta-meta">⏱ Hoy · Biblioteca, librería o lo que ya tengan en casa</div>
+        <p>Elegí un libro que trate un tema que tu hijo esté viviendo en este momento — miedo, amistad difícil, cambios en la familia. Leánlo juntos y hacé una lista de los personajes y sus emociones.</p>
+        <div class="receta-tip">💡 Tip: que él participe en la elección — eso ya dice mucho sobre lo que necesita procesar emocionalmente.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 2 — Representación de una escena clave</h3>
+        <div class="receta-meta">⏱ 20 minutos · Después de la lectura</div>
+        <p>Después de leer, elegí una escena donde el personaje enfrenta algo difícil. Actuenla juntos — él es el personaje, vos el contexto. Al terminar, preguntale cómo se sintió siendo ese personaje y qué haría diferente.</p>
+        <div class="receta-tip">💡 Tip: no busques una "actuación perfecta" — buscá que exprese la emoción. Cómo lo hace importa menos que el hecho de que lo intente.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 3 — Diario emocional semanal</h3>
+        <div class="receta-meta">⏱ 10 minutos por semana · Cuaderno especial</div>
+        <p>Establecé un momento fijo por semana para revisar juntos el diario de emociones. Que sea un momento tranquilo — sin apuro. Escuchá sin interrumpir y validá lo que expresa.</p>
+        <div class="receta-tip">💡 Tip: hacelo en el mismo lugar y horario cada semana — la rutina hace que el chico llegue ya predispuesto a abrirse.</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">⚠️ Los 5 errores que hay que evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span><span><strong>Corregir su perspectiva emocional.</strong> Si el chico dice que el personaje está "enojado" y vos creés que está "triste", no lo corrijas — explorá su versión. Puede ser tan válida como la tuya.</span></li>
+        <li><span class="num">2</span><span><strong>Elegir libros que no conectan.</strong> Un libro que no resuena no va a generar empatía. Si después de dos capítulos no hay conexión, cambien de libro — sin culpa.</span></li>
+        <li><span class="num">3</span><span><strong>Forzar la representación.</strong> Si el chico no quiere actuar, no insistas. Hay otras formas de procesar — el dibujo, la conversación, el diario.</span></li>
+        <li><span class="num">4</span><span><strong>No validar sus emociones.</strong> Si expresa algo inesperado sobre la historia, no lo descartés. Escuchá y preguntá más — esas respuestas son ventanas a su mundo interior.</span></li>
+        <li><span class="num">5</span><span><strong>Separar la lectura de la vida real.</strong> La empatía literaria solo se consolida cuando se conecta con la experiencia cotidiana. No olvides el puente entre el personaje y su propia vida.</span></li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Muy bien! En el Cap 3 vemos algo muy especial: cómo los cuentos pueden ayudar a sanar emociones difíciles que el chico no sabe cómo expresar de otra forma.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume las estrategias de lectura empática y los ejercicios para ponerse en los zapatos de los personajes.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/bono2/cap2.png" alt="Infografía Bono 2 Cap 2" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Bono 2 Cap 2 — Lectura Empática</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Terminaste el Cap 2! En el Cap 3 vemos cómo los cuentos pueden ser una herramienta terapéutica para ayudar a tu hijo a procesar emociones difíciles.</p>
+        </div>
+      </div>
+      <a href="bono2-cap3.html" class="next-btn" style="margin-top:24px; text-decoration:none;">
+        Bono 2 Cap 3: Cuentos para Sanar →
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('bono2-cap2');</script>
+</body>
+</html>

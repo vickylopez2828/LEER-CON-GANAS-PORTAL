@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Cap 4: Motivación y Confianza</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="sidebar-container"></div>
+
+<main class="main">
+  <div class="chapter-header">
+    <div class="bubble b1"></div><div class="bubble b2"></div>
+    <div class="bubble b3"></div><div class="bubble b4"></div>
+    <div class="chapter-badge">📖 Capítulo 4 de 10</div>
+    <h1 class="chapter-title">La Importancia de la Motivación y la Confianza</h1>
+    <p class="chapter-quote">"La motivación es lo que te hace empezar. El hábito es lo que te mantiene en marcha."<span>— Jim Ryun</span></p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>Tu hijo está frente a un libro. Sus ojos recorren las páginas pero la frustración se dibuja en su cara. Te dice en voz baja: "No puedo leerlo." Esa frase, aunque breve, es un eco de inseguridades que puede marcar toda su relación con la lectura.</p>
+        <p>La lectura no es solo una habilidad técnica — es una puerta a la autoconfianza. Si no trabajamos la motivación y la confianza, cada intento de leer se convierte en una batalla. Pero cuando la confianza brilla, la lectura se transforma en aventura.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">💪</div>
+          <h4>Motivación intrínseca</h4>
+          <p>La que viene de adentro. El 75% de los chicos con motivación interna continúan leyendo a largo plazo.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🌱</div>
+          <h4>Confianza que se construye</h4>
+          <p>No se otorga — se cultiva a través de pequeñas experiencias positivas acumuladas.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🔄</div>
+          <h4>El ciclo virtuoso</h4>
+          <p>Confianza → intenta → logra → más confianza. O al revés: frustración → evita → menos práctica → más frustración.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div>
+          <h4>Lo que dice la teoría de Bandura</h4>
+          <p>La autoeficacia — creer que podemos hacer algo — influye directamente en nuestro desempeño. Si tu hijo cree que puede leer, lo intentará más. Si cree que no puede, lo evitará. Por eso construir confianza desde pequeños logros es la estrategia más poderosa.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar este capítulo</h4>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Entiendo que la motivación se construye, no aparece sola</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a celebrar los logros pequeños, no solo los grandes</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Estoy dispuesta a cambiar cómo elogio a mi hijo</span></div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>La motivación y la confianza no son magia — son práctica diaria, amor y paciencia. Este capítulo te da las herramientas concretas para construirlas.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- TAB CONTEXTO -->
+    <div class="section-panel" id="tab-contexto">
+      <div class="intro-card">
+        <p>Para ayudar a tu hijo a motivarse, primero hay que entender cómo funciona la motivación en los chicos — y por qué el refuerzo positivo es tan poderoso como herramienta de aprendizaje.</p>
+      </div>
+
+      <div class="section-title">La psicología detrás de la motivación</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🧠</div>
+          <div class="strategy-info"><h3>Motivación intrínseca vs extrínseca</h3><p>La diferencia que marca el largo plazo</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La motivación intrínseca (la que viene de adentro — curiosidad, placer, orgullo) es la que sostiene el hábito lector a largo plazo. La extrínseca (premios, notas, presión) puede funcionar a corto plazo pero no construye el amor por leer.</p>
+          <p>El objetivo no es que tu hijo lea para ganarse un premio — es que lea porque le gusta, porque se siente capaz, porque la historia lo atrapa. Los premios son una herramienta de transición, no el destino.</p>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🎯</div>
+            <div><h4>La clave</h4><p>Usá los premios para arrancar el hábito, pero siempre combinados con elogios específicos que construyan la imagen de "soy un buen lector". Esa imagen interna es lo que dura.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">⭐</div>
+          <div class="strategy-info"><h3>El refuerzo positivo específico</h3><p>No alcanza con "bien hecho"</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Cuando tu hijo lee algo bien, en lugar de decir "¡Muy bien!", probá con algo específico: <em>"Me encanta cómo encontraste la palabra 'aventura' y la leíste correctamente. ¡Sos un gran lector!"</em></p>
+          <p>Este tipo de elogio específico no solo valida el esfuerzo — refuerza la imagen positiva que él tiene de sí mismo como lector. Con el tiempo, esa imagen se vuelve parte de su identidad.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Nombrá exactamente qué hizo bien — la palabra, el párrafo, la expresión.</li>
+            <li><div class="step-num">2</div>Conectalo con su identidad: "eso es lo que hace un buen lector".</li>
+            <li><div class="step-num">3</div>Celebrá el esfuerzo, no solo el resultado — "vi que lo intentaste varias veces, eso es lo importante".</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🌱</div>
+          <div class="strategy-info"><h3>Mentalidad de crecimiento</h3><p>Carol Dweck — los errores como oportunidades</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La psicóloga Carol Dweck descubrió que los chicos que creen que sus habilidades pueden mejorar con el esfuerzo (mentalidad de crecimiento) perseveran más ante los desafíos y aprenden más rápido.</p>
+          <p>El antídoto al "no puedo" es el "todavía no puedo". Ese pequeño cambio de frase transforma el fracaso en una etapa del proceso.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Cuando diga "no puedo", respondé: "Todavía no podés — pero cada vez que practicás, mejorás".</li>
+            <li><div class="step-num">2</div>Compartí tus propias experiencias de aprendizaje — que vea que vos también tuviste que practicar.</li>
+            <li><div class="step-num">3</div>Establecé metas pequeñas y alcanzables — el logro de metas cortas construye confianza.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">✨</div>
+            <div><h4>Ejemplo concreto</h4><p>Si se frustra con una palabra difícil: "Es normal que esta palabra sea difícil al principio. Pero cada vez que la intentás, te volvés más fuerte como lector. ¿La probamos juntos?"</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Celebrá el esfuerzo y cada pequeño logro que construye su confianza. Enséñale a ver los desafíos como oportunidades para crecer.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- TAB ESTRATEGIAS -->
+    <div class="section-panel" id="tab-estrategias">
+      <div class="intro-card">
+        <p>Acá van las tres estrategias principales del capítulo — refuerzo positivo, celebración de logros y mentalidad de crecimiento — con los pasos concretos para implementarlas esta semana.</p>
+      </div>
+
+      <div class="section-title">3 estrategias probadas</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info"><h3>Sistema de puntos y recompensas</h3><p>Motivación externa → hábito interno</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Un sistema de puntos crea una estructura visible del progreso. El chico puede ver cuánto avanzó y eso alimenta las ganas de seguir.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Creá un gráfico de progreso en papel grande y colgalo en un lugar visible.</li>
+            <li><div class="step-num">2</div>Establecé el sistema: por cada página leída, 1 punto. Por cada libro terminado, 5 puntos.</li>
+            <li><div class="step-num">3</div>Definí premios significativos — elegir la cena, una salida especial, tiempo extra de juego.</li>
+            <li><div class="step-num">4</div>Celebrá cada hito con una pequeña ceremonia — que sea un momento especial, no solo un sticker.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🎯</div>
+            <div><h4>Tip clave</h4><p>Los premios tienen que ser significativos para él — no para vos. Preguntale qué le gustaría ganarse. Eso multiplica la motivación.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info"><h3>Mural de logros lectores</h3><p>Visualizar el progreso · Para toda la familia</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Un mural visible del progreso no solo motiva al chico — también celebra el esfuerzo frente a toda la familia. Eso tiene un poder enorme en la autoestima.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Conseguí una cartulina grande o usá una pared con papel afiche.</li>
+            <li><div class="step-num">2</div>Cada libro terminado tiene su espacio — pueden pegar la portada, dibujar el personaje favorito o escribir la parte que más les gustó.</li>
+            <li><div class="step-num">3</div>Decoren el mural juntos con stickers, colores y dibujos suyos.</li>
+            <li><div class="step-num">4</div>Al llegar a un número de libros (5, 10, 20), organizá una pequeña celebración familiar.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">💡</div>
+            <div><h4>Tip clave</h4><p>Hacé que la decoración del mural sea un proyecto conjunto — la conexión emocional con el proceso aumenta la motivación.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info"><h3>Celebraciones de lectura</h3><p>Rituales que crean recuerdos positivos</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Las celebraciones convierten la lectura en un evento especial — algo que se espera con ganas, no algo que se hace por obligación.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Fiesta de lectura:</strong> al terminar un libro, hacen una pequeña celebración — merienda especial, elegir la peli del viernes, lo que él quiera.</li>
+            <li><div class="step-num">2</div><strong>Tarjetas de reconocimiento:</strong> escribí una tarjetita con algo específico que hizo bien. Dásela en un momento inesperado.</li>
+            <li><div class="step-num">3</div><strong>Momentos de reflexión:</strong> preguntale "¿cómo te sentiste al leer esto?" — que verbalice el orgullo es parte del proceso.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>El objetivo no es el premio — es que tu hijo asocie la lectura con emociones positivas. Eso es lo que dura toda la vida.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- TAB ACTIVIDADES -->
+    <div class="section-panel" id="tab-actividades">
+      <div class="intro-card">
+        <p>Dos ejercicios concretos para aplicar esta semana, más las recetas del capítulo. Todo con materiales simples y tiempo estimado.</p>
+      </div>
+
+      <div class="section-title">Ejercicios prácticos</div>
+
+      <div class="receta-box">
+        <h3>📦 La Caja de los Logros</h3>
+        <div class="receta-meta">⏱ 30 min para armar · Materiales: caja de zapatos, tarjetas de color, marcadores, stickers</div>
+        <p><strong>¿Para qué sirve?</strong> Crea un recordatorio visual y emocional de todo lo que el chico ya logró. Cada vez que dude de sí mismo, la caja le muestra la evidencia de que puede.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Decorá la caja juntos — colores, dibujos y stickers que le gusten. Que sienta que es suya.</li>
+          <li><div class="step-num">2</div>Definan juntos qué cuenta como logro: leer una página solo, terminar un cuento, leer en voz alta frente a alguien.</li>
+          <li><div class="step-num">3</div>Por cada logro, escriben una tarjeta de color describiendo qué pasó. Él puede decorarla.</li>
+          <li><div class="step-num">4</div>Cada vez que agregan una tarjeta, lo celebran — aunque sea con un aplauso y un abrazo.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Un objeto físico lleno de evidencia de que puede — y que lo motiva a seguir llenándolo.</p>
+        <div class="receta-tip">💡 Tip: revisá la caja juntos cada dos semanas. Leer los logros en voz alta es poderoso.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>🦸 La Historia del Superhéroe Lector</h3>
+        <div class="receta-meta">⏱ 20 min · Materiales: papel, lápices de colores</div>
+        <p><strong>¿Para qué sirve?</strong> Asociar la lectura con una identidad positiva — "soy un lector" — a través de la creatividad.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Pedile que invente un superhéroe que represente la lectura — puede tener sus características favoritas.</li>
+          <li><div class="step-num">2</div>Escriban juntos una mini historia sobre cómo ese superhéroe ayuda a otros a amar los libros.</li>
+          <li><div class="step-num">3</div>Él ilustra las escenas — que dibuje al superhéroe leyendo, enseñando, salvando el día con un libro.</li>
+          <li><div class="step-num">4</div>Cuelguen el dibujo en su cuarto — que lo vea todos los días.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Tu hijo crea una representación positiva de sí mismo como lector — y esa imagen empieza a construir su identidad.</p>
+        <div class="receta-tip">💡 Tip: podés agregarle una "frase de poder" que él mismo invente para su superhéroe.</div>
+      </div>
+
+      <div class="section-title">Recetas del capítulo</div>
+
+      <div class="receta-box">
+        <h3>⭐ Sistema de Recompensas de Lectura</h3>
+        <div class="receta-meta">⏱ 15 min para armar · Materiales: papel grande, marcadores, stickers</div>
+        <p><strong>¿Para qué sirve?</strong> Crear una estructura visible que motive a leer más frecuentemente.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Creá un gráfico de progreso en papel grande y colgalo donde él lo vea siempre.</li>
+          <li><div class="step-num">2</div>Definí los puntos: 1 punto por página, 5 por libro terminado.</li>
+          <li><div class="step-num">3</div>Decidí juntos qué premios se pueden ganar y cuántos puntos cuestan.</li>
+          <li><div class="step-num">4</div>Celebrá cada hito del gráfico — no esperes al premio final.</li>
+        </ul>
+        <div class="receta-tip">💡 Tip: que él elija los premios — eso multiplica la motivación.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>🏆 Mural de Éxitos</h3>
+        <div class="receta-meta">⏱ 20 min para armar · Materiales: cartulina, marcadores, portadas de libros, stickers</div>
+        <p><strong>¿Para qué sirve?</strong> Visualizar el progreso lector de forma creativa y motivadora.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Diseñá el mural juntos — que él decida cómo organizarlo.</li>
+          <li><div class="step-num">2</div>Por cada libro terminado, agregan la portada o un dibujo del personaje favorito.</li>
+          <li><div class="step-num">3</div>Pueden agregar una frase corta con lo que más les gustó.</li>
+          <li><div class="step-num">4</div>Al llegar a 5, 10, 20 libros — celebración especial.</li>
+        </ul>
+        <div class="receta-tip">💡 Tip: colgalo en un lugar que él vea todos los días — su cuarto, la cocina, el pasillo.</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">5 errores a evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span><strong>Subestimar los logros pequeños:</strong> cada avance cuenta. Ignorarlos desmotiva. Celebrá todo.</li>
+        <li><span class="num">2</span><strong>Comparar con otros:</strong> cada chico tiene su ritmo. Las comparaciones generan frustración, no motivación.</li>
+        <li><span class="num">3</span><strong>Expectativas poco realistas:</strong> la lectura es un proceso. Metas alcanzables construyen confianza — metas imposibles la destruyen.</li>
+        <li><span class="num">4</span><strong>Ignorar el ambiente:</strong> el espacio de lectura tiene que ser cómodo y atractivo. Un entorno agradable mejora la experiencia.</li>
+        <li><span class="num">5</span><strong>Olvidar la diversión:</strong> si tu hijo asocia la lectura con estrés, la va a evitar. La lectura tiene que ser placentera, no una obligación.</li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Terminaste el Cap 4! En el Cap 5 vemos cómo integrar la lectura en la vida diaria para que se convierta en un hábito natural — no en una tarea más.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume los conceptos clave del capítulo. Guardala para tenerla a mano cuando necesites recordar cómo motivar a tu hijo.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/infografia-cap4.png" alt="Infografía Capítulo 4 — Motivación y Confianza" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Capítulo 4 — La Importancia de la Motivación y la Confianza</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Excelente! Ya tenés todas las herramientas para construir la motivación y confianza de tu hijo. En el Cap 5 vemos cómo integrar la lectura en la vida diaria.</p>
+        </div>
+      </div>
+      <a href="cap5.html" class="next-btn" style="margin-top:24px;">Capítulo 5: Lectura en la vida diaria →</a>
+    </div>
+
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('cap4');</script>
+</body>
+</html>

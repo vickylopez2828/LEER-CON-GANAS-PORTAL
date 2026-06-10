@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Bono 3 Cap 2: Lectura y Cultura</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  :root { --naranja: #0284C7; --naranja-claro: #38BDF8; --amarillo: #E0F2FE; }
+  .chapter-header { background: linear-gradient(135deg, #0284C7 0%, #38BDF8 50%, #7DD3FC 100%); }
+  .next-btn { background: linear-gradient(135deg, #0284C7, #38BDF8); }
+  .next-btn:hover { box-shadow: 0 10px 28px rgba(2,132,199,0.45); }
+  .tab.active { background: #0284C7; border-color: #0284C7; box-shadow: 0 4px 12px rgba(2,132,199,0.3); }
+  .tab:hover:not(.active) { border-color: #0284C7; color: #0284C7; }
+  .intro-card { border-left-color: #0284C7; }
+  .strategy-num { background: #0C4A6E; color: #38BDF8; }
+  .step-dot.active { background: #0284C7; box-shadow: 0 3px 10px rgba(2,132,199,0.4); }
+  .step-dot.done { background: #0C4A6E; }
+  .progress-fill { background: linear-gradient(90deg, #0C4A6E, #0284C7); }
+  .tuki-tip { border-color: rgba(2,132,199,0.25); }
+  .tuki-tip .tt-text h4 { color: #38BDF8; }
+  .receta-box { border-color: #7DD3FC; }
+  .check-item.checked .check-box { background: #0284C7; border-color: #0284C7; }
+  .mini-card { border-top-color: #0284C7; }
+  .resumen-box ul li::before { color: #0284C7; }
+</style>
+</head>
+<body>
+<div id="sidebar-container"></div>
+
+<main class="main">
+  <div class="chapter-header">
+    <div class="bubble b1"></div><div class="bubble b2"></div>
+    <div class="bubble b3"></div><div class="bubble b4"></div>
+    <div class="chapter-badge">🌍 Bono 3 · Capítulo 2 de 4</div>
+    <h1 class="chapter-title">Lectura y Cultura: Incorporando Diversidad en la Enseñanza</h1>
+    <p class="chapter-quote">"La lectura es el pasaporte a mundos infinitos."<span>— Anónimo</span></p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>Imaginate a tu hijo sumergido en un mundo donde las historias trascienden fronteras — un rincón de la India, una selva en África, un pueblo en México. La lectura no solo enseña a descifrar letras, también es una ventana a la diversidad del mundo.</p>
+        <p>Al introducir libros de diferentes culturas y tradiciones, no solo ampliás el horizonte de tu hijo — también fomentás su empatía, su curiosidad y su comprensión de que hay muchas formas válidas de vivir y de ver el mundo.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">📚</div>
+          <h4>Libros de otras culturas</h4>
+          <p>Historias que muestran realidades distintas — cómo viven, qué comen, qué celebran otras personas alrededor del mundo.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🌮</div>
+          <h4>Cocina y cuentos</h4>
+          <p>Leer sobre una cultura y después cocinar un plato típico de ese lugar. Aprendizaje sensorial que no se olvida.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">✈️</div>
+          <h4>Viajes literarios</h4>
+          <p>Un rincón de lectura que cada semana viaja a un país diferente — con música, recetas y libros de ese lugar.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div>
+          <h4>Por qué la diversidad cultural en la lectura importa</h4>
+          <p>Un chico que lee sobre realidades distintas a la suya desarrolla empatía hacia lo diferente — y eso lo acompaña toda la vida. Los libros son la forma más accesible de viajar sin moverse del sillón.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar</h4>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Entiendo que los libros de otras culturas amplían la empatía de mi hijo</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a elegir al menos un libro de una cultura diferente esta semana</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a organizar el primer "viaje literario" en casa</span></div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Cada libro de otra cultura es un viaje. Y los viajes cambian la forma en que vemos el mundo — y a las personas que lo habitan.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- TAB CONTEXTO -->
+    <div class="section-panel" id="tab-contexto">
+      <div class="intro-card">
+        <p>Para entender cómo funciona la lectura multicultural, veamos qué pasa cuando un chico se encuentra con una historia de un mundo completamente distinto al suyo.</p>
+      </div>
+
+      <div class="section-title">Por qué la diversidad literaria amplía el mundo</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🌍</div>
+          <div class="strategy-info"><h3>Historias que cruzan fronteras</h3><p>Empatía · Identidad · Perspectiva</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Las historias de otras culturas le dan al chico algo que muy pocas experiencias pueden dar: la posibilidad de ver la vida desde una perspectiva completamente diferente a la propia. Eso amplía el mapa mental sobre cómo es el mundo.</p>
+          <p>Un cuento de origen japonés, mexicano o africano no es solo entretenimiento — es una ventana a valores, tradiciones y formas de resolver problemas que el chico no conocía. Y eso genera preguntas. Y las preguntas generan aprendizaje.</p>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🪞</div>
+            <div><h4>La identidad propia se fortalece</h4><p>Paradójicamente, leer sobre otras culturas ayuda al chico a entender mejor la suya propia. Al ver lo que es diferente, también empieza a ver lo que es único en su propia forma de vivir.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">📖</div>
+          <div class="strategy-info"><h3>Libros recomendados para empezar</h3><p>Por edad y temática</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Algunos libros concretos para incorporar la diversidad cultural desde edades tempranas:</p>
+          <ul class="steps-list">
+            <li><div class="step-num">📖</div><strong>"Cuentos de la selva"</strong> (Horacio Quiroga) — Conecta con la naturaleza desde la tradición latinoamericana.</li>
+            <li><div class="step-num">📖</div><strong>"El niño que no quería ser un dragón"</strong> (Jörg Müller) — Cuestionar expectativas culturales y valorar la autenticidad.</li>
+            <li><div class="step-num">📖</div><strong>Libros de Mo Willems o Julia Donaldson</strong> — Perspectivas del mundo anglosajón con valores universales.</li>
+            <li><div class="step-num">📖</div><strong>Cuentos indígenas latinoamericanos</strong> — Comunidad, naturaleza, trabajo en equipo desde tradiciones propias de la región.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">💡</div>
+            <div><h4>Tip para elegir</h4><p>Buscá libros que hablen de situaciones cotidianas — una comida, una celebración, una amistad — desde otra cultura. Lo cotidiano conocido en un contexto diferente es lo que más activa la curiosidad.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>No hace falta viajar para conocer el mundo. Un libro bien elegido lleva a tu hijo a la India, a México o a Japón — sin salir del cuarto.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- TAB ESTRATEGIAS -->
+    <div class="section-panel" id="tab-estrategias">
+      <div class="intro-card">
+        <p>Tres estrategias para incorporar la diversidad cultural en la lectura — el día de cuentos del mundo, cocina y cuentos, y los viajes literarios en casa.</p>
+      </div>
+
+      <div class="section-title">3 estrategias de lectura multicultural</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info"><h3>Día de cuentos del mundo</h3><p>Un día por semana · Rotación de culturas</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Designá un día a la semana donde cada miembro de la familia elige un cuento de una cultura diferente. Después de leer, comparten sus impresiones.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Cada semana, una cultura diferente — puede ser el país de un personaje histórico que estén aprendiendo, un lugar que les llame la atención, o simplemente elegido al azar.</li>
+            <li><div class="step-num">2</div>Armá una tabla simple donde registren las historias, los países de origen y lo que aprendieron.</li>
+            <li><div class="step-num">3</div>Después de la lectura, cada uno comparte: "¿qué te sorprendió?" o "¿qué te parece diferente a como vivimos nosotros?"</li>
+            <li><div class="step-num">4</div>Con el tiempo, la tabla se convierte en un "mapa de viajes literarios" — pueden marcarlo en un mapa del mundo.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info"><h3>Cocina y cuentos</h3><p>Aprendizaje sensorial · Lo que se come se recuerda</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Elegí un libro sobre una cultura y después cocinen un plato típico de ese lugar. El aprendizaje sensorial — tocar, oler, saborear — fija la experiencia de una forma que la lectura sola no puede.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí el libro y la cultura — si el cuento es sobre una fiesta en India, buscan una receta simple de esa tradición.</li>
+            <li><div class="step-num">2</div>Cocinan juntos mientras hablan sobre la cultura del libro.</li>
+            <li><div class="step-num">3</div>Comen lo que prepararon mientras relatan lo que aprendieron de la historia.</li>
+            <li><div class="step-num">4</div>Pueden hacer una "reseña" del plato y del libro — ambas cosas juntas crean un recuerdo muy rico.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🍛</div>
+            <div><h4>Ejemplo concreto</h4><p>Leen un cuento sobre una familia japonesa. Después preparan onigiri (bolitas de arroz) con ingredientes simples. Mientras comen, hablan sobre las diferencias y similitudes con su propia familia.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info"><h3>Viajes literarios en casa</h3><p>Un rincón · Una cultura · Una semana</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Cada semana, el rincón de lectura "viaja" a un país diferente. Música de fondo, decoración simple, libros de ese lugar — la inmersión hace que el aprendizaje sea mucho más profundo.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí el país de la semana juntos — puede ser un lugar que él mencionó, que estudió en la escuela o que simplemente le llama la atención.</li>
+            <li><div class="step-num">2</div>Buscá música tradicional de ese país para poner de fondo durante la lectura.</li>
+            <li><div class="step-num">3</div>Armá el rincón con algo visual — una imagen, un objeto, los colores de la bandera.</li>
+            <li><div class="step-num">4</div>Leán libros, vean un video corto, cocinen algo típico — la inmersión de varios sentidos multiplica el aprendizaje.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>El mundo tiene miles de historias esperando ser contadas. Cada libro de otra cultura es una nueva forma de entender lo que significa ser humano.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- TAB ACTIVIDADES -->
+    <div class="section-panel" id="tab-actividades">
+      <div class="intro-card">
+        <p>Tres acciones concretas para arrancar esta semana — el mural cultural, la noche de cuentos del mundo y el primer viaje literario.</p>
+      </div>
+
+      <div class="section-title">🎯 Plan de acción rápido</div>
+
+      <div class="receta-box">
+        <h3>Acción 1 — Elegí 3 libros de diferentes culturas</h3>
+        <div class="receta-meta">⏱ Esta tarde · Biblioteca, librería o digital</div>
+        <p>Seleccioná tres libros de culturas distintas — una latinoamericana, una europea y una asiática, por ejemplo. Leé el primero con tu hijo esta semana. Hacélo interactivo: "¿qué te parece cómo vive este personaje?"</p>
+        <div class="receta-tip">💡 Tip: que él elija cuál de los tres quiere leer primero — eso ya es una decisión informada sobre culturas.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 2 — Mural cultural en casa</h3>
+        <div class="receta-meta">⏱ Después de cada lectura · Cartulina, marcadores, recortes</div>
+        <p>Después de cada libro de otra cultura, que él dibuje o recorte algo que represente lo que aprendió. Con el tiempo, el mural se convierte en un registro visual de todos los países que "visitaron" a través de los libros.</p>
+        <div class="receta-tip">💡 Tip: colgá el mural en un lugar visible — que lo vea todos los días y recuerde los viajes literarios que hicieron.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 3 — Noche de cuentos del mundo</h3>
+        <div class="receta-meta">⏱ Este fin de semana · Un cuento por miembro de la familia</div>
+        <p>Organizá una noche donde cada miembro de la familia cuente o lea una historia de su cultura o de un país que le interese. Después, todos comparten qué aprendieron. Hacélo con música de fondo y algo rico para comer.</p>
+        <div class="receta-tip">💡 Tip: grabá un video corto de la noche — ver la experiencia después es muy motivador para repetirla.</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">⚠️ Los 5 errores que hay que evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span><strong>Elegir libros demasiado complejos:</strong> que sean accesibles en lenguaje y en tema. Lo importante es la conexión emocional, no la complejidad literaria.</li>
+        <li><span class="num">2</span><strong>No hacer preguntas:</strong> leer sin conversar después pierde la mitad del potencial. Las preguntas abiertas son las que activan la reflexión cultural.</li>
+        <li><span class="num">3</span><strong>Quedarse solo con los clásicos:</strong> hay literatura contemporánea increíble de todo el mundo. No te limitás a lo conocido.</li>
+        <li><span class="num">4</span><strong>Presentarlo como "clase de geografía":</strong> si lo enmarcás como aprendizaje escolar, pierde la magia. Que sea exploración, aventura, viaje.</li>
+        <li><span class="num">5</span><strong>No conectar con la vida del chico:</strong> el aprendizaje cultural se consolida cuando se relaciona con algo que él ya conoce. "¿Qué harías vos en su lugar?" es la pregunta clave.</li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>En el próximo capítulo vemos cómo crear materiales de lectura en casa — libros caseros, tarjetas interactivas y juegos de rol literarios que hacen que la lectura sea todavía más personal.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume las estrategias de lectura multicultural y los viajes literarios en casa.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/bono3/cap2.png" alt="Infografía Bono 3 Cap 2 — Lectura y Cultura" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Bono 3 Cap 2 — Lectura y Cultura</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Muy bien! En el Cap 3 vemos cómo crear materiales de lectura en casa — libros caseros, tarjetas y juegos de rol que hacen la lectura todavía más personal.</p>
+        </div>
+      </div>
+      <a href="bono3-cap3.html" class="next-btn" style="margin-top:24px;">Bono 3 Cap 3: Materiales Creativos →</a>
+    </div>
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('bono3-cap2');</script>
+</body>
+</html>

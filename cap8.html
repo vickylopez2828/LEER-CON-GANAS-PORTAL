@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Cap 8: Colaborando con la Escuela</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="sidebar-container"></div>
+
+<main class="main">
+  <div class="chapter-header">
+    <div class="bubble b1"></div><div class="bubble b2"></div>
+    <div class="bubble b3"></div><div class="bubble b4"></div>
+    <div class="chapter-badge">📖 Capítulo 8 de 10</div>
+    <h1 class="chapter-title">Colaborando con Educadores y Escuelas</h1>
+    <p class="chapter-quote">"La educación es la llave maestra que abre todas las puertas del futuro."<span>— Victor Hugo</span></p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>Pasaste semanas trabajando la lectura en casa — y de repente tu hijo llega frustrado porque algo en la escuela no le cierra. ¿Te suena? Esa desconexión entre lo que aprendió en casa y lo que le piden en el aula es más común de lo que parece.</p>
+        <p>Cuando la mamá y el maestro trabajan alineados, el chico no tiene que "traducir" entre dos sistemas distintos. Todo suma en la misma dirección — y eso acelera el aprendizaje de forma notable.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">🤝</div>
+          <h4>Alianza con el maestro</h4>
+          <p>El docente tiene información que vos no tenés. Vos tenés contexto del hogar que él no tiene. Juntos tienen el panorama completo.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">📋</div>
+          <h4>Conocer el currículo</h4>
+          <p>Saber qué se enseña en el aula te permite reforzar exactamente eso en casa — sin ir en direcciones distintas.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🆘</div>
+          <h4>Apoyos adicionales</h4>
+          <p>La mayoría de las escuelas tienen programas de intervención. Pedirlos a tiempo puede marcar una diferencia enorme.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">📊</div>
+        <div>
+          <h4>Lo que dice la investigación</h4>
+          <p>Los chicos cuyos padres se involucran activamente en su educación tienen un 30% más de probabilidades de tener éxito académico. No es magia — es el resultado de que dos entornos importantes del chico tiran para el mismo lado.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar este capítulo</h4>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Entiendo que el maestro es un aliado, no un evaluador</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a contactar al maestro esta semana con una pregunta específica</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a averiguar qué está aprendiendo mi hijo en clase ahora mismo</span></div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Juntos, padres y educadores pueden abrir todas las puertas del futuro de tu hijo. La colaboración hoy construye el éxito de mañana.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- TAB CONTEXTO -->
+    <div class="section-panel" id="tab-contexto">
+      <div class="intro-card">
+        <p>Para colaborar bien con la escuela, primero hay que entender por qué esa colaboración es tan poderosa — y qué pasa cuando no existe.</p>
+      </div>
+
+      <div class="section-title">Por qué la colaboración hace la diferencia</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🔗</div>
+          <div class="strategy-info"><h3>El aprendizaje fragmentado</h3><p>Qué pasa cuando casa y escuela van por caminos distintos</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Cuando lo que se trabaja en casa y lo que se enseña en el aula no están alineados, el chico recibe mensajes contradictorios. Eso genera confusión, fatiga y, eventualmente, desinterés.</p>
+          <p>Por ejemplo: si en casa trabajás la lectura fonética y en la escuela usan un método global, el chico tiene que hacer el esfuerzo de "traducir" entre dos sistemas. Ese esfuerzo extra cansa y desmotiva.</p>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">💡</div>
+            <div><h4>La solución</h4><p>Una sola conversación con el maestro puede alinearte completamente. No hace falta que uses el mismo método — alcanza con saber qué está aprendiendo y reforzar eso en casa.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">📋</div>
+          <div class="strategy-info"><h3>Conocer el currículo escolar</h3><p>Anticipar lo que viene · Preparar el terreno</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Cuando entendés qué se enseña en el aula, podés anticipar los desafíos y preparar a tu hijo antes de que lleguen. Eso no es hacer trampa — es ser estratégica.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Solicitá una copia del currículo o preguntale al maestro qué habilidades lectoras están trabajando este trimestre.</li>
+            <li><div class="step-num">2</div>Preguntá qué metodología usa el aula — así podés usar algo compatible en casa.</li>
+            <li><div class="step-num">3</div>Diseñá actividades caseras que refuercen exactamente lo que está viendo en clase.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">✨</div>
+            <div><h4>Ejemplo concreto</h4><p>Si el currículo dice que están introduciendo libros de nivel 1, elegí libros del mismo nivel para leer en casa — enfatizando los sonidos y palabras clave que necesita dominar.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🆘</div>
+          <div class="strategy-info"><h3>Programas de intervención</h3><p>Cuándo y cómo pedirlos</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La mayoría de las escuelas tienen programas de apoyo para chicos que necesitan un enfoque diferente. Pedirlos no es un fracaso — es una herramienta más que tenés a disposición.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Preguntá al maestro:</strong> ¿Qué programas de intervención ofrece la escuela? ¿Clases de lectura intensiva? ¿Recursos en línea?</li>
+            <li><div class="step-num">2</div><strong>Pedí una evaluación formal:</strong> si sentís que necesita apoyo adicional, podés pedir una evaluación que puede derivar en un plan personalizado.</li>
+            <li><div class="step-num">3</div><strong>Conectate con especialistas:</strong> orientadores y especialistas en lectura pueden darte estrategias muy específicas para el caso de tu hijo.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🎯</div>
+            <div><h4>Ejemplo concreto</h4><p>Si tiene dificultades con la fluidez, podés pedir que participe en un programa de lectura de pares — donde un estudiante más avanzado lee con él. Práctica + confianza en un ambiente relajado.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Escuchá activamente, comunicá con respeto y sé abierta a nuevas estrategias. El maestro y vos son el mejor equipo que puede tener tu hijo.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- TAB ESTRATEGIAS -->
+    <div class="section-panel" id="tab-estrategias">
+      <div class="intro-card">
+        <p>Tres estrategias concretas para construir una colaboración real con la escuela — comunicación efectiva, entender el currículo y pedir apoyos cuando hace falta.</p>
+      </div>
+
+      <div class="section-title">3 estrategias para trabajar con la escuela</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info"><h3>Comunicación proactiva y específica</h3><p>No esperes que surjan problemas</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La comunicación efectiva no es solo ir a la reunión de padres una vez por trimestre. Es establecer un canal abierto y continuo donde ambos — vos y el maestro — puedan compartir observaciones y estrategias.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Reuniones breves mensuales:</strong> no esperés a las reuniones formales. Un mensaje o mail cada mes para intercambiar información va mucho más lejos.</li>
+            <li><div class="step-num">2</div><strong>Usá herramientas digitales:</strong> ClassDojo, Google Classroom o incluso un grupo de WhatsApp con el maestro permiten comunicación fluida y rápida.</li>
+            <li><div class="step-num">3</div><strong>Sé específica en las preguntas:</strong> en lugar de "¿cómo va mi hijo?", preguntá "¿cómo está manejando la identificación de palabras con sílabas cerradas?" — eso muestra que estás involucrada y genera respuestas útiles.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">💬</div>
+            <div><h4>Ejemplo concreto</h4><p>Si notás en casa que se frustra con ciertas letras o sonidos, comunicáselo al maestro. Juntos pueden desarrollar juegos fonéticos que refuercen exactamente eso en clase y en casa al mismo tiempo.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info"><h3>Entender y usar el currículo</h3><p>Reforzar en casa lo que se enseña en el aula</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Conocer el currículo te permite anticipar lo que viene y preparar el terreno antes de que llegue. Es como tener el mapa antes de empezar el viaje.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Pedí una copia del currículo o preguntale al maestro qué temas cubre este trimestre.</li>
+            <li><div class="step-num">2</div>Identificá las habilidades específicas que están trabajando y buscá actividades caseras que las refuercen.</li>
+            <li><div class="step-num">3</div>Creá un plan complementario — no paralelo. La idea es sumar, no duplicar.</li>
+            <li><div class="step-num">4</div>Revisá el plan cada mes con el maestro para ver si sigue siendo relevante.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info"><h3>Involucrar a los educadores en casa</h3><p>Compartir lo que hacés · Recibir feedback</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La colaboración es bidireccional. No solo pedís información — también compartís lo que estás haciendo en casa para que el maestro pueda darte feedback y sugerencias.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Contale al maestro qué libro están leyendo juntos en casa y pedile sugerencias de preguntas o actividades para profundizar.</li>
+            <li><div class="step-num">2</div>Compartí las actividades que funcionan — si algo enganchó bien a tu hijo, el maestro puede incorporarlo al aula.</li>
+            <li><div class="step-num">3</div>Pedile retroalimentación activa: "¿lo que hago en casa está alineado con lo que trabajamos acá?"</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🏆</div>
+            <div><h4>Casos de éxito</h4><p>María notó que su hijo tenía dificultades con la lectura en voz alta. Lo comunicó al maestro. Juntas diseñaron un plan: libros cortos en casa + ejercicios de fluidez guiados en clase. En 3 meses, su confianza cambió completamente.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Un vínculo positivo y respetuoso con el maestro facilita la colaboración y el apoyo mutuo. Reconocé y valorá su trabajo — eso abre todas las puertas.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- TAB ACTIVIDADES -->
+    <div class="section-panel" id="tab-actividades">
+      <div class="intro-card">
+        <p>Dos ejercicios concretos para arrancar esta semana más las dos recetas del capítulo — todo accionable desde hoy.</p>
+      </div>
+
+      <div class="section-title">Ejercicios prácticos</div>
+
+      <div class="receta-box">
+        <h3>💬 Comunicación Abierta con el Maestro</h3>
+        <div class="receta-meta">⏱ 30 min · Materiales: papel, bolígrafo, acceso a email</div>
+        <p><strong>¿Para qué sirve?</strong> Establecer una comunicación proactiva y específica que mejore el seguimiento del aprendizaje de tu hijo.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Hacé una lista de al menos 5 preguntas específicas sobre el progreso de tu hijo y el currículo actual.</li>
+          <li><div class="step-num">2</div>Enviá un mail al maestro solicitando una reunión breve — presencial o virtual. Explicá que es para mejorar la experiencia de aprendizaje de tu hijo.</li>
+          <li><div class="step-num">3</div>Durante la reunión, tomá notas de los consejos y recursos que te da. Eso te ayuda a implementarlos y recordarlos.</li>
+          <li><div class="step-num">4</div>Acordá un seguimiento en 2-4 semanas para ver cómo va el progreso y ajustar si hace falta.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Una relación más sólida con el maestro y un entendimiento claro de las necesidades educativas de tu hijo.</p>
+        <div class="receta-tip">💡 Tip: preguntas como "¿qué habilidades está trabajando esta semana?" son mucho más útiles que "¿cómo va?"</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>📅 Calendario de Aprendizaje Compartido</h3>
+        <div class="receta-meta">⏱ 20 min · Materiales: papel grande, marcadores o app de calendario</div>
+        <p><strong>¿Para qué sirve?</strong> Crear un recurso visual que conecte lo que se enseña en la escuela con las actividades que hacen en casa.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Investigá qué temas cubre el currículo en las próximas semanas — preguntale al maestro o revisá la agenda escolar.</li>
+          <li><div class="step-num">2</div>Creá un calendario visual con las fechas importantes: temas de lectura, evaluaciones, eventos.</li>
+          <li><div class="step-num">3</div>Agregá actividades caseras relacionadas — si estudian animales, planificá leer un libro sobre eso o escribir una historia.</li>
+          <li><div class="step-num">4</div>Revisá el calendario con tu hijo cada semana y ajustá según su progreso y el feedback del maestro.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Un recurso visual que mantiene a tu hijo enfocado y refuerza lo aprendido en el aula.</p>
+        <div class="receta-tip">💡 Tip: que tu hijo decore el calendario — eso lo hace suyo y aumenta su compromiso con las actividades.</div>
+      </div>
+
+      <div class="section-title">Recetas del capítulo</div>
+
+      <div class="receta-box">
+        <h3>📖 Lectura en Doble Canal</h3>
+        <div class="receta-meta">⏱ 20 min · Materiales: libro del currículo escolar, cuaderno</div>
+        <p><strong>¿Para qué sirve?</strong> Fortalecer la comprensión lectora generando un vínculo directo entre la lectura en casa y la escuela.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Elegí un libro que tu hijo esté leyendo en clase.</li>
+          <li><div class="step-num">2</div>Leé el primer capítulo juntos, alternando párrafos.</li>
+          <li><div class="step-num">3</div>Pedile que resuma lo que entendió y que escriba sus pensamientos en el cuaderno.</li>
+          <li><div class="step-num">4</div>Compartí tus observaciones y preguntas — fomentá el diálogo sobre la historia.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Mejora en la comprensión lectora y mayor interés por el libro que está viendo en clase.</p>
+        <div class="receta-tip">💡 Tip: usá post-its para marcar las partes importantes — facilita la discusión y ayuda a recordar detalles clave.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>📝 Correspondencia con el Maestro</h3>
+        <div class="receta-meta">⏱ 10 min semanales · Materiales: libreta de comunicación, email</div>
+        <p><strong>¿Para qué sirve?</strong> Mantener una comunicación fluida y sistemática que mejore el seguimiento del progreso.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Creá una libreta donde anotés observaciones sobre el aprendizaje de tu hijo en casa cada semana.</li>
+          <li><div class="step-num">2</div>Una vez por semana, enviá un mail breve al maestro: qué notaste + una pregunta sobre el progreso en clase.</li>
+          <li><div class="step-num">3</div>Antes de cada reunión, revisá la libreta y el historial de mails para preparar puntos de discusión.</li>
+          <li><div class="step-num">4</div>Guardá las respuestas del maestro — son un registro valioso del progreso de tu hijo.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Comunicación fluida que mantiene a todos alineados y permite ajustar la estrategia rápidamente.</p>
+        <div class="receta-tip">💡 Tip: mantené siempre un tono positivo y constructivo — eso construye una relación sólida que beneficia a tu hijo.</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">5 errores a evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span><strong>No comunicarte con el maestro:</strong> ignorar a los educadores lleva a malentendidos y esfuerzos duplicados. La comunicación regular es la base de todo.</li>
+        <li><span class="num">2</span><strong>Desconocer el currículo:</strong> no saber qué se enseña en clase puede hacer que tus esfuerzos en casa sean irrelevantes o contradictorios.</li>
+        <li><span class="num">3</span><strong>Esperar resultados inmediatos:</strong> la lectura es un proceso. Los avances pueden ser lentos — celebrá cada pequeño logro y tené paciencia.</li>
+        <li><span class="num">4</span><strong>No involucrar a tu hijo:</strong> hacer todo por él puede desmotivarlo. Involucrálo en las decisiones sobre su aprendizaje — que sienta que tiene agencia.</li>
+        <li><span class="num">5</span><strong>No ajustar la estrategia:</strong> si algo no funciona, no sigas insistiendo. Recogé feedback del maestro y ajustá el enfoque según sea necesario.</li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Terminaste el Cap 8! En el Cap 9 vemos algo muy motivador: cómo celebrar el progreso de tu hijo para mantener viva la chispa lectora.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume las estrategias de colaboración con la escuela. Guardala para tenerla a mano antes de tu próxima reunión con el maestro.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/infografia-cap8.png" alt="Infografía Capítulo 8 — Colaborando con la Escuela" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Capítulo 8 — Colaborando con Educadores y Escuelas</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Excelente trabajo! Ya tenés las herramientas para trabajar en equipo con la escuela. En el Cap 9 vemos cómo celebrar el progreso y mantener la motivación encendida.</p>
+        </div>
+      </div>
+      <a href="cap9.html" class="next-btn" style="margin-top:24px;">Capítulo 9: Celebrar el progreso →</a>
+    </div>
+
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('cap8');</script>
+</body>
+</html>

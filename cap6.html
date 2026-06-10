@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Cap 6: Superar Dificultades</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="sidebar-container"></div>
+
+<main class="main">
+  <div class="chapter-header">
+    <div class="bubble b1"></div><div class="bubble b2"></div>
+    <div class="bubble b3"></div><div class="bubble b4"></div>
+    <div class="chapter-badge">📖 Capítulo 6 de 10</div>
+    <h1 class="chapter-title">Estrategias para Superar Dificultades Comunes</h1>
+    <p class="chapter-quote">"La lectura no es solo un pasatiempo, es la clave que abre las puertas del conocimiento."<span>— Anónimo</span></p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>Tu hijo llega a casa y te dice que no quiere leer más porque no entiende lo que dice su libro favorito. Esa situación es más común de lo que pensás — y refleja una lucha interna que muchos chicos enfrentan en su camino lector.</p>
+        <p>La frustración y el desánimo pueden crear un círculo vicioso: el nene evita leer, practica menos, se atrasa más, se frustra más. Este capítulo te da las herramientas para cortar ese ciclo antes de que se instale.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">👁️</div>
+          <h4>Identificar a tiempo</h4>
+          <p>Las señales de dificultad aparecen antes de que el nene las verbalice. Saber qué observar es el primer paso.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🌊</div>
+          <h4>Fluidez y comprensión</h4>
+          <p>Son dos habilidades distintas que se trabajan diferente. Un chico puede leer fluido y no comprender — o al revés.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🧩</div>
+          <h4>Dislexia y diferencias</h4>
+          <p>Algunos chicos procesan la información de manera diferente. Eso no es un límite — es una forma distinta de aprender.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">📊</div>
+        <div>
+          <h4>Un dato importante</h4>
+          <p>Aproximadamente el 30% de los chicos enfrenta algún tipo de dificultad lectora en sus primeros años escolares. No es una excepción — es algo que le pasa a muchas familias. La diferencia la hace la intervención temprana.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar este capítulo</h4>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Entiendo que las dificultades lectoras son comunes y tienen solución</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a observar las señales de dificultad sin presionar</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Estoy dispuesta a adaptar el método si algo no funciona</span></div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Cada pequeño paso cuenta. Con amor, paciencia y las estrategias adecuadas, tu hijo puede superar cualquier dificultad y descubrir el placer de leer.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- TAB CONTEXTO -->
+    <div class="section-panel" id="tab-contexto">
+      <div class="intro-card">
+        <p>Para intervenir bien, primero hay que entender qué está pasando. Las dificultades lectoras tienen señales claras — y cuanto antes las identificás, más fácil es ayudar.</p>
+      </div>
+
+      <div class="section-title">Señales de dificultad</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🚩</div>
+          <div class="strategy-info"><h3>¿Cómo saber si hay una dificultad?</h3><p>Señales a observar desde los 5 años</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Los chicos no siempre verbalizan la frustración — pero sus comportamientos sí la muestran. Estas son las señales más comunes:</p>
+          <ul class="steps-list">
+            <li><div class="step-num">⚠️</div>Evita la lectura o se pone ansioso cuando tiene que leer en voz alta.</li>
+            <li><div class="step-num">⚠️</div>Tiene dificultad para pronunciar palabras simples que ya debería conocer.</li>
+            <li><div class="step-num">⚠️</div>Lee pero no puede contar qué pasó en la historia.</li>
+            <li><div class="step-num">⚠️</div>Le cuesta mucho mantener el hilo — pierde el lugar constantemente.</li>
+            <li><div class="step-num">⚠️</div>Muestra signos de frustración intensa ante textos que parecen apropiados para su nivel.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">💡</div>
+            <div><h4>Lo que podés hacer</h4><p>Si notas estas señales, no lo presionés. Primero observá, después hablá con él sobre cómo se siente al leer. Un simple "¿qué te parece esta historia?" puede abrir una conversación muy reveladora.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🎯</div>
+          <div class="strategy-info"><h3>Fluidez vs comprensión</h3><p>Son distintas — se trabajan distinto</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Un error común es confundir las dos. Un chico puede leer en voz alta sin trabarse (fluidez) y no entender nada de lo que leyó (comprensión). O puede entender muy bien pero leer lento y con trabajo (fluidez baja).</p>
+          <div class="dos-col" style="margin-top:14px;">
+            <div class="mini-card">
+              <div class="mini-icon">🏃</div>
+              <h4>Fluidez</h4>
+              <p>Leer con ritmo, expresión y sin trabarse. Se mejora con la <strong>lectura repetida</strong> — el mismo texto varias veces hasta que fluye.</p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-icon">🧠</div>
+              <h4>Comprensión</h4>
+              <p>Entender lo que se leyó. Se mejora con <strong>preguntas abiertas</strong> después de leer — "¿qué harías vos si fueras el personaje?"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🧩</div>
+          <div class="strategy-info"><h3>La dislexia y otras diferencias</h3><p>No es un límite — es una forma distinta</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La dislexia implica que el cerebro procesa la información de manera diferente — no es falta de inteligencia ni de esfuerzo. Con las estrategias adecuadas, los chicos con dislexia pueden ser excelentes lectores.</p>
+          <p>La intervención multisensorial es la más efectiva: involucrar la vista, el oído y el movimiento al mismo tiempo crea conexiones más fuertes entre los sonidos y las letras.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Letras tridimensionales:</strong> formá letras con plastilina o cartón. Que las toque y las diga en voz alta al mismo tiempo.</li>
+            <li><div class="step-num">2</div><strong>Escritura en el aire:</strong> que dibuje la letra en el aire con el dedo mientras pronuncia el sonido.</li>
+            <li><div class="step-num">3</div><strong>Colores para cada sonido:</strong> asigná un color a cada letra o sonido difícil — ayuda a visualizar y memorizar.</li>
+            <li><div class="step-num">4</div><strong>Apps y videos con música:</strong> los sonidos de las letras con rimas o canciones hacen el aprendizaje más atractivo.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">✨</div>
+            <div><h4>Ejemplo concreto</h4><p>Si está aprendiendo la "B": formá la letra con plastilina, después que la dibuje en el aire con el dedo mientras dice el sonido. Kinestésico + auditivo + visual al mismo tiempo.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Identificar la dificultad es la mitad del trabajo. La otra mitad es elegir la estrategia correcta — y eso es exactamente lo que viene ahora.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- TAB ESTRATEGIAS -->
+    <div class="section-panel" id="tab-estrategias">
+      <div class="intro-card">
+        <p>Tres estrategias concretas para las dificultades más comunes: reconocer las señales, mejorar la fluidez con lectura compartida, y trabajar la comprensión con preguntas.</p>
+      </div>
+
+      <div class="section-title">3 estrategias probadas</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info"><h3>Observación y diálogo abierto</h3><p>El primer paso siempre es escuchar</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Antes de cualquier estrategia, necesitás saber exactamente qué le está costando. Y la única forma de saberlo es observar y preguntar — sin presionar.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Observación diaria:</strong> dedicá unos minutos a ver cómo reacciona frente a los libros. ¿Se muestra ansioso? ¿Evita leer? ¿Se traba siempre en las mismas palabras?</li>
+            <li><div class="step-num">2</div><strong>Diálogo abierto:</strong> preguntale cómo se siente al leer. "¿Hay palabras que te cuestan más?" — sin juicio, con curiosidad.</li>
+            <li><div class="step-num">3</div><strong>Registrá patrones:</strong> anotá qué palabras o situaciones le generan más dificultad. Eso te ayuda a detectar si es un problema de fluidez, comprensión o fonética.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">💬</div>
+            <div><h4>Ejemplo concreto</h4><p>Si se frustra con "casa", no lo corrijas directamente. Probá con palabras similares: "mesa", "cama". ¿Le salen mejor? Eso te dice que el problema es esa palabra específica, no la habilidad general.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info"><h3>Modelo de lectura compartida</h3><p>Para mejorar la fluidez · Todos los niveles</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La lectura compartida es una de las técnicas más efectivas para mejorar la fluidez. El chico escucha cómo se pronuncian las palabras correctamente y cómo se modula la voz — y después lo replica.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí un libro al nivel de su capacidad — ni demasiado fácil ni demasiado difícil.</li>
+            <li><div class="step-num">2</div>Vos leés un párrafo en voz alta con buena entonación y ritmo.</li>
+            <li><div class="step-num">3</div>Él lee el mismo párrafo intentando imitar tu entonación y ritmo.</li>
+            <li><div class="step-num">4</div>Si se equivoca en una palabra, corregí suavemente y pedile que lo intente de nuevo — sin dramatizar.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">📖</div>
+            <div><h4>Ejemplo concreto</h4><p>Si leen "El Principito", vos leés la descripción del planeta. Él lee las aventuras. Al terminar, conversen sobre lo que más les gustó. La lectura compartida + la conversación es una combinación muy poderosa.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info"><h3>Preguntas abiertas para la comprensión</h3><p>Pensamiento crítico · Conexión emocional</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La comprensión se trabaja con el diálogo. Las preguntas abiertas — sin respuesta correcta o incorrecta — estimulan el pensamiento crítico y ayudan al chico a conectar la lectura con su propia vida.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Después de leer, preguntá: "¿qué crees que habría pasado si el personaje hubiera tomado otra decisión?"</li>
+            <li><div class="step-num">2</div>Pedile que relate la historia con sus palabras — sin el libro. Eso muestra qué retuvo y qué no.</li>
+            <li><div class="step-num">3</div>Conectá la historia con su vida: "¿alguna vez te pasó algo parecido a lo que le pasó al personaje?"</li>
+            <li><div class="step-num">4</div>Usá post-its para marcar palabras difíciles mientras leen — después las repasan juntos.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Con amor, paciencia y las estrategias correctas, tu hijo puede superar cualquier dificultad. Lo importante es no rendirse — cada intento lo hace más fuerte como lector.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- TAB ACTIVIDADES -->
+    <div class="section-panel" id="tab-actividades">
+      <div class="intro-card">
+        <p>Dos ejercicios prácticos para aplicar esta semana más las dos recetas del capítulo. Todo con materiales simples y tiempo estimado.</p>
+      </div>
+
+      <div class="section-title">Ejercicios prácticos</div>
+
+      <div class="receta-box">
+        <h3>📖 Lectura en Voz Alta Interactiva</h3>
+        <div class="receta-meta">⏱ 20-30 min · Materiales: libro, post-its, cuaderno</div>
+        <p><strong>¿Para qué sirve?</strong> Mejorar la fluidez y la comprensión al mismo tiempo, en un contexto de conexión emocional.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Elegí un libro que le entusiasme — a su nivel de lectura.</li>
+          <li><div class="step-num">2</div>Empezá leyendo en voz alta vos, animándolo a seguir el texto con el dedo.</li>
+          <li><div class="step-num">3</div>Hacé pausas interactivas: "¿qué creés que va a pasar ahora?"</li>
+          <li><div class="step-num">4</div>Marcá con post-its las palabras difíciles. Al terminar, repásenlas juntos practicando la pronunciación.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Mejora de fluidez, comprensión y un momento de conexión que hace que quiera repetirlo.</p>
+        <div class="receta-tip">💡 Tip: no corrijás cada error — interrumpir mucho desmotiva. Marcá los difíciles y trabajalos al final.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>🎯 Juego de Palabras en Casa (Bingo)</h3>
+        <div class="receta-meta">⏱ 15-20 min · Materiales: tarjetas con palabras</div>
+        <p><strong>¿Para qué sirve?</strong> Practicar el reconocimiento de palabras de forma divertida y sin presión.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Creá tarjetas con palabras que está aprendiendo: objetos de la casa, palabras de sus libros favoritos.</li>
+          <li><div class="step-num">2</div>Jugá al bingo: vos decís las palabras, él las busca en sus tarjetas.</li>
+          <li><div class="step-num">3</div>Por cada palabra que encuentre, la lee en voz alta antes de marcarla.</li>
+          <li><div class="step-num">4</div>Pequeños premios por cada ronda ganada para mantener la motivación.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Practica el reconocimiento de palabras sin que se sienta como una tarea — es un juego.</p>
+        <div class="receta-tip">💡 Tip: usá las palabras que más le cuestan — es la forma más efectiva de trabajarlas sin que se dé cuenta.</div>
+      </div>
+
+      <div class="section-title">Recetas del capítulo</div>
+
+      <div class="receta-box">
+        <h3>🔍 Caza de Palabras</h3>
+        <div class="receta-meta">⏱ 15 min · Materiales: 10-15 tarjetas con palabras, cronómetro</div>
+        <p><strong>¿Para qué sirve?</strong> Mejorar el vocabulario y la identificación de palabras en formato de juego activo.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Escribí palabras que está aprendiendo en tarjetas.</li>
+          <li><div class="step-num">2</div>Esparcí las tarjetas por la habitación.</li>
+          <li><div class="step-num">3</div>1 minuto para encontrar la mayor cantidad posible.</li>
+          <li><div class="step-num">4</div>Cada tarjeta encontrada se lee en voz alta y se usa en una oración.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Más vocabulario y más seguridad al reconocer palabras.</p>
+        <div class="receta-tip">💡 Tip: pequeños premios por cada 5 palabras correctas — la motivación se mantiene alta.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>📝 Cuento en Tercera Persona</h3>
+        <div class="receta-meta">⏱ 20 min · Materiales: libro, papel y lápices</div>
+        <p><strong>¿Para qué sirve?</strong> Mejorar la comprensión lectora a través de la narración creativa.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Leé juntos un capítulo del libro que estén leyendo.</li>
+          <li><div class="step-num">2</div>Pedile que cuente la misma historia desde el punto de vista de un personaje secundario.</li>
+          <li><div class="step-num">3</div>Que escriba o dibuje su versión.</li>
+          <li><div class="step-num">4</div>Comparen las dos versiones y conversen sobre las diferencias.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Mejora la comprensión, la creatividad y la capacidad de análisis narrativo.</p>
+        <div class="receta-tip">💡 Tip: preguntá "¿qué harías vos en su lugar?" — eso dispara la reflexión y el debate.</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">5 errores a evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span><strong>Ignorar las señales:</strong> la frustración sin resolver se convierte en bloqueo emocional. Cuanto antes intervenís, mejor.</li>
+        <li><span class="num">2</span><strong>Presionar demasiado:</strong> forzarlo cuando no está listo genera resistencia. Respetá su ritmo y celebrá cada pequeño logro.</li>
+        <li><span class="num">3</span><strong>No variar los materiales:</strong> un solo tipo de libro o actividad aburre. Alternás cuentos, cómics, libros de actividades, revistas.</li>
+        <li><span class="num">4</span><strong>Olvidar la diversión:</strong> si la lectura se siente como tarea, pierde su encanto. Los juegos y actividades lúdicas mantienen el interés vivo.</li>
+        <li><span class="num">5</span><strong>Comparar con otros:</strong> cada chico tiene su ritmo. Las comparaciones desmotivan — enfocate en sus logros personales.</li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Terminaste el Cap 6! En el Cap 7 vemos herramientas y recursos adicionales para enriquecer aún más la experiencia lectora de tu hijo.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume las señales, estrategias y herramientas del capítulo. Guardala para tenerla a mano cuando aparezcan dificultades.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/infografia-cap6.png" alt="Infografía Capítulo 6 — Superar Dificultades" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Capítulo 6 — Estrategias para Superar Dificultades Comunes</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Excelente! Ya tenés las herramientas para superar los obstáculos más comunes. En el Cap 7 vemos recursos adicionales para enriquecer la experiencia lectora.</p>
+        </div>
+      </div>
+      <a href="cap7.html" class="next-btn" style="margin-top:24px;">Capítulo 7: Herramientas y recursos →</a>
+    </div>
+
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('cap6');</script>
+</body>
+</html>

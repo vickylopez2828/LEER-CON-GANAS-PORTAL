@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Cap 1: Estilos de Aprendizaje</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<button class="hamburger" id="hamburger">☰</button>
+<div class="overlay" id="overlay"></div>
+<div id="sidebar-container"></div>
+
+<main class="main">
+
+  <!-- HEADER -->
+  <div class="chapter-header">
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+    <div class="bubble b4"></div>
+    <div class="chapter-badge">📖 Capítulo 1 de 10</div>
+    <h1 class="chapter-title">Descubriendo el Estilo de Aprendizaje de Tu Hijo</h1>
+    <p class="chapter-quote">
+      "La educación es la mejor amiga de la mente."
+      <span>— Platón</span>
+    </p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki"
+      onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active"   onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked"   onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked"   onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked"   onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked"   onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active"  onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab"         onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab"         onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab"         onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab"         onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         TAB 1 — INTRO
+    ══════════════════════════════════════════ -->
+    <div class="section-panel active" id="tab-intro">
+
+      <div class="intro-card">
+        <p>¿Intentaste enseñarle a leer a tu hijo y se frustró —o te frustraste vos— sin entender por qué? La mayoría de las veces la causa no es que al nene "no le da la cabeza". Es que el método que usás no conecta con cómo él aprende.</p>
+        <p>Cada chico tiene su propio estilo de aprendizaje. Identificarlo es el cambio que transforma no solo su habilidad para leer, sino su amor por los libros. Sin eso, podés esforzarte el doble y avanzar la mitad.</p>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div>
+          <h4>El círculo vicioso que hay que romper</h4>
+          <p>Cuando el método no encaja con el estilo del nene, aparece la frustración — en él y en vos. Ese loop de desmotivación se rompe en cuanto encontrás el canal por donde él naturalmente absorbe la información.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar este capítulo</h4>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">✓</div>
+          <span>Entiendo que no todos los chicos aprenden igual</span>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">✓</div>
+          <span>Estoy abierta a cambiar el método si no está funcionando</span>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">✓</div>
+          <span>Voy a observar cómo juega mi hijo para identificar su estilo</span>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>No existe un método único que funcione para todos. Lo que existe es el método correcto para tu hijo. Este capítulo te ayuda a encontrarlo.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('contexto')">Entender el contexto →</button>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         TAB 2 — CONTEXTO
+    ══════════════════════════════════════════ -->
+    <div class="section-panel" id="tab-contexto">
+
+      <div class="intro-card">
+        <p>Muchos padres se desesperan al ver que sus hijos no responden al mismo método que funcionó para ellos en su infancia. Sin embargo, cada chico es único. Si no adaptás tu enfoque, podés estar alejando a tu hijo del aprendizaje sin darte cuenta, haciéndolo más difícil de lo que debería ser.</p>
+      </div>
+
+      <div class="section-title">La diversidad de estilos de aprendizaje</div>
+
+      <div class="intro-card">
+        <p>Cada chico tiene su propia forma de absorber la información. Según estudios recientes, aproximadamente el 65% de los estudiantes aprenden de manera visual, un 30% se inclina hacia métodos kinestésicos y un 5% se siente más cómodo con el aprendizaje auditivo. Estos números muestran la necesidad de personalizar la educación.</p>
+        <p>Imaginá que intentás enseñarle a leer a tu hijo usando solo libros de texto. Para un nene que aprende mejor con actividades prácticas, eso es tan efectivo como regar una planta con una manguera bloqueada. La clave está en reconocer que no todos los chicos se sienten atraídos por los mismos métodos. Y entender eso no solo mejora el aprendizaje — también fortalece la relación entre ustedes.</p>
+      </div>
+
+      <div class="section-title">Los 7 estilos de aprendizaje</div>
+
+      <div class="estilos-grid">
+        <div class="estilo-card">
+          <div style="font-size:36px;margin-bottom:8px;">👁️</div>
+          <div class="estilo-num">1</div>
+          <h4>Visual</h4>
+          <p>Aprende con imágenes, colores y gráficos. Retiene mejor cuando ve la información organizada.</p>
+        </div>
+        <div class="estilo-card">
+          <div style="font-size:36px;margin-bottom:8px;">👂</div>
+          <div class="estilo-num">2</div>
+          <h4>Auditivo</h4>
+          <p>Aprende mejor escuchando. La lectura en voz alta y las explicaciones son clave para él.</p>
+        </div>
+        <div class="estilo-card">
+          <div style="font-size:36px;margin-bottom:8px;">🤸</div>
+          <div class="estilo-num">3</div>
+          <h4>Kinestésico</h4>
+          <p>Necesita moverse y tocar. Aprende a través de la acción y materiales manipulativos.</p>
+        </div>
+        <div class="estilo-card">
+          <div style="font-size:36px;margin-bottom:8px;">✏️</div>
+          <div class="estilo-num">4</div>
+          <h4>Verbal</h4>
+          <p>Se expresa bien con palabras. Le gusta leer y escribir — el más natural para la lectura.</p>
+        </div>
+        <div class="estilo-card">
+          <div style="font-size:36px;margin-bottom:8px;">🔢</div>
+          <div class="estilo-num">5</div>
+          <h4>Lógico</h4>
+          <p>Analítico y ordenado. Resuelve problemas con facilidad y prefiere estructuras claras.</p>
+        </div>
+        <div class="estilo-card">
+          <div style="font-size:36px;margin-bottom:8px;">👥</div>
+          <div class="estilo-num">6</div>
+          <h4>Interpersonal</h4>
+          <p>Aprende en grupo. Le va mejor practicar la lectura con otros chicos o con vos.</p>
+        </div>
+        <div class="estilo-card" style="grid-column: 1 / -1;">
+          <div style="font-size:36px;margin-bottom:8px;">🧘</div>
+          <div class="estilo-num">7</div>
+          <h4>Intrapersonal</h4>
+          <p>Prefiere trabajar solo y a su ritmo. Reflexiona sobre su propio aprendizaje — dale espacio.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">🎯</div>
+        <div>
+          <h4>¿Cómo identificás el estilo de tu hijo?</h4>
+          <p>Observalo jugando. ¿Prefiere armar cosas con las manos (kinestésico), ver videos (visual), escuchar cuentos (auditivo) o leer solo en su cuarto (intrapersonal)? El juego libre revela el estilo natural más claramente que cualquier test.</p>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Tu hijo probablemente tenga uno o dos estilos dominantes. No te preocupés si combinás varios — lo importante es encontrar por dónde entra mejor la información.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         TAB 3 — ESTRATEGIAS
+    ══════════════════════════════════════════ -->
+    <div class="section-panel" id="tab-estrategias">
+
+      <div class="intro-card">
+        <p>Una vez que sabés cuál es el estilo de tu hijo, podés adaptar el enfoque. Acá van las tres estrategias más efectivas para identificarlo con precisión y aplicarlo directamente a la lectura.</p>
+      </div>
+
+      <!-- Estrategia 1 -->
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info">
+            <h3>Identificación por juegos</h3>
+            <p>Observar para descubrir · Sin materiales especiales</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Los juegos son una forma natural de aprendizaje. Cuando el nene juega sin presión, revela su estilo con más claridad que cualquier test formal. Usá eso a tu favor.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Seleccioná varios tipos de juego: juegos de mesa para los visuales, juegos de memoria con palabras para los auditivos, juego de rol o construcción para los kinestésicos.</li>
+            <li><div class="step-num">2</div>Observá cómo reacciona a cada uno. ¿En cuál se engancha más? ¿En cuál muestra mayor facilidad natural?</li>
+            <li><div class="step-num">3</div>Incorporá elementos de ese estilo a la práctica de lectura. Si le gusta el juego de memoria, usá tarjetas con palabras e imágenes para emparejar.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">✨</div>
+            <div>
+              <h4>Ejemplo concreto</h4>
+              <p>Si tu hijo se emociona con el juego de memoria de palabras, usá ese mismo formato para enseñarle vocabulario nuevo — tarjetas con imágenes y palabras que tiene que emparejar. El aprendizaje se cuela sin que lo note.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estrategia 2 -->
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info">
+            <h3>Técnicas de visualización</h3>
+            <p>Para chicos visuales · Fácil de aplicar en casa</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Los chicos visuales absorben información mucho más rápido a través de imágenes y gráficos. Si tu hijo es visual, la lectura de texto plano puede aburrirlo aunque sepa leer perfectamente.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí libros con muchas ilustraciones y colores al principio.</li>
+            <li><div class="step-num">2</div>Creá "mapas de la historia" — un dibujo simple de inicio, nudo y desenlace.</li>
+            <li><div class="step-num">3</div>Usá colores para destacar palabras clave cuando practica la lectura.</li>
+            <li><div class="step-num">4</div>Asociá cada palabra nueva a una imagen mental o dibujada.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">✨</div>
+            <div>
+              <h4>Ejemplo concreto</h4>
+              <p>Si estás enseñando la palabra "árbol", mostrá una imagen al lado de la palabra escrita. Después pedile que dibuje su propio árbol y escriba la palabra debajo. Esa conexión queda fija en su memoria.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estrategia 3 -->
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info">
+            <h3>Práctica espaciada</h3>
+            <p>Para consolidar el aprendizaje · Sesiones cortas y frecuentes</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La práctica espaciada se basa en repasar la información en intervalos en lugar de sesiones largas concentradas. Es más efectiva para la retención a largo plazo y evita el agotamiento.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Creá un calendario de lectura con tiempos específicos a lo largo de la semana — breves pero frecuentes.</li>
+            <li><div class="step-num">2</div>Después de cada sesión, revisá brevemente (5-10 min) las palabras aprendidas en la sesión anterior.</li>
+            <li><div class="step-num">3</div>Alternando entre libros, tarjetas y actividades interactivas. La variedad mantiene el interés y refuerza el aprendizaje desde distintos ángulos.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">✨</div>
+            <div>
+              <h4>Ejemplo concreto</h4>
+              <p>Si tu hijo aprendió 5 palabras nuevas hoy, revisalas mañana y de nuevo en 3 días. Ese repaso corto y espaciado hace que las palabras queden grabadas a largo plazo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>No necesitás aplicar las tres estrategias al mismo tiempo. Empezá con la que más conecta con el estilo de tu hijo y después sumás las otras de a poco.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('actividades')">Ver actividades y recetas →</button>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         TAB 4 — ACTIVIDADES Y RECETAS
+    ══════════════════════════════════════════ -->
+    <div class="section-panel" id="tab-actividades">
+
+      <div class="intro-card">
+        <p>Acá están los ejercicios concretos para poner en práctica lo que aprendiste. Son actividades que podés hacer con tu hijo esta misma semana, sin materiales especiales.</p>
+      </div>
+
+      <!-- RECETAS -->
+      <div class="section-title">🎨 Recetas para aplicar</div>
+
+      <div class="receta-box">
+        <h3>Mural de Palabras Creativas</h3>
+        <div class="receta-meta">⏱ 30 minutos · Para chicos visuales</div>
+        <p>Junto con tu hijo, elegí 10 palabras que quiera aprender y diseñen un mural colorido con dibujos, fotos o recortes que representen cada palabra. Colocalo en un lugar visible.</p>
+        <ul class="steps-list" style="margin-top:10px;">
+          <li><div class="step-num">1</div>Elegí 10 palabras que quiera aprender esta semana.</li>
+          <li><div class="step-num">2</div>Pedile que dibuje o recorte imágenes que representen cada palabra.</li>
+          <li><div class="step-num">3</div>Juntos, peguen las palabras e imágenes en un orden atractivo en la cartulina.</li>
+          <li><div class="step-num">4</div>Colgalo donde lo vea todos los días — a la altura de sus ojos.</li>
+        </ul>
+        <div class="receta-tip">💡 Tip: Cambiá las palabras del mural cada dos semanas para mantenerlo desafiante.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Juego de Memoria de Palabras</h3>
+        <div class="receta-meta">⏱ 20 minutos · Para chicos auditivos y visuales</div>
+        <p>Creá tarjetas con pares de palabras e imágenes. Tu hijo tiene que encontrar los pares y leer cada palabra en voz alta cuando los da vuelta.</p>
+        <ul class="steps-list" style="margin-top:10px;">
+          <li><div class="step-num">1</div>Cortá cartulina en rectángulos del mismo tamaño — necesitás dos tarjetas por palabra.</li>
+          <li><div class="step-num">2</div>En una escribí la palabra; en la otra dibujá o pegá la imagen que la representa.</li>
+          <li><div class="step-num">3</div>Mezclá todas las tarjetas y colocalas boca abajo en una grilla.</li>
+          <li><div class="step-num">4</div>Cuando encuentra un par, que lo lea en voz alta antes de seguir jugando.</li>
+        </ul>
+        <div class="receta-tip">💡 Tip: Variá las palabras en cada partida para ampliar el vocabulario semana a semana.</div>
+      </div>
+
+      <!-- EJERCICIOS PRÁCTICOS -->
+      <div class="section-title" style="margin-top:32px;">📋 Ejercicios prácticos</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info">
+            <h3>Mapa de Estilos de Aprendizaje</h3>
+            <p>Ejercicio en familia · 30 minutos · Hojas, lápices y post-its</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Este ejercicio crea un mapa visual que clarifica el estilo de aprendizaje de tu hijo y te ayuda a personalizar tu enfoque desde el primer día.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Dibujá un círculo en el centro de una hoja y escribí el nombre de tu hijo. Eso es el núcleo del mapa.</li>
+            <li><div class="step-num">2</div>Creá 7 ramas, una por cada estilo de aprendizaje. Escribí una descripción breve en cada rama.</li>
+            <li><div class="step-num">3</div>Pedile a tu hijo que elija los estilos con los que más se identifica y que los marque con un post-it.</li>
+            <li><div class="step-num">4</div>Conversen sobre sus elecciones y definan juntos cómo van a adaptar la práctica de lectura a esos estilos.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🎯</div>
+            <div><p><strong>Resultado esperado:</strong> Al terminar, tenés un mapa claro del estilo de tu hijo para guiar los próximos capítulos.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info">
+            <h3>Diario de Lectura</h3>
+            <p>Hábito diario · 15 minutos · Solo un cuaderno</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Un diario de lectura sencillo donde tu hijo registra lo que lee y cómo lo vivió. Sirve para que vos veas qué formatos le gustan más y cuáles evita.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí un cuaderno o anotador que sea "de él" — que le guste el diseño.</li>
+            <li><div class="step-num">2</div>Creá un apartado donde anote el libro, cuánto leyó y qué sintió.</li>
+            <li><div class="step-num">3</div>Agregá una pregunta fija: "¿Qué fue lo que más te enganchó hoy?" — visual, una historia, el misterio, etc.</li>
+            <li><div class="step-num">4</div>Una vez por semana, revisá juntos el diario para identificar patrones en sus gustos.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🎯</div>
+            <div><p><strong>Resultado esperado:</strong> En una semana tenés un registro claro de sus preferencias para ajustar el enfoque en los próximos días.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOS 5 ERRORES -->
+      <div class="section-title" style="margin-top:32px;">⚠️ Los 5 errores que hay que evitar</div>
+
+      <ul class="errores-list">
+        <li>
+          <span class="num">1</span>
+          <span><strong>No involucrar al nene.</strong> Ignorar su opinión sobre su propio estilo puede hacer que se sienta desmotivado. Siempre preguntale qué le gusta y qué no — su respuesta es tu mejor información.</span>
+        </li>
+        <li>
+          <span class="num">2</span>
+          <span><strong>Forzar un estilo que no es el suyo.</strong> Cada chico es único. Tratar de imponer un método que no resuena con él crea frustración y desinterés en lugar de aprendizaje.</span>
+        </li>
+        <li>
+          <span class="num">3</span>
+          <span><strong>No ajustar las actividades.</strong> Si algo no funciona, no tengas miedo de cambiarlo. La flexibilidad es esencial. Un método que no conecta no es un fracaso — es información.</span>
+        </li>
+        <li>
+          <span class="num">4</span>
+          <span><strong>Olvidarte de celebrar los logros.</strong> Cada pequeño avance cuenta. Ignorar los progresos puede desincentivar a tu hijo. Celebrá cada triunfo, por chico que parezca.</span>
+        </li>
+        <li>
+          <span class="num">5</span>
+          <span><strong>Descuidar la práctica constante.</strong> La lectura es una habilidad que se fortalece con la repetición. Sesiones cortas y frecuentes valen más que sesiones largas y esporádicas.</span>
+        </li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Muy bien! Ya tenés todo lo del Cap 1. Ahora mirá el resumen visual — es tu hoja de ruta para esta semana. Y después te espera el Cap 2: cómo crear el ambiente de lectura ideal para el estilo de tu hijo.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         TAB 5 — RESUMEN VISUAL
+    ══════════════════════════════════════════ -->
+    <div class="section-panel" id="tab-resumen">
+
+      <div class="intro-card">
+        <p>Esta infografía resume todo lo que vimos en el capítulo. Guardala o compartila — es tu hoja de ruta para descubrir el estilo de aprendizaje de tu hijo.</p>
+      </div>
+
+      <div class="infografia-wrap">
+        <img src="assets/infografia-cap1.png"
+          alt="Infografía Capítulo 1 — Estilos de Aprendizaje"
+          onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Capítulo 1 — Estilos de Aprendizaje</p>
+      </div>
+
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Terminaste el Capítulo 1! Ya tenés las herramientas para descubrir el estilo de tu hijo esta semana. En el Cap 2 vemos cómo crear el ambiente de lectura ideal para ese estilo.</p>
+        </div>
+      </div>
+
+      <a href="cap2.html" class="next-btn" style="margin-top:24px; text-decoration:none;">
+        Capítulo 2: Ambiente de lectura →
+      </a>
+    </div>
+
+  </div><!-- /content -->
+</main>
+
+<script>
+  const TABS = ['intro','contexto','estrategias','actividades','resumen'];
+
+  function switchTab(id) {
+    // Panels
+    TABS.forEach(t => {
+      document.getElementById('tab-' + t).classList.remove('active');
+    });
+    document.getElementById('tab-' + id).classList.add('active');
+
+    // Tab buttons
+    const tabEls = document.querySelectorAll('.tab');
+    tabEls.forEach((el, i) => {
+      el.classList.toggle('active', TABS[i] === id);
+    });
+
+    // Progress
+    const idx = TABS.indexOf(id);
+    document.getElementById('progressFill').style.width = ((idx + 1) / TABS.length * 100) + '%';
+
+    // Step dots
+    document.querySelectorAll('.step-dot').forEach((d, i) => {
+      d.className = 'step-dot';
+      if (i < idx) d.classList.add('done');
+      else if (i === idx) d.classList.add('active');
+      else d.classList.add('locked');
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleStrategy(card) {
+    card.classList.toggle('expanded');
+  }
+
+  function toggleCheck(item) {
+    item.classList.toggle('checked');
+  }
+</script>
+
+<script src="sidebar.js"></script>
+<script>renderSidebar('cap1');</script>
+</body>
+</html>

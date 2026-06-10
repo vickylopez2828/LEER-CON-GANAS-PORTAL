@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Cap 5: Lectura en la Vida Diaria</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="sidebar-container"></div>
+
+<main class="main">
+  <div class="chapter-header">
+    <div class="bubble b1"></div><div class="bubble b2"></div>
+    <div class="bubble b3"></div><div class="bubble b4"></div>
+    <div class="chapter-badge">📖 Capítulo 5 de 10</div>
+    <h1 class="chapter-title">Integrando la Lectura en la Vida Diaria</h1>
+    <p class="chapter-quote">"La lectura es un refugio; un lugar donde podemos soñar y aprender al mismo tiempo."<span>— Anónimo</span></p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>Estás en la cocina preparando la cena y tu hijo empieza a preguntarte sobre los ingredientes. En lugar de solo contestar, le contás la historia detrás de cada uno. Ahí, entre la cebolla y el tomate, surge un momento mágico de lectura.</p>
+        <p>Integrar la lectura en la vida diaria no es difícil — es cuestión de ver las oportunidades que ya existen en tu rutina y aprovecharlas. La comida, el baño, el paseo al parque, el supermercado — todo puede ser un momento lector.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">🍽️</div>
+          <h4>En la mesa</h4>
+          <p>La comida es el momento familiar por excelencia. Un cuento corto o una anécdota conecta la lectura con calidez y pertenencia.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🌙</div>
+          <h4>Antes de dormir</h4>
+          <p>El cuento nocturno calma y abre mundos imaginativos. Es la tradición lectora más poderosa y más fácil de sostener.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🌳</div>
+          <h4>En el paseo</h4>
+          <p>El mundo real cobra vida cuando lo conectamos con lo que leímos. Un libro sobre animales cobra otro sentido en el zoo.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div>
+          <h4>¿Por qué es tan importante integrarlo?</h4>
+          <p>Los chicos que tienen experiencias de lectura integradas en su vida cotidiana desarrollan vocabulario más amplio y comprensión más sólida. No es solo leer más — es leer en contextos significativos donde las palabras cobran vida real.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar este capítulo</h4>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Entiendo que la lectura no tiene que ser solo en el escritorio</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a identificar al menos 2 momentos de mi rutina donde puedo integrar la lectura</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Estoy dispuesta a ser constante — la rutina es la clave</span></div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Pequeños momentos diarios crean grandes hábitos. No hace falta una hora especial — alcanza con 10 minutos en el momento justo.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- TAB CONTEXTO -->
+    <div class="section-panel" id="tab-contexto">
+      <div class="intro-card">
+        <p>Antes de ver las estrategias concretas, entendamos por qué la lectura integrada en la rutina funciona mejor que la lectura como "tarea separada".</p>
+      </div>
+
+      <div class="section-title">Por qué funciona la lectura integrada</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">📚</div>
+          <div class="strategy-info"><h3>Las palabras cobran vida en contexto</h3><p>Aprendizaje situado · Más retención</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Cuando tu hijo puede ver cómo una historia se relaciona con su entorno real, es mucho más probable que se interese por leer por sí mismo. Las palabras no son abstractas — tienen un lugar en el mundo que él conoce.</p>
+          <p>Por ejemplo: si leen sobre delfines antes de ir al acuario, cuando los ve en el tanque ya tiene una historia, datos y emociones asociadas. Esa conexión hace que lo leído se fije mucho más profundo.</p>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🔗</div>
+            <div><h4>La clave</h4><p>Conectar la lectura con la vida real fomenta el pensamiento crítico y la creatividad — no solo la decodificación de palabras.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🔄</div>
+          <div class="strategy-info"><h3>El poder de la rutina</h3><p>Neurociencia del hábito lector</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Las rutinas son aliadas del aprendizaje. Cuando establecés momentos específicos para la lectura — en la cena, antes de dormir — estás creando un hábito que se asocia con seguridad y confort.</p>
+          <p>Los chicos que leen regularmente desarrollan conexiones neuronales más fuertes en áreas del lenguaje. No es magia — es práctica constante en un contexto positivo.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí uno o dos momentos fijos de la semana para empezar — no hace falta todos los días desde el día uno.</li>
+            <li><div class="step-num">2</div>Mantené esos momentos aunque duren solo 10 minutos — la consistencia vale más que la duración.</li>
+            <li><div class="step-num">3</div>Conectalos con algo placentero: la cena favorita, el momento de relajación antes de dormir.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🌍</div>
+          <div class="strategy-info"><h3>Lectura fuera de casa</h3><p>El mundo como aula</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>El supermercado, el parque, el auto, el médico — todos son oportunidades de lectura que la mayoría de los padres no aprovecha. Etiquetas, carteles, menús, folletos — el mundo está lleno de texto esperando ser leído.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Supermercado:</strong> leé las etiquetas juntos, buscá palabras que empieces con cierta letra, hacé una lista de compras que él ayude a armar y leer.</li>
+            <li><div class="step-num">2</div><strong>En el auto:</strong> carteles, nombres de calles, tiendas — todo es texto. Podés hacer un juego de encontrar palabras.</li>
+            <li><div class="step-num">3</div><strong>Calendario familiar:</strong> escribí y leé juntos las actividades, citas y recordatorios. La lectura funcional tiene mucho valor.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>No necesitás un libro para leer. El mundo está lleno de palabras — ayudá a tu hijo a verlas.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- TAB ESTRATEGIAS -->
+    <div class="section-panel" id="tab-estrategias">
+      <div class="intro-card">
+        <p>Tres estrategias concretas para integrar la lectura en tu rutina diaria — con pasos específicos y ejemplos reales de cómo aplicarlas.</p>
+      </div>
+
+      <div class="section-title">3 estrategias para el día a día</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info"><h3>Lectura durante las comidas</h3><p>15-20 min · Cualquier momento de la mesa</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La comida es el momento familiar por excelencia. Un cuento corto o una lectura compartida convierte la mesa en un espacio de conexión lectora. Los chicos asocian la lectura con calidez, y eso es exactamente lo que queremos.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí un libro o cuento corto relacionado con lo que van a comer — o simplemente algo que le interese.</li>
+            <li><div class="step-num">2</div>Antes de empezar a comer, leé un párrafo o una página en voz alta — establecé ese ritual.</li>
+            <li><div class="step-num">3</div>Hacé preguntas después: "¿qué te pareció?", "¿qué harías vos en su lugar?"</li>
+            <li><div class="step-num">4</div>Variá el contenido: libros, revistas, recetas, artículos cortos — lo que sea que mantenga el interés.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🍝</div>
+            <div><h4>Ejemplo concreto</h4><p>Están comiendo espaguetis. Leés un cuento sobre una familia italiana que prepara una gran cena. Después preguntás: "¿qué comida te gustaría preparar a vos y por qué?" La lectura se vuelve conversación — y la conversación refuerza la lectura.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info"><h3>Cuentos nocturnos interactivos</h3><p>Antes de dormir · El ritual más poderoso</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Las historias antes de dormir calman a los chicos y abren mundos imaginativos. Es la tradición lectora más fácil de instalar y la que más dura. La clave está en hacerlo interactivo — no solo leer, sino hacer que él participe.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí libros con tramas que capturen su atención — los ilustrados son ideales para arrancar.</li>
+            <li><div class="step-num">2</div>Usá voces diferentes para los personajes — que sea teatral, divertido, expresivo.</li>
+            <li><div class="step-num">3</div>Pedile que prediga qué va a pasar: "¿qué creés que va a hacer el personaje ahora?"</li>
+            <li><div class="step-num">4</div>Al terminar, preguntá su parte favorita y qué haría él diferente.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🌙</div>
+            <div><h4>Ejemplo concreto</h4><p>Leen "El monstruo de colores". Mientras lees, pedile que haga con su cara la emoción del monstruo en cada parte. Al final, preguntale cómo se siente él y qué hace cuando tiene esa emoción. La lectura conecta con su mundo interior.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info"><h3>Lectura en excursiones</h3><p>Parque, zoo, museo, supermercado</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Llevar un libro relacionado con el lugar que van a visitar transforma cualquier salida en una aventura literaria. Lo que se aprende en contexto real se recuerda mucho más que lo que se lee en abstracto.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Antes de salir, elegí un libro relacionado con el destino — zoológico, acuario, parque, museo.</li>
+            <li><div class="step-num">2</div>Leé un fragmento relevante en cada parada del recorrido.</li>
+            <li><div class="step-num">3</div>Relacioná lo que leen con lo que ven: "¿qué diferencias encontrás entre el delfín del libro y este?"</li>
+            <li><div class="step-num">4</div>Al volver, preguntá qué fue lo que más le gustó — del lugar Y de la historia.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🦁</div>
+            <div><h4>Ejemplo concreto</h4><p>Van al zoológico. Llevás un libro sobre animales. Justo antes de llegar al tanque de los delfines, leés el fragmento sobre ellos. Al verlos, preguntás: "¿qué aprendiste del libro que estás viendo ahora?" Ese momento se graba.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Sé constante, sé flexible y disfrutá el momento sin presiones. Escuchá sus intereses y elegí lecturas que lo motiven — cada momento compartido cuenta.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- TAB ACTIVIDADES -->
+    <div class="section-panel" id="tab-actividades">
+      <div class="intro-card">
+        <p>Dos ejercicios para arrancar esta semana más las dos recetas del capítulo — todo con tiempo estimado y materiales simples.</p>
+      </div>
+
+      <div class="section-title">Ejercicios prácticos</div>
+
+      <div class="receta-box">
+        <h3>🍽️ Lectura durante la comida</h3>
+        <div class="receta-meta">⏱ 15-20 min · Materiales: un libro adecuado a su edad</div>
+        <p><strong>¿Para qué sirve?</strong> Asociar la lectura con momentos placenteros y familiares — el antídoto perfecto contra la resistencia lectora.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Dejá que él elija el libro — eso crea expectativa y compromiso desde el arranque.</li>
+          <li><div class="step-num">2</div>Antes de comer, anuncialo: "hoy vamos a leer un poco mientras comemos." Eso crea anticipación.</li>
+          <li><div class="step-num">3</div>Alternás: vos leés un párrafo, él lee el siguiente. Participación activa todo el tiempo.</li>
+          <li><div class="step-num">4</div>Hacé preguntas mientras leen: "¿cómo se siente el personaje?", "¿qué harías vos?"</li>
+        </ul>
+        <p><strong>Resultado:</strong> La lectura queda asociada con la calidez de la mesa familiar — uno de los vínculos emocionales más fuertes.</p>
+        <div class="receta-tip">💡 Tip: empezá con libros muy cortos o cuentos de una página — la idea es crear el hábito, no terminar el libro.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>🚶 Historias en el paseo</h3>
+        <div class="receta-meta">⏱ 30 min · Materiales: un libro relacionado con el destino</div>
+        <p><strong>¿Para qué sirve?</strong> Conectar la lectura con experiencias reales — lo que más profundamente fija el aprendizaje.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Planificá una salida corta — parque, tienda, plaza, cualquier lugar.</li>
+          <li><div class="step-num">2</div>Antes de salir, contale sobre la historia que van a leer y cómo se relaciona con el lugar.</li>
+          <li><div class="step-num">3</div>En cada parada relevante, leé un fragmento corto del libro.</li>
+          <li><div class="step-num">4</div>Al terminar: "¿qué parte te gustó más? ¿qué aprendiste?" — cerrá el círculo.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Aprende a ver los vínculos entre la literatura y la vida real — cada salida puede ser una aventura de aprendizaje.</p>
+        <div class="receta-tip">💡 Tip: no hace falta ir lejos. Una vuelta a la manzana con un libro sobre plantas o pájaros ya funciona.</div>
+      </div>
+
+      <div class="section-title">Recetas del capítulo</div>
+
+      <div class="receta-box">
+        <h3>📖 Lectura Familiar en la Mesa</h3>
+        <div class="receta-meta">⏱ 15 min · Materiales: 1 libro o cuento corto</div>
+        <p><strong>¿Para qué sirve?</strong> Fomentar el amor por la lectura en un entorno familiar y cálido.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Elegí un libro relacionado con la comida o con algo que le interese.</li>
+          <li><div class="step-num">2</div>Antes de empezar a comer, leé un párrafo en voz alta.</li>
+          <li><div class="step-num">3</div>Hacé preguntas sobre el texto — que hable, que opine.</li>
+          <li><div class="step-num">4</div>Compartí tu opinión también — mostrá que a vos también te gusta leer.</li>
+        </ul>
+        <p><strong>Resultado:</strong> La lectura se convierte en parte natural de la rutina familiar.</p>
+        <div class="receta-tip">💡 Tip: variá los temas según la comida para mantener el interés y la sorpresa.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>🌙 Cuentos de Buenas Noches Interactivos</h3>
+        <div class="receta-meta">⏱ 15-20 min · Materiales: 1 libro ilustrado, luz suave</div>
+        <p><strong>¿Para qué sirve?</strong> Crear un vínculo afectivo con la lectura y estimular la imaginación antes de dormir.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Elegí un libro ilustrado que le llame la atención — mejor si lo elige él.</li>
+          <li><div class="step-num">2</div>Creá el ambiente: luz suave, sin pantallas, cómodos.</li>
+          <li><div class="step-num">3</div>Leé con voces distintas para cada personaje — que sea un pequeño teatro.</li>
+          <li><div class="step-num">4</div>Al terminar: "¿cuál fue tu parte favorita? ¿cómo hubieras continuado la historia?"</li>
+        </ul>
+        <p><strong>Resultado:</strong> Un ritual nocturno que el nene espera con ganas — la lectura queda asociada con calma y conexión.</p>
+        <div class="receta-tip">💡 Tip: dejá que él elija el libro — eso aumenta muchísimo su motivación para el rato de lectura.</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">5 errores a evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span><strong>No leer en voz alta:</strong> muchos papás creen que el nene tiene que leer solo. Leer en voz alta juntos es fundamental para la entonación y la comprensión.</li>
+        <li><span class="num">2</span><strong>No adaptar a sus intereses:</strong> obligarlo a leer libros que no le interesan genera resistencia. Siempre buscá títulos que conecten con lo que le apasiona.</li>
+        <li><span class="num">3</span><strong>Ignorar el diálogo:</strong> leer sin conversar después es desaprovechar la mitad del potencial. Las preguntas y la discusión son clave para el aprendizaje profundo.</li>
+        <li><span class="num">4</span><strong>No establecer rutinas:</strong> la lectura esporádica no construye hábito. La consistencia — aunque sea 10 minutos — vale más que una hora ocasional.</li>
+        <li><span class="num">5</span><strong>Convertirla en obligación:</strong> si se siente como tarea, el nene la va a evitar. Integrala en momentos placenteros para que la asocie con disfrute.</li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Terminaste el Cap 5! En el Cap 6 vemos cómo superar las dificultades más comunes que aparecen en el camino lector.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume las estrategias y momentos clave del capítulo. Guardala para tenerla a mano en tu rutina diaria.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/infografia-cap5.png" alt="Infografía Capítulo 5 — Lectura en la Vida Diaria" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Capítulo 5 — Integrando la Lectura en la Vida Diaria</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Muy bien! Ya sabés cómo integrar la lectura en cada momento del día. En el Cap 6 vemos cómo superar las dificultades que aparecen en el camino.</p>
+        </div>
+      </div>
+      <a href="cap6.html" class="next-btn" style="margin-top:24px;">Capítulo 6: Superar dificultades →</a>
+    </div>
+
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('cap5');</script>
+</body>
+</html>

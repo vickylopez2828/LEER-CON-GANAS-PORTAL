@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Bono 1 Cap 4: Actividades Prácticas</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  :root { --naranja: #16A34A; --naranja-claro: #4ADE80; --amarillo: #DCFCE7; }
+  .chapter-header { background: linear-gradient(135deg, #16A34A 0%, #4ADE80 50%, #86EFAC 100%); }
+  .next-btn { background: linear-gradient(135deg, #16A34A, #4ADE80); }
+  .next-btn:hover { box-shadow: 0 10px 28px rgba(22,163,74,0.45); }
+  .tab.active { background: #16A34A; border-color: #16A34A; box-shadow: 0 4px 12px rgba(22,163,74,0.3); }
+  .tab:hover:not(.active) { border-color: #16A34A; color: #16A34A; }
+  .intro-card { border-left-color: #16A34A; }
+  .strategy-num { background: #14532D; color: #4ADE80; }
+  .step-dot.active { background: #16A34A; box-shadow: 0 3px 10px rgba(22,163,74,0.4); }
+  .step-dot.done { background: #14532D; }
+  .progress-fill { background: linear-gradient(90deg, #14532D, #16A34A); }
+  .tuki-tip { border-color: rgba(22,163,74,0.25); }
+  .tuki-tip .tt-text h4 { color: #4ADE80; }
+  .receta-box { border-color: #86EFAC; }
+  .check-item.checked .check-box { background: #16A34A; border-color: #16A34A; }
+  .mini-card { border-top-color: #16A34A; }
+  .resumen-box ul li::before { color: #16A34A; }
+</style>
+</head>
+<body>
+
+<button class="hamburger" id="hamburger">☰</button>
+<div class="overlay" id="overlay"></div>
+<div id="sidebar-container"></div>
+
+<main class="main">
+
+  <!-- HEADER -->
+  <div class="chapter-header">
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+    <div class="bubble b4"></div>
+    <div class="chapter-badge">🎮 Bono 1 · Capítulo 4 de 4</div>
+    <h1 class="chapter-title">Actividades Prácticas para Promover la Lectura</h1>
+    <p class="chapter-quote">
+      "La lectura es el pasaporte a cientos de mundos; ¡no te pierdas la aventura!"
+      <span>— Anónimo</span>
+    </p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki"
+      onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         TAB 1 — INTRO
+    ══════════════════════════════════════════ -->
+    <div class="section-panel active" id="tab-intro">
+
+      <div class="intro-card">
+        <p>¿Sentís que la lectura es un laberinto del que cuesta salir? La buena noticia es que no hacen falta materiales especiales ni sesiones formales. La cocina, las paredes de la casa y el juego cotidiano pueden ser los mejores aliados para que tu hijo aprenda a leer sin darse cuenta.</p>
+        <p>Este capítulo es el cierre del Bono 1 — y es el más práctico de todos. Todo lo que vimos en los capítulos anteriores se convierte acá en actividades concretas para hacer hoy, esta semana, con lo que ya tenés en casa.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">🍳</div>
+          <h4>Lectura en la cocina</h4>
+          <p>Las recetas como mini aventuras literarias. Ingredientes, cantidades y pasos — todo es texto que el nene puede leer.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🏷️</div>
+          <h4>Etiquetas en casa</h4>
+          <p>Convertir el hogar en un ambiente de lectura continua. Cada objeto etiquetado es una palabra que aprende en contexto.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🎭</div>
+          <h4>Juegos de roles</h4>
+          <p>Asumir personajes y leer en contexto. Lo que se vive actuando se recuerda mucho más que lo que se lee sentado.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div>
+          <h4>La clave de este capítulo</h4>
+          <p>Leer no tiene que ser una tarea separada de la vida. Cuando la lectura aparece dentro de actividades que el nene ya disfruta — cocinar, jugar, explorar la casa — la resistencia desaparece sola.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar</h4>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">✓</div>
+          <span>Entiendo que la lectura puede integrarse en la vida diaria sin sesiones formales</span>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">✓</div>
+          <span>Voy a probar al menos una actividad de este capítulo esta semana</span>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">✓</div>
+          <span>Estoy dispuesta a hacer el ridículo jugando con mi hijo — eso es parte del proceso</span>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Cada rincón de tu casa puede ser un espacio donde la lectura florezca. No necesitás nada especial — solo creatividad y ganas de jugar.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         TAB 2 — CONTEXTO
+    ══════════════════════════════════════════ -->
+    <div class="section-panel" id="tab-contexto">
+
+      <div class="intro-card">
+        <p>Para entender por qué estas actividades funcionan, hay que entender algo clave sobre cómo aprenden los chicos: el contexto lo es todo. Una palabra leída en un libro puede olvidarse. La misma palabra leída en una receta mientras cocinás juntos queda grabada para siempre.</p>
+      </div>
+
+      <div class="section-title">Por qué el contexto cotidiano funciona</div>
+
+      <div class="dos-col">
+        <div class="mini-card">
+          <div class="mini-icon">🧠</div>
+          <h4>Aprendizaje contextual</h4>
+          <p>Las palabras aprendidas en contexto real se retienen mucho mejor que las aprendidas de forma aislada. El significado se ancla a la experiencia.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">❤️</div>
+          <h4>Conexión emocional</h4>
+          <p>Leer mientras cocinás juntos o jugás a ser personajes crea recuerdos positivos asociados a las palabras. Esa conexión emocional es lo que hace que quieran volver.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🔄</div>
+          <h4>Repetición natural</h4>
+          <p>Las etiquetas en casa se ven todos los días sin esfuerzo. Esa exposición repetida y pasiva es una de las formas más efectivas de consolidar el vocabulario.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🎯</div>
+          <h4>Propósito real</h4>
+          <p>Leer una receta tiene un propósito concreto: hacer la comida. Esa utilidad inmediata motiva al nene mucho más que leer por leer.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">🏠</div>
+        <div>
+          <h4>El hogar como aula</h4>
+          <p>No hace falta separar el "tiempo de lectura" del resto del día. Cuando la lectura se integra en las actividades cotidianas, se convierte en algo natural — no en una obligación que hay que cumplir.</p>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>La mejor sesión de lectura es la que no parece una sesión de lectura. Si el nene se divierte tanto que no nota que está aprendiendo — ganaron.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         TAB 3 — ESTRATEGIAS
+    ══════════════════════════════════════════ -->
+    <div class="section-panel" id="tab-estrategias">
+
+      <div class="intro-card">
+        <p>Tres estrategias concretas que podés implementar esta semana sin preparación especial. Cada una convierte un momento cotidiano en una oportunidad de lectura.</p>
+      </div>
+
+      <div class="section-title">3 estrategias para el hogar</div>
+
+      <!-- Estrategia 1 -->
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info">
+            <h3>Lectura en la cocina</h3>
+            <p>Recetas como texto real · Con propósito · Memoria + vocabulario</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La cocina es un aula dinámica que ya tenés en casa. Cada receta es un texto real con vocabulario específico, cantidades, pasos y secuencia — todo lo que un lector necesita practicar.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Elegí una receta simple</strong> que el nene pueda leer y entender. Que él identifique los ingredientes y busque las cantidades — "2 tazas de harina", "1 cucharadita de sal".</li>
+            <li><div class="step-num">2</div><strong>Juego de búsqueda:</strong> pedile que encuentre y señale cada ingrediente en la despensa mientras lo lee en la receta. Leer + acción física = retención.</li>
+            <li><div class="step-num">3</div><strong>Libro de recetas familiar:</strong> escriban juntos las recetas favoritas de la familia en tarjetas. Que él las ilustre y las lea en voz alta. Con el tiempo arman su propio libro.</li>
+            <li><div class="step-num">4</div><strong>Mientras esperan:</strong> usá los tiempos de cocción para leer sobre el origen de los ingredientes o buscar recetas de otras culturas. El tiempo de espera se convierte en exploración.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🍳</div>
+            <div>
+              <h4>Ejemplo concreto</h4>
+              <p>Hacen panqueques juntos. Él lee la receta en voz alta mientras vos preparás. Cuando dice "2 tazas de harina", él busca la harina y la medida. Al terminar, comen lo que leyeron — ese recuerdo queda para siempre.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estrategia 2 -->
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info">
+            <h3>Etiquetas en casa</h3>
+            <p>El hogar como ambiente lector · Vocabulario visual · Sin esfuerzo</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Etiquetar objetos del hogar es una de las estrategias más simples y efectivas que existen. La exposición repetida y pasiva consolida el vocabulario sin que el nene tenga que "estudiar" nada.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Elegí un área para empezar</strong> — la habitación, la sala, la cocina. No hagas toda la casa de golpe: dos o tres etiquetas por semana es suficiente.</li>
+            <li><div class="step-num">2</div><strong>Etiquetas coloridas y grandes:</strong> letra clara, colores llamativos, y si querés sumarle un ícono dibujado al lado de la palabra — mejor todavía.</li>
+            <li><div class="step-num">3</div><strong>Hacé un recorrido:</strong> caminá con él por la casa y pedile que lea cada etiqueta en voz alta. ¿Quién puede leerlas más rápido? Ese juego simple engancha mucho.</li>
+            <li><div class="step-num">4</div><strong>Que él invente sus propias etiquetas:</strong> pedile que etiquete su habitación con adjetivos — "cómoda" para la cama, "divertida" para su zona de juegos. Esa apropiación activa el aprendizaje.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🏷️</div>
+            <div>
+              <h4>Ejemplo concreto</h4>
+              <p>Empezás con 5 etiquetas en la cocina: "heladera", "mesa", "silla", "ventana", "puerta". Cada mañana cuando desayunan, él las lee sin que sea una actividad formal — es solo parte del ambiente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estrategia 3 -->
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info">
+            <h3>Juegos de roles con lectura</h3>
+            <p>Personajes + texto real · Comprensión vivencial · Creatividad</p>
+          </div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Los juegos de roles combinan lo mejor de dos mundos: la imaginación del nene y la práctica real de lectura. Al asumir un personaje, se enfrenta a palabras nuevas en un contexto emocionante — no intimidante.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Chef famoso:</strong> él tiene un delantal y lee la receta mientras vos seguís sus instrucciones. La lectura tiene un propósito real — si se equivoca, la comida sale mal.</li>
+            <li><div class="step-num">2</div><strong>Teatro de lectura:</strong> elegí un cuento conocido, dividí los personajes entre la familia y cada uno lee su parte en voz alta. Diferentes tonos, voces y emociones.</li>
+            <li><div class="step-num">3</div><strong>Menú de roles semanal:</strong> un día son médicos, otro bomberos, otro exploradores. Cada rol trae vocabulario específico que podés buscar juntos antes de empezar el juego.</li>
+            <li><div class="step-num">4</div><strong>Finales alternativos:</strong> al terminar, preguntale: "¿qué hubiera pasado si el lobo no se comía a la abuela y en cambio le hacía un pastel?" Ese cuestionamiento activa el pensamiento crítico sobre el texto.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🎭</div>
+            <div>
+              <h4>Ejemplo concreto</h4>
+              <p>Juegan al restaurante. Él es el mozo y tiene que leer el "menú" que vos escribieron juntos. Vos sos la clienta difícil que pregunta por cada plato. Sin darse cuenta, leyó todo el menú tres veces.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Las tres estrategias tienen algo en común: la lectura aparece dentro de algo que el nene ya quiere hacer. Eso es lo que hace que funcionen.</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         TAB 4 — ACTIVIDADES
+    ══════════════════════════════════════════ -->
+    <div class="section-panel" id="tab-actividades">
+
+      <div class="intro-card">
+        <p>Tres acciones concretas para arrancar esta semana — una por día, sin preparación especial. Y el libro de personajes como proyecto que crece con el tiempo.</p>
+      </div>
+
+      <div class="section-title">🎯 Plan de acción rápido</div>
+
+      <div class="receta-box">
+        <h3>Acción 1 — Teatro en casa hoy</h3>
+        <div class="receta-meta">⏱ 30 minutos · Un cuento conocido · Disfraces improvisados</div>
+        <p>Elegí un cuento que le guste a tu hijo y organizá una pequeña representación teatral donde cada miembro de la familia sea un personaje.</p>
+        <ul class="steps-list" style="margin-top:10px;">
+          <li><div class="step-num">1</div>Elegí el cuento juntos — que sea uno que él ya conozca bien para que la actuación sea libre.</li>
+          <li><div class="step-num">2</div>Repartí los personajes. Que él elija el suyo primero.</li>
+          <li><div class="step-num">3</div>Improvisá disfraces con lo que tengan — una capa de tela, un sombrero, lo que sea. El ritual del disfraz prepara al cerebro para el juego.</li>
+          <li><div class="step-num">4</div>Actuá con expresión, diferentes voces y mucho entusiasmo. Que sea ridícula y divertida — así se crean los recuerdos.</li>
+        </ul>
+        <div class="receta-tip">💡 Tip: grabá un video corto de la actuación. Verlo después es una experiencia muy motivadora — y se convierte en un recuerdo familiar asociado a la lectura.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 2 — Menú de roles para la semana</h3>
+        <div class="receta-meta">⏱ 15 minutos por día · Sin materiales · Solo imaginación</div>
+        <p>Creá un "menú" de juegos de roles para los próximos días. Cada día un rol diferente, cada rol trae lectura específica.</p>
+        <ul class="steps-list" style="margin-top:10px;">
+          <li><div class="step-num">1</div>Definí juntos los roles de la semana — médico, chef, explorador, detective, astronauta.</li>
+          <li><div class="step-num">2</div>Para cada rol, buscá juntos 5 palabras relacionadas y léanlas antes de empezar el juego.</li>
+          <li><div class="step-num">3</div>Durante el juego, usá esas palabras en contexto — que él tenga que leerlas o decirlas para avanzar en el juego.</li>
+          <li><div class="step-num">4</div>Al terminar cada día, preguntale cuál fue su palabra favorita del rol de hoy.</li>
+        </ul>
+        <div class="receta-tip">💡 Tip: escribí las palabras de cada rol en una tarjeta y pegálas en la heladera. Que las vea durante el día antes de que llegue el momento del juego.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 3 — Libro de Personajes</h3>
+        <div class="receta-meta">⏱ Proyecto semanal · Cuaderno + lápices de colores</div>
+        <p>Un cuaderno donde tu hijo dibuja y escribe sobre los personajes que crea en los juegos de roles. Con el tiempo se convierte en su propio libro de historias.</p>
+        <ul class="steps-list" style="margin-top:10px;">
+          <li><div class="step-num">1</div>Elegí un cuaderno especial que sea "de sus personajes" — que lo decore con la tapa.</li>
+          <li><div class="step-num">2</div>Después de cada juego de roles, él dibuja al personaje que fue ese día y escribe su nombre y una característica.</li>
+          <li><div class="step-num">3</div>Con el tiempo, animalo a escribir mini historias sobre esos personajes — ¿qué aventuras vivieron? ¿se conocieron alguna vez?</li>
+          <li><div class="step-num">4</div>Una vez por mes, lean juntos el libro de personajes desde el principio. Ver el crecimiento es muy motivador.</li>
+        </ul>
+        <div class="receta-tip">💡 Tip: esto también consolida el vocabulario aprendido en cada rol — al escribir sobre el personaje usa las palabras en contexto propio.</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">⚠️ Los 5 errores que hay que evitar</div>
+
+      <ul class="errores-list">
+        <li><span class="num">1</span><span><strong>Forzar el tema.</strong> Si el nene no quiere ser médico hoy, no importa — que elija él el rol. La agencia sobre el juego es lo que mantiene la motivación.</span></li>
+        <li><span class="num">2</span><span><strong>Corregir demasiado durante el juego.</strong> Si se equivoca leyendo una palabra, dejálo seguir — ya va a volver sobre ella. Interrumpir el flujo del juego rompe el encanto.</span></li>
+        <li><span class="num">3</span><span><strong>No guardar lo que crean.</strong> El libro de personajes, las recetas escritas, los cuentos del teatro — guardarlos es muy motivador. Ver lo que ya hizo lo impulsa a seguir.</span></li>
+        <li><span class="num">4</span><span><strong>Exigir perfección.</strong> Una actuación "mala" hecha con entusiasmo vale más que una "perfecta" hecha con desgano. El proceso importa más que el resultado.</span></li>
+        <li><span class="num">5</span><span><strong>No reflexionar al final.</strong> La conversación post-actividad es donde se consolida el aprendizaje. "¿Qué personaje fue tu favorito? ¿Qué palabras nuevas aprendiste hoy?" — dos preguntas simples que valen mucho.</span></li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Terminaste el Bono 1 completo! Ya tenés un arsenal de estrategias para hacer que la lectura sea un juego en todos los espacios de la vida familiar. ¡Ahora a aplicarlas!</p>
+        </div>
+      </div>
+
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         TAB 5 — RESUMEN VISUAL
+    ══════════════════════════════════════════ -->
+    <div class="section-panel" id="tab-resumen">
+
+      <div class="intro-card">
+        <p>Esta infografía resume las tres estrategias del capítulo y el plan de acción para esta semana. Guardala para tenerla a mano cuando necesités ideas rápidas.</p>
+      </div>
+
+      <div class="infografia-wrap">
+        <img src="assets/bono1/cap4.png"
+          alt="Infografía Bono 1 Cap 4 — Actividades Prácticas"
+          onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Bono 1 Cap 4 — Actividades Prácticas para Promover la Lectura</p>
+      </div>
+
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki"
+          onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Completaste el Bono 1 — Juegos que Enseñan! Cada capítulo te dio herramientas distintas. Ahora tenés todo lo que necesitás para que la lectura sea una aventura en tu casa.</p>
+        </div>
+      </div>
+
+      <a href="index.html" class="next-btn" style="margin-top:24px; text-decoration:none;">
+        Volver al inicio →
+      </a>
+    </div>
+
+  </div><!-- /content -->
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('bono1-cap4');</script>
+</body>
+</html>

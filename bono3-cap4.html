@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Bono 3 Cap 4: Lectura al Aire Libre</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  :root { --naranja: #0284C7; --naranja-claro: #38BDF8; --amarillo: #E0F2FE; }
+  .chapter-header { background: linear-gradient(135deg, #0284C7 0%, #38BDF8 50%, #7DD3FC 100%); }
+  .next-btn { background: linear-gradient(135deg, #0284C7, #38BDF8); }
+  .next-btn:hover { box-shadow: 0 10px 28px rgba(2,132,199,0.45); }
+  .tab.active { background: #0284C7; border-color: #0284C7; box-shadow: 0 4px 12px rgba(2,132,199,0.3); }
+  .tab:hover:not(.active) { border-color: #0284C7; color: #0284C7; }
+  .intro-card { border-left-color: #0284C7; }
+  .strategy-num { background: #0C4A6E; color: #38BDF8; }
+  .step-dot.active { background: #0284C7; box-shadow: 0 3px 10px rgba(2,132,199,0.4); }
+  .step-dot.done { background: #0C4A6E; }
+  .progress-fill { background: linear-gradient(90deg, #0C4A6E, #0284C7); }
+  .tuki-tip { border-color: rgba(2,132,199,0.25); }
+  .tuki-tip .tt-text h4 { color: #38BDF8; }
+  .receta-box { border-color: #7DD3FC; }
+  .check-item.checked .check-box { background: #0284C7; border-color: #0284C7; }
+  .mini-card { border-top-color: #0284C7; }
+  .resumen-box ul li::before { color: #0284C7; }
+</style>
+</head>
+<body>
+<div id="sidebar-container"></div>
+
+<main class="main">
+  <div class="chapter-header">
+    <div class="bubble b1"></div><div class="bubble b2"></div>
+    <div class="bubble b3"></div><div class="bubble b4"></div>
+    <div class="chapter-badge">🌍 Bono 3 · Capítulo 4 de 4</div>
+    <h1 class="chapter-title">Conectando con la Naturaleza: Lectura al Aire Libre</h1>
+    <p class="chapter-quote">"La lectura es un viaje que empieza en la mente y se expande en el corazón."<span>— Anónimo</span></p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>¿Recordás la última vez que leíste un libro bajo la sombra de un árbol? Esa sensación de libertad y conexión con el entorno es algo que podemos ofrecerle a nuestros hijos. La naturaleza no solo actúa como telón de fondo — se convierte en un aliado poderoso en el aprendizaje.</p>
+        <p>La lectura al aire libre es una forma de integrar el mundo natural en el aprendizaje. Al acercar los cuentos y las historias a la naturaleza, creamos un vínculo más profundo entre lo que leen y lo que experimentan.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">🌳</div>
+          <h4>Cuentos bajo los árboles</h4>
+          <p>Leer en contacto con la naturaleza, conectar lo que dice el libro con lo que ven a su alrededor.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🗺️</div>
+          <h4>Exploraciones literarias</h4>
+          <p>Mapa literario del entorno, desafíos de lectura en distintos puntos, diario de naturaleza y lectura.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">📔</div>
+          <h4>Diario al aire libre</h4>
+          <p>Registrar las experiencias de lectura en la naturaleza — lo que ven, lo que sienten, lo que aprenden.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">🌿</div>
+        <div>
+          <h4>Por qué la naturaleza potencia la lectura</h4>
+          <p>El aire libre mejora la atención y reduce el estrés — dos condiciones ideales para el aprendizaje. Un chico relajado y estimulado sensorialmente absorbe mucho más que uno sentado en una silla bajo luz artificial.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar</h4>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Entiendo que la naturaleza es un aliado del aprendizaje, no una distracción</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a organizar la primera sesión de lectura al aire libre esta semana</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a crear un diario de lectura al aire libre con mi hijo</span></div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>La lectura al aire libre no es solo un cambio de escenario — es una forma de integrar el mundo natural en el aprendizaje. Cada árbol, cada hoja, puede ser un nuevo capítulo por descubrir.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- TAB CONTEXTO -->
+    <div class="section-panel" id="tab-contexto">
+      <div class="intro-card">
+        <p>Para entender por qué la lectura al aire libre funciona tan bien, veamos qué pasa cuando combinamos la experiencia sensorial de la naturaleza con la lectura.</p>
+      </div>
+
+      <div class="section-title">Por qué la naturaleza potencia la lectura</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🌿</div>
+          <div class="strategy-info"><h3>El entorno natural como contexto de aprendizaje</h3><p>Atención · Sensorialidad · Conexión</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La naturaleza reduce el estrés y mejora la concentración — dos condiciones ideales para el aprendizaje. Cuando combinamos eso con la lectura, el resultado es una experiencia de aprendizaje mucho más profunda que la del aula convencional.</p>
+          <p>Además, la lectura al aire libre crea asociaciones sensoriales únicas. El olor del pasto, el sonido del viento, la textura de la tierra — todo eso queda ligado al recuerdo de la historia que leyeron. Y esos recuerdos multisensoriales son los más duraderos.</p>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🔗</div>
+            <div><h4>La observación como extensión de la lectura</h4><p>Mientras leen sobre un árbol en el libro, pueden observar el árbol real frente a ellos. ¿Cómo se parecen? ¿Qué diferencias ven? Ese diálogo entre el texto y la realidad es comprensión lectora en acción.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">📔</div>
+          <div class="strategy-info"><h3>El diario de lectura al aire libre</h3><p>Observación + escritura + reflexión</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Un diario donde el chico registra sus experiencias de lectura al aire libre crea un puente entre la naturaleza y las palabras. No es solo un cuaderno — es un registro de cómo el mundo exterior se conecta con el mundo de los libros.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Que anote qué libro leyó, dónde estaban y qué observó a su alrededor durante la lectura.</li>
+            <li><div class="step-num">2</div>Que dibuje algo que haya visto — un animal, una planta, el paisaje — y lo conecte con algo de la historia.</li>
+            <li><div class="step-num">3</div>Que escriba una frase sobre cómo se sintió leyendo en ese lugar. Eso desarrolla la conciencia emocional y la expresión escrita al mismo tiempo.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>La naturaleza es el aula más grande y más estimulante que existe. Y no cobra entrada.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- TAB ESTRATEGIAS -->
+    <div class="section-panel" id="tab-estrategias">
+      <div class="intro-card">
+        <p>Tres estrategias para llevar la lectura al aire libre — cuentos bajo los árboles, exploraciones literarias y círculos de lectura al aire libre.</p>
+      </div>
+
+      <div class="section-title">3 estrategias de lectura al aire libre</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info"><h3>Cuentos bajo los árboles</h3><p>Lectura + observación + conversación</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Elegí un lugar al aire libre — un parque, el jardín, la sombra de un árbol en la vereda. Creá una pequeña ceremonia de lectura en ese espacio.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Elegí libros relacionados con la naturaleza:</strong> sobre animales, plantas, el cielo, el agua. La conexión entre el texto y el entorno es inmediata y poderosa.</li>
+            <li><div class="step-num">2</div><strong>Exploración previa:</strong> antes de leer, recorran el lugar juntos. Preguntá qué ven, qué escuchan, qué animales podrían estar escondidos. Esa curiosidad activa la atención para la lectura.</li>
+            <li><div class="step-num">3</div><strong>Lectura + observación simultánea:</strong> cuando el libro mencione algo que pueden ver en el entorno, detenete y observenlo. "El libro dice que los árboles tienen raíces profundas — ¿podés imaginar las raíces de este árbol?"</li>
+            <li><div class="step-num">4</div><strong>Creación post-lectura:</strong> que invente su propio cuento inspirado en lo que vio. Un cuaderno y lápices de colores son suficientes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info"><h3>Exploraciones literarias en la naturaleza</h3><p>Mapa literario · Desafíos · Diario</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Convertir una caminata en una exploración literaria donde cada parada tiene una lectura y un desafío.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Mapa literario:</strong> antes de salir, dibujen un mapa simple del área que van a explorar. Marcá puntos específicos donde van a leer fragmentos del libro relacionados con lo que van a ver.</li>
+            <li><div class="step-num">2</div><strong>Diario de naturaleza y lectura:</strong> llevá un cuaderno donde el chico anote y dibuje lo que observa — hojas, piedras, insectos — y lo conecte con lo que están leyendo.</li>
+            <li><div class="step-num">3</div><strong>Desafíos de lectura:</strong> creá misiones — "encontrá una piedra y leé el párrafo sobre rocas", "encontrá un insecto y leé lo que dice el libro sobre él".</li>
+            <li><div class="step-num">4</div><strong>Lectura en voz alta con sentido:</strong> usá el entorno para enriquecer la lectura — si hay pájaros, que lea con la voz del pájaro. Si hay viento, que lea más lento. El contexto natural hace que la lectura sea más expresiva.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info"><h3>Círculos de lectura al aire libre</h3><p>Social · Compartido · Memorable</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Si hay otros chicos cerca — hermanos, amigos, primos — organizá una sesión de lectura al aire libre en grupo. La lectura como actividad social en la naturaleza crea recuerdos muy poderosos.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Cada chico trae un libro que le guste y lo comparte brevemente con el grupo.</li>
+            <li><div class="step-num">2</div>Leen en voz alta por turnos — fragmentos cortos, con expresión.</li>
+            <li><div class="step-num">3</div>Después de cada lectura, espacio breve para que los demás comenten o hagan preguntas.</li>
+            <li><div class="step-num">4</div>Cerrá con una actividad — dibujar algo de lo que escucharon, inventar el final alternativo de una historia, o simplemente charlar sobre cuál les gustó más.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🌟</div>
+            <div><h4>Por qué funciona</h4><p>La combinación de naturaleza + grupo + lectura es una de las experiencias más positivas que podés crear alrededor de los libros. Y las experiencias positivas son lo que construye el amor duradero por la lectura.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Sé constante y disfrutá el proceso. La lectura al aire libre no es una técnica — es una experiencia. Y las experiencias se repiten cuando son buenas.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- TAB ACTIVIDADES -->
+    <div class="section-panel" id="tab-actividades">
+      <div class="intro-card">
+        <p>Tres acciones concretas para arrancar esta semana — la primera sesión al aire libre, el diario de naturaleza y la exploración literaria.</p>
+      </div>
+
+      <div class="section-title">🎯 Plan de acción rápido</div>
+
+      <div class="receta-box">
+        <h3>Acción 1 — Primera sesión de lectura al aire libre</h3>
+        <div class="receta-meta">⏱ Esta semana · Un libro + manta de picnic</div>
+        <p>Elegí un libro que le entusiasme y llevá a cabo una lectura al aire libre. Preparale un pequeño picnic para hacerlo especial. Leán juntos 10-15 minutos y después conversen sobre lo que vieron a su alrededor mientras leían.</p>
+        <div class="receta-tip">💡 Tip: empezá en el patio o la vereda si no pueden ir al parque — lo que importa es el aire libre, no el destino.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 2 — Creá el diario de lectura al aire libre</h3>
+        <div class="receta-meta">⏱ Al terminar la primera sesión · Un cuaderno especial</div>
+        <p>Conseguí un cuaderno que sea "el diario de aventuras lectoras". Después de cada sesión al aire libre, que escriba o dibuje: qué libro leyeron, dónde estaban, qué observó y cómo se sintió. Revisálo juntos cada mes.</p>
+        <div class="receta-tip">💡 Tip: que él decore la tapa del diario con elementos naturales — hojas pegadas, dibujos de lo que vio. Lo hace suyo desde el primer momento.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>Acción 3 — Exploración literaria con mapa</h3>
+        <div class="receta-media">⏱ 45 min · Cuaderno, libro relacionado con el entorno</div>
+        <p>Planificá una caminata corta. Antes de salir, dibujen juntos el mapa del recorrido y marcá 3 paradas donde van a leer. En cada parada, leén un fragmento relacionado con lo que ven. Al volver, que dibuje su parada favorita en el diario.</p>
+        <div class="receta-tip">💡 Tip: hacé que él elija los puntos del mapa — eso lo involucra en la planificación y aumenta su compromiso con la actividad.</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">⚠️ Los 5 errores que hay que evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span><strong>Ver la naturaleza como distracción:</strong> los pájaros, los insectos, el viento — todo eso puede ser parte de la lectura, no un obstáculo. Integrá el entorno en lugar de ignorarlo.</li>
+        <li><span class="num">2</span><strong>Leer demasiado tiempo:</strong> al aire libre, 15-20 minutos de lectura activa es suficiente. Mejor terminar con ganas de más que cuando ya está cansado.</li>
+        <li><span class="num">3</span><strong>No preparar el material:</strong> elegí el libro antes de salir y verificá que sea adecuado para el entorno. Llegar sin material preparado corta el entusiasmo.</li>
+        <li><span class="num">4</span><strong>Olvidar el diario:</strong> la reflexión post-lectura es lo que consolida el aprendizaje. Sin el diario, la experiencia queda incompleta.</li>
+        <li><span class="num">5</span><strong>Hacerlo solo una vez:</strong> la primera sesión siempre es un poco rara. La segunda ya tiene ritual. Que sea una práctica semanal o quincenal, no un evento aislado.</li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Felicitaciones! 🎉 Completaste el Bono 3 y toda la guía Leer con Ganas. Ahora tenés todas las herramientas para transformar la lectura en una aventura — adentro y afuera de casa, con emociones y con movimiento, con familia y en soledad. ¡A leer!</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume las estrategias de lectura al aire libre — el cierre perfecto de todo el viaje de Leer con Ganas.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/bono3/cap4.png" alt="Infografía Bono 3 Cap 4 — Lectura al Aire Libre" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Bono 3 Cap 4 — Lectura al Aire Libre</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Lo lograste! Completaste toda la guía Leer con Ganas. Ahora revisá el Kit de Actividades para seguir profundizando el viaje lector.</p>
+        </div>
+      </div>
+      <a href="index.html" class="next-btn" style="margin-top:24px;">🏠 Volver al inicio →</a>
+    </div>
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('bono3-cap4');</script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leer con Ganas — Cap 7: Herramientas y Recursos</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="sidebar-container"></div>
+
+<main class="main">
+  <div class="chapter-header">
+    <div class="bubble b1"></div><div class="bubble b2"></div>
+    <div class="bubble b3"></div><div class="bubble b4"></div>
+    <div class="chapter-badge">📖 Capítulo 7 de 10</div>
+    <h1 class="chapter-title">Herramientas y Recursos Adicionales</h1>
+    <p class="chapter-quote">"La lectura es el viaje de un hombre a través de un mundo desconocido."<span>— Hermann Hesse</span></p>
+    <img class="tuki-float" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'position:absolute;right:48px;bottom:-10px;font-size:90px;z-index:2;animation:float 3s ease-in-out infinite\'>🦜</div>'"/>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">Tu progreso</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-steps">
+      <div class="step-dot active" onclick="switchTab('intro')">1</div>
+      <div class="step-dot locked" onclick="switchTab('contexto')">2</div>
+      <div class="step-dot locked" onclick="switchTab('estrategias')">3</div>
+      <div class="step-dot locked" onclick="switchTab('actividades')">4</div>
+      <div class="step-dot locked" onclick="switchTab('resumen')">5</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-tabs">
+      <div class="tab active" onclick="switchTab('intro')">🌟 Intro</div>
+      <div class="tab" onclick="switchTab('contexto')">🧠 Contexto</div>
+      <div class="tab" onclick="switchTab('estrategias')">🎯 Estrategias</div>
+      <div class="tab" onclick="switchTab('actividades')">🎲 Actividades</div>
+      <div class="tab" onclick="switchTab('resumen')">📊 Resumen visual</div>
+    </div>
+
+    <!-- TAB INTRO -->
+    <div class="section-panel active" id="tab-intro">
+      <div class="intro-card">
+        <p>¿Cuáles son las mejores herramientas para enseñar a leer? ¿Cómo sé si lo que estoy usando es efectivo? La elección de los recursos adecuados puede ser la diferencia entre una experiencia frustrante y una emocionante.</p>
+        <p>No se trata de tener todo — se trata de tener lo correcto. Una combinación de apps, libros y actividades caseras bien elegidas puede transformar completamente la experiencia lectora de tu hijo.</p>
+      </div>
+
+      <div class="tres-col">
+        <div class="mini-card">
+          <div class="mini-icon">📱</div>
+          <h4>Apps educativas</h4>
+          <p>Las herramientas digitales ofrecen experiencias interactivas que capturan la atención de formas que el método tradicional no puede.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">📚</div>
+          <h4>Libros y material físico</h4>
+          <p>Los libros bien elegidos son la base. El material físico — tarjetas, murales, juegos — refuerza lo que las apps y los libros enseñan.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🤝</div>
+          <h4>Comunidad y apoyo</h4>
+          <p>Compartir experiencias con otras mamás que están en el mismo camino hace el proceso menos solitario y más efectivo.</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">📊</div>
+        <div>
+          <h4>Lo que dice la investigación</h4>
+          <p>Los chicos que usan recursos variados y adaptados a su estilo de aprendizaje mejoran su habilidad lectora hasta un 60% más que los que siguen un único enfoque tradicional. La diversidad de recursos no es un lujo — es una estrategia.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h4>✅ Antes de arrancar este capítulo</h4>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Entiendo que no hay un recurso único que funcione para todos</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Estoy dispuesta a probar distintos formatos — digital y físico</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span>Voy a crear al menos un material casero esta semana</span></div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Equiparte con las mejores herramientas, rodearte de apoyo y disfrutar cada paso — ese es el secreto para que enseñar a leer sea una aventura y no una carga.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('contexto')">Ver el contexto →</button>
+    </div>
+
+    <!-- TAB CONTEXTO -->
+    <div class="section-panel" id="tab-contexto">
+      <div class="intro-card">
+        <p>Antes de ver qué herramientas usar, entendamos por qué la diversidad de recursos hace tanta diferencia — y qué rol juegan las apps, los libros y la comunidad en el proceso lector.</p>
+      </div>
+
+      <div class="section-title">Por qué importa la diversidad de recursos</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">📱</div>
+          <div class="strategy-info"><h3>Herramientas digitales y su impacto</h3><p>Apps que enganchan · Sin reemplazar el libro</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Las apps educativas ofrecen experiencias interactivas que capturan la atención de formas que los métodos tradicionales no pueden. Un chico que lucha con la lectura en papel puede iluminarse con una app que cuenta la misma historia con animaciones y sonidos.</p>
+          <p>En una escuela primaria de Madrid donde se implementaron apps de lectura en el aula, los estudiantes mostraron un 40% de mejora en lectura y escritura al final del año. Las herramientas digitales complementan — no reemplazan — el libro.</p>
+          <div class="section-title" style="font-size:16px;margin-top:16px;">Apps recomendadas</div>
+          <div class="dos-col">
+            <div class="mini-card">
+              <div class="mini-icon">⭐</div>
+              <h4>Starfall</h4>
+              <p>Juegos y canciones para introducir letras. Permite monitorear el progreso y leer libros en voz alta.</p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-icon">🔤</div>
+              <h4>Endless Alphabet</h4>
+              <p>Personajes animados y festín visual para aprender vocabulario jugando. Muy efectiva para chicos visuales.</p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-icon">🖱️</div>
+              <h4>ABCmouse</h4>
+              <p>Currículo completo de preescolar. Se adapta al nivel y permite avanzar a su propio ritmo.</p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-icon">🥚</div>
+              <h4>Reading Eggs</h4>
+              <p>Combina juegos, canciones y libros interactivos. Se adapta al nivel lector del chico automáticamente.</p>
+            </div>
+          </div>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">⚖️</div>
+            <div><h4>La clave del equilibrio</h4><p>Usá las apps como aliadas, no como niñeras digitales. Lo ideal: 20-30 minutos de app + tiempo de libro físico. Involucrate mientras usa la app — eso multiplica el aprendizaje.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">📚</div>
+          <div class="strategy-info"><h3>Libros imprescindibles</h3><p>Clásicos que funcionan · Por qué eligen bien</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Los libros bien elegidos son la base de todo. No se trata de cantidad — se trata de libros que conecten con el chico, que tengan imágenes que inviten, tramas que enganchen y palabras que no abrumen.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">📖</div><strong>Donde viven los monstruos</strong> (Maurice Sendak) — Fomenta imaginación y comprensión emocional.</li>
+            <li><div class="step-num">📖</div><strong>Adivina cuánto te quiero</strong> (Sam McBratney) — Ideal para conectar emociones con palabras.</li>
+            <li><div class="step-num">📖</div><strong>¿A qué sabe la luna?</strong> (Michael Grejniec) — Poético y perfecto para conversar sobre la historia.</li>
+            <li><div class="step-num">📖</div><strong>Los tres cerditos</strong> (versión ilustrada) — Clásico para trabajar secuencia y predicción.</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">💡</div>
+            <div><h4>Tip para elegir</h4><p>Visitá la biblioteca con tu hijo y dejalo que elija. Un libro que él eligió tiene 10 veces más chances de ser leído que uno que vos le impusiste.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">🤝</div>
+          <div class="strategy-info"><h3>Grupos de apoyo y comunidad</h3><p>No estás sola en esto</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Compartir experiencias con otras mamás que están en el mismo camino hace el proceso menos solitario. Los chicos cuyos padres participan en grupos de apoyo tienen un 45% más de probabilidades de desarrollar habilidades lectoras sólidas.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div><strong>Comunidades en redes:</strong> grupos de Facebook o WhatsApp de mamás enfocadas en la educación en casa — excelentes para compartir recursos y preguntas.</li>
+            <li><div class="step-num">2</div><strong>Foros y blogs educativos:</strong> espacios para hacer preguntas, compartir recursos y experiencias con otras familias.</li>
+            <li><div class="step-num">3</div><strong>Red de apoyo cercana:</strong> familia, amigos y maestros pueden ser aliados increíbles — no tenés que hacerlo sola.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Cada chico aprende diferente. El mejor recurso es el que conecta con él — probá varios y observá cuál lo engancha más.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('estrategias')">Ver las estrategias →</button>
+    </div>
+
+    <!-- TAB ESTRATEGIAS -->
+    <div class="section-panel" id="tab-estrategias">
+      <div class="intro-card">
+        <p>Tres técnicas concretas para usar las herramientas de forma efectiva — lectura compartida, asociación de palabras y juego de roles con cuentos.</p>
+      </div>
+
+      <div class="section-title">3 estrategias probadas</div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">1</div>
+          <div class="strategy-info"><h3>Lectura compartida expresiva</h3><p>Conectar palabras con imágenes y sonidos</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>La lectura compartida transforma la forma en que el chico percibe los libros. Al compartir la experiencia, lo ayudás a conectar palabras con imágenes y sonidos — y creás un espacio seguro para explorar y hacer preguntas.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí un libro visualmente estimulante — con rimas o repetición si es más chico.</li>
+            <li><div class="step-num">2</div>Encontrá un lugar cómodo, sin distracciones.</li>
+            <li><div class="step-num">3</div>Leé con expresión — distintos tonos para cada personaje, pausas dramáticas, suspenso.</li>
+            <li><div class="step-num">4</div>Hacé preguntas después de cada página: "¿qué creés que va a pasar?" o "¿qué te parece este personaje?"</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🎭</div>
+            <div><h4>Ejemplo concreto</h4><p>Si leen "El gato en el sombrero", preguntale cómo se sentiría si ese gato apareciera en su casa. Eso conecta la historia con su vida real — y eso es lo que fija el aprendizaje.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">2</div>
+          <div class="strategy-info"><h3>Asociación de palabras</h3><p>Mapas mentales de vocabulario nuevo</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Relacionar palabras nuevas con imágenes o conceptos que el chico ya conoce facilita la retención. Es la forma más natural de ampliar el vocabulario — igual que lo hacemos los adultos.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí una palabra nueva relevante para su vida: "perro", "jugar", "aventura".</li>
+            <li><div class="step-num">2</div>Escribí la palabra en el centro de una hoja y rodeenla de todo lo que se le ocurra: "ladrar", "jugar", "pasear", "amigo".</li>
+            <li><div class="step-num">3</div>Agregá dibujos o fotos para cada concepto — el mapa visual es muy poderoso para chicos visuales.</li>
+            <li><div class="step-num">4</div>Usá las palabras del mapa para crear frases: "Mi perro ladra cuando jugamos en el parque."</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">✨</div>
+            <div><h4>Ejemplo concreto</h4><p>Con la palabra "perro" como centro, pueden inventar una historia corta sobre un día en el parque con su perro imaginario — practican lectura, escritura y vocabulario al mismo tiempo.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-card" onclick="toggleStrategy(this)">
+        <div class="strategy-header">
+          <div class="strategy-num">3</div>
+          <div class="strategy-info"><h3>Juego de roles con cuentos</h3><p>Teatro en casa · Comprensión y vocabulario</p></div>
+          <div class="strategy-toggle">▼</div>
+        </div>
+        <div class="strategy-body">
+          <p>Cuando el chico se pone en el papel de un personaje, refuerza su comprensión de la narrativa y el vocabulario de forma lúdica y memorable. Es difícil olvidar una historia que viviste desde adentro.</p>
+          <ul class="steps-list">
+            <li><div class="step-num">1</div>Elegí un cuento con personajes claros — "Caperucita Roja", "Los tres cerditos", cualquier clásico.</li>
+            <li><div class="step-num">2</div>Asignen roles — que él elija quién quiere ser. Vos tomás el otro personaje.</li>
+            <li><div class="step-num">3</div>Mientras leen, actúen lo que sucede — diferentes voces, expresiones, movimientos.</li>
+            <li><div class="step-num">4</div>Al terminar: "¿cómo te sentiste siendo ese personaje? ¿qué hubieras hecho diferente?"</li>
+          </ul>
+          <div class="tip-box" style="margin-top:14px;margin-bottom:0">
+            <div class="tip-icon">🎭</div>
+            <div><h4>Ejemplo concreto</h4><p>Si él es Caperucita y vos el lobo, actuar la historia les ayuda a recordar palabras, secuencia de eventos — y crea un recuerdo divertido asociado a la lectura.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>Experimentá, divertite y observá cómo florece. Cada chico es diferente — lo que importa es encontrar la combinación que a él lo engancha.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('actividades')">Ver las actividades →</button>
+    </div>
+
+    <!-- TAB ACTIVIDADES -->
+    <div class="section-panel" id="tab-actividades">
+      <div class="intro-card">
+        <p>Dos ejercicios para aplicar esta semana más las dos recetas del capítulo. Todo con materiales que ya tenés en casa.</p>
+      </div>
+
+      <div class="section-title">Ejercicios prácticos</div>
+
+      <div class="receta-box">
+        <h3>🔍 Caza de Palabras con Mapa</h3>
+        <div class="receta-meta">⏱ 30 min · Materiales: hojas, rotuladores de colores, temporizador</div>
+        <p><strong>¿Para qué sirve?</strong> Practicar la lectura de forma activa y divertida — ideal para chicos kinestésicos que necesitan moverse.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Escribí palabras en hojas de papel — mezcla conocidas y nuevas.</li>
+          <li><div class="step-num">2</div>Escondé las hojas en distintos lugares de la casa y hacé un pequeño "mapa del tesoro".</li>
+          <li><div class="step-num">3</div>Temporizador: cuántas palabras puede encontrar en el tiempo dado.</li>
+          <li><div class="step-num">4</div>Al terminar, leen cada palabra encontrada y practican la pronunciación de las nuevas.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Practica lectura en contexto divertido y refuerza vocabulario con asociación espacial.</p>
+        <div class="receta-tip">💡 Tip: dejá que él esconda las palabras para vos también — invertir los roles multiplica el aprendizaje.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>✍️ Crea tu Propio Cuento</h3>
+        <div class="receta-meta">⏱ 45 min · Materiales: papel, lápices de colores</div>
+        <p><strong>¿Para qué sirve?</strong> Desarrollar comprensión lectora y habilidades de escritura al crear una historia propia.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Empezá con su tema favorito: un animal, un superhéroe, su juguete preferido.</li>
+          <li><div class="step-num">2</div>Hagan juntos el esquema: personajes, inicio, nudo, desenlace.</li>
+          <li><div class="step-num">3</div>Él escribe las frases o palabras clave de cada parte — ayudalo solo si lo pide.</li>
+          <li><div class="step-num">4</div>Lean el cuento juntos en voz alta con distintas voces para cada personaje.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Comprensión lectora + escritura + imaginación + amor por los libros — todo en una actividad.</p>
+        <div class="receta-tip">💡 Tip: guardá los cuentos que hagan juntos. Con el tiempo arman su propia "biblioteca de historias" — eso es muy motivador.</div>
+      </div>
+
+      <div class="section-title">Recetas del capítulo</div>
+
+      <div class="receta-box">
+        <h3>🃏 Caza de Palabras (versión clásica)</h3>
+        <div class="receta-meta">⏱ 15 min · Materiales: tarjetas de cartón, marcadores de colores</div>
+        <p><strong>¿Para qué sirve?</strong> Reconocimiento de palabras en entorno divertido y activo.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Escribí palabras en tarjetas de cartón — podés reutilizar cajas de cereal.</li>
+          <li><div class="step-num">2</div>Escondé las tarjetas con pistas o indicaciones.</li>
+          <li><div class="step-num">3</div>Cada tarjeta encontrada se lee en voz alta.</li>
+          <li><div class="step-num">4</div>Al terminar, usán todas las palabras para crear oraciones juntos.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Reconoce las palabras más fácilmente y gana confianza al leer.</p>
+        <div class="receta-tip">💡 Tip: cambiá las palabras cada semana y premialo con una sorpresa si encuentra todas.</div>
+      </div>
+
+      <div class="receta-box">
+        <h3>🎱 Bingo de Letras y Palabras</h3>
+        <div class="receta-meta">⏱ 20 min · Materiales: cartillas de bingo caseras, papelitos con letras/palabras</div>
+        <p><strong>¿Para qué sirve?</strong> Reforzar el reconocimiento de letras y palabras con competencia amistosa.</p>
+        <ul class="steps-list">
+          <li><div class="step-num">1</div>Creá cartillas de bingo 5x5 con letras y palabras que está aprendiendo.</li>
+          <li><div class="step-num">2</div>Poné las mismas letras/palabras en papelitos en un bol.</li>
+          <li><div class="step-num">3</div>Sacá un papelito y leélo en voz alta — si lo tiene en la cartilla, lo marca.</li>
+          <li><div class="step-num">4</div>Gana quien complete primero una línea.</li>
+        </ul>
+        <p><strong>Resultado:</strong> Reconocimiento de letras y palabras en formato divertido y competitivo.</p>
+        <div class="receta-tip">💡 Tip: sumá a otros miembros de la familia — cuantos más juegan, más emocionante se pone.</div>
+      </div>
+
+      <div class="section-title" style="margin-top:32px;">5 errores a evitar</div>
+      <ul class="errores-list">
+        <li><span class="num">1</span><strong>No adaptar el material:</strong> recursos que no van con su nivel lo frustran. Elegí siempre materiales apropiados para su edad y habilidades.</li>
+        <li><span class="num">2</span><strong>Forzar la lectura:</strong> si no está interesado, cambiá de actividad o método. La motivación es la clave — sin ella, ningún recurso funciona.</li>
+        <li><span class="num">3</span><strong>Descuidar la diversión:</strong> si aprender a leer se siente como tarea, el chico lo va a evitar. Cada recurso tiene que tener un elemento lúdico.</li>
+        <li><span class="num">4</span><strong>Ignorar el contexto emocional:</strong> si tu hijo asocia la lectura con estrés o ansiedad, ninguna app va a funcionar. Primero el ambiente positivo, después las herramientas.</li>
+        <li><span class="num">5</span><strong>No celebrar los logros:</strong> cada avance cuenta. Ignorar los éxitos afecta la autoestima — celebrá todo, por pequeño que sea.</li>
+      </ul>
+
+      <div class="tuki-tip">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Terminaste el Cap 7! En el Cap 8 vemos cómo trabajar en equipo con la escuela para que lo que hacés en casa y lo que aprende allá se complementen perfectamente.</p>
+        </div>
+      </div>
+      <button class="next-btn" onclick="switchTab('resumen')">Ver resumen visual →</button>
+    </div>
+
+    <!-- TAB RESUMEN VISUAL -->
+    <div class="section-panel" id="tab-resumen">
+      <div class="intro-card">
+        <p>Esta infografía resume las herramientas, apps y estrategias del capítulo. Guardala como referencia rápida cuando necesités ideas nuevas.</p>
+      </div>
+      <div class="infografia-wrap">
+        <img src="assets/infografia-cap7.png" alt="Infografía Capítulo 7 — Herramientas y Recursos" onerror="this.style.display='none'">
+        <p class="infografia-label">Infografía · Capítulo 7 — Herramientas y Recursos Adicionales</p>
+      </div>
+      <div class="tuki-tip" style="margin-top:32px;">
+        <img class="tuki-img-sm" src="assets/tuki.png" alt="Tuki" onerror="this.outerHTML='<div style=\'font-size:48px\'>🦜</div>'"/>
+        <div class="tt-text">
+          <h4>Tuki te dice:</h4>
+          <p>¡Muy bien! Ya tenés el kit completo de herramientas. En el Cap 8 vemos cómo colaborar con la escuela para multiplicar lo que hacés en casa.</p>
+        </div>
+      </div>
+      <a href="cap8.html" class="next-btn" style="margin-top:24px;">Capítulo 8: Colaborar con la escuela →</a>
+    </div>
+
+  </div>
+</main>
+
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+<script>renderSidebar('cap7');</script>
+</body>
+</html>
