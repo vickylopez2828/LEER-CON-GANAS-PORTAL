@@ -34,7 +34,6 @@ function renderSidebar(activePage) {
   ];
 
   const kit = [
-    { id: 'kit', href: 'kit.html', icon: '📦', label: 'Kit de Actividades' },
     { id: 'descargas', href: 'descargas.html', icon: '⬇️', label: 'Descargar Material' },
   ];
 
